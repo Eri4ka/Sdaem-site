@@ -1,0 +1,45 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.news-card {
+  background: $white;
+  max-width: 406px;
+  width: 100%;
+  border-radius: 10px;
+  filter: drop-shadow(0px 20px 40px rgba(135, 124, 202, 0.15));
+  &__image {
+    border-radius: 10px;
+    width: 100%;
+  }
+  &__content {
+    padding: 25px 20px 23px 20px;
+  }
+  &__head {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  &__text {
+    font-size: 14px;
+    color: $text-grey-scnd;
+  }
+  &__divider {
+    border-bottom: 2px solid $grey;
+    margin: 25px 0 18px 0;
+  }
+  &__bottom {
+    @include d-flex-j-between-a-center;
+  }
+  &__date {
+    display: inline-flex;
+    background: $grey;
+    color: $text-grey;
+    border-radius: 18px;
+    font-size: 14px;
+    padding: 10px 8px;
+  }
+  &__button {
+    height: 37px;
+    width: 81px;
+  }
+}

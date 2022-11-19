@@ -1,0 +1,187 @@
+@import '@styles/variables.scss';
+
+.footer {
+  box-shadow: 0px -11px 40px rgba(39, 95, 158, 0.05);
+  padding: 39px 0 43px 0;
+  &__wrapper {
+    display: flex;
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  &__info {
+    max-width: 297px;
+    width: 100%;
+    margin-right: 30px;
+  }
+  &__company {
+    margin-bottom: 36px;
+  }
+  &__logo {
+    max-width: 134px;
+    width: 100%;
+    margin-bottom: 3px;
+  }
+  &__name {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    color: $text-grey;
+  }
+  &__requisites {
+    font-size: 11px;
+    line-height: 13px;
+    color: $text-grey;
+    margin: 0;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+  &__menu {
+    display: flex;
+    height: 93px;
+  }
+  &__ads {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 76px;
+  }
+  &__head {
+    font-weight: 700;
+    font-size: 14px;
+    color: $black;
+  }
+  &__apartments {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 98px;
+  }
+  &__list {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 6px 53px;
+  }
+  &__text {
+    font-size: 14px;
+    color: $text-grey;
+  }
+  &__sections {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__badges {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 45px;
+  }
+  &__social {
+    display: flex;
+  }
+  &__soc {
+    font-weight: 500;
+    font-size: 14px;
+    color: $black;
+    align-self: center;
+    margin-right: 26px;
+  }
+  &__icons {
+    display: flex;
+    align-items: center;
+  }
+  &__svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    margin-right: 15px;
+  }
+  &__inst {
+    height: 23px;
+    width: 23px;
+  }
+  &__vk {
+    height: 14px;
+    width: 24px;
+  }
+  &__fb {
+    height: 20px;
+    width: 20px;
+  }
+  &__payments {
+    display: flex;
+    align-items: center;
+  }
+  &__image {
+    margin-right: 15px;
+  }
+}
+
+@media screen and (max-width: $desktop_view) {
+  .footer {
+    &__wrapper {
+      margin: 0 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 1190px) {
+  .footer {
+    &__info {
+      max-width: 250px;
+    }
+    &__ads {
+      margin-right: 45px;
+    }
+    &__head {
+      font-size: 12px;
+    }
+    &__text {
+      font-size: 12px;
+    }
+    &__apartments {
+      margin-right: 50px;
+    }
+    &__list {
+      grid-gap: 6px 35px;
+    }
+    &__soc {
+      font-size: 12px;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet_large) {
+  .footer {
+    &__wrapper {
+      justify-content: space-around;
+    }
+    &__company {
+      margin-bottom: 0;
+    }
+    &__info {
+      width: auto;
+      margin-right: 0;
+    }
+    &__menu {
+      display: none;
+    }
+    &__requisites {
+      display: none;
+    }
+    &__badges {
+      margin-top: 0;
+    }
+    &__payments {
+      display: none;
+    }
+    &__soc {
+      display: none;
+    }
+  }
+}

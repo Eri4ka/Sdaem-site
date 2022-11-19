@@ -1,0 +1,23 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.icon {
+  @include d-flex-j-center-a-center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  transition: 0.2s;
+  &__wrapper {
+    @include d-flex-j-center-a-center;
+    height: 18px;
+    width: 18px;
+  }
+  &_default {
+    color: $black;
+    background-color: $icon-grey;
+    &:hover {
+      color: $blue;
+      background-color: rgba(102, 78, 249, 0.1);
+    }
+  }
+}

@@ -1,0 +1,9 @@
+.singlenews-related {
+  background: linear-gradient(90deg, rgba(148, 175, 255, 0.1) 0%, rgba(78, 100, 249, 0.1) 94.5%);
+  padding: 62px 0 100px 0;
+  &__container {
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+  }
+}

@@ -1,8 +1,11 @@
+import HeaderBottom from './components/HeaderBottom';
+import HeaderTop from './components/HeaderTop';
+
 const Header = () => {
   return (
-    <header>
-      <h1>Header</h1>
-      <p>text</p>
+    <header className='header'>
+      <HeaderTop />
+      <HeaderBottom />
     </header>
   );
 };

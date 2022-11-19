@@ -6,8 +6,6 @@ import type { AppProps } from 'next/app';
 const inter = Inter();
 
 const App = ({ Component, pageProps }: AppProps) => {
-  console.log(Component);
-
   return (
     <>
       <style jsx global>{`

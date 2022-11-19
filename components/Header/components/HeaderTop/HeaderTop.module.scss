@@ -1,0 +1,90 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.header-top {
+  background-color: $grey;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  &__nav {
+    @include d-flex-j-between-a-center;
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+  }
+  &__list {
+    max-width: 724px;
+    width: 100%;
+    @include d-flex-j-between-a-center;
+    margin: 0;
+    padding: 0;
+  }
+  &__item {
+    font-size: 14px;
+    color: $text-grey;
+    transition: 0.2s;
+    &:hover {
+      color: $black;
+    }
+    &_wrapper {
+      display: flex;
+    }
+    &_active {
+      position: relative;
+      color: $black;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 26px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: $yellow;
+      }
+    }
+    &_icon {
+      width: 8px;
+      height: 10px;
+      margin-right: 5px;
+    }
+  }
+  &__svg {
+    width: 100%;
+    height: 100%;
+  }
+  &__user {
+    @include d-flex-j-between-a-center;
+    max-width: 273px;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    &_wrapper {
+      display: flex;
+      align-items: center;
+      color: $text-grey;
+      transition: 0.2s;
+      &:hover {
+        color: $black;
+      }
+    }
+    &_icon {
+      width: 16px;
+      height: 14px;
+      margin-left: 11px;
+    }
+    &_account {
+      color: $blue;
+    }
+  }
+}
+
+@media screen and (max-width: $desktop_view) {
+  .header-top {
+    &__nav {
+      margin: 0 20px;
+    }
+    &__list {
+      max-width: 600px;
+    }
+  }
+}

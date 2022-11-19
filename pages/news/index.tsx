@@ -1,11 +1,28 @@
-import Layout from '@components/Layout';
+import { GetServerSideProps } from 'next';
 
-const News = () => {
+import Layout from '@components/Layout';
+import News from '@components/News';
+import { API_URL } from '@utils/constants';
+import { NewsType } from '@utils/types';
+
+type NewsPageProps = {
+  data: NewsType[];
+};
+
+export const getServerSideProps: GetServerSideProps<{ data: NewsType[] }> = async () => {
+  const response = await fetch(`${API_URL}/api/news`);
+  const data: NewsType[] = await response.json();
+
+  return { props: { data } };
+};
+
+const NewsPage: React.FC<NewsPageProps> = ({ data }) => {
+  console.log('kek');
   return (
     <Layout>
-      <h1>News</h1>
+      <News data={data} />
     </Layout>
   );
 };
 
-export default News;
+export default NewsPage;
