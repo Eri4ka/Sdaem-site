@@ -1,0 +1,17 @@
+.contacts-caution {
+  display: flex;
+  align-items: center;
+  background: rgba(80, 57, 189, 0.5);
+  border-radius: 10px;
+  padding: 21px 28px 21px 29px;
+  margin-top: 10px;
+  &__icon {
+    height: 35px;
+    width: 35px;
+    margin-right: 22px;
+  }
+  &__text {
+    margin: 0;
+    line-height: 150%;
+  }
+}

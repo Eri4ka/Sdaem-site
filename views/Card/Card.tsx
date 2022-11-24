@@ -22,7 +22,7 @@ const Card: React.FC<CardType> = ({ data }) => {
 
   return (
     <li className={styles['news-card']}>
-      <Image className={styles['news-card__image']} src={image} alt={title} />
+      <Image className={styles['news-card__image']} src={image} alt={title} priority={true} />
       <div className={styles['news-card__content']}>
         <div className={styles['news-card__head']}>{title}</div>
         <div className={styles['news-card__text']}>{slicedText}</div>

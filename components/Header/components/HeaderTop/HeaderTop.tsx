@@ -21,7 +21,7 @@ const HeaderTop = () => {
           </li>
           <li
             className={`${styles['header-top__item']} ${
-              pathname === '/news' ? styles['header-top__item_active'] : ''
+              pathname.startsWith('/news') ? styles['header-top__item_active'] : ''
             } `}>
             <Link href='/news'>Новости</Link>
           </li>
@@ -44,9 +44,9 @@ const HeaderTop = () => {
           </li>
           <li
             className={`${styles['header-top__item']} ${
-              pathname === '/' ? styles['header-top__item_active'] : ''
+              pathname === '/contacts' ? styles['header-top__item_active'] : ''
             } `}>
-            <Link href='/'>Контакты</Link>
+            <Link href='/contacts'>Контакты</Link>
           </li>
         </ul>
         <div className={styles['header-top__user']}>

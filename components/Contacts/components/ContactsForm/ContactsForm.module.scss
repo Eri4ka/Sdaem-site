@@ -1,0 +1,26 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.contacts-form {
+  max-width: 625px;
+  width: 100%;
+  background-color: $white;
+  box-shadow: 0px 20px 40px rgba(39, 95, 158, 0.2);
+  border-radius: 10px;
+  padding: 41px 37px 44px 38px;
+  z-index: 1;
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  &__bottom {
+    @include d-flex-f-column-a-center;
+  }
+  &__button {
+    height: 48px;
+    max-width: 200px;
+    width: 100%;
+    margin-top: 40px;
+  }
+}

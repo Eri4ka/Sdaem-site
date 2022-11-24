@@ -17,7 +17,6 @@ export const getServerSideProps: GetServerSideProps<{ data: NewsType[] }> = asyn
 };
 
 const NewsPage: React.FC<NewsPageProps> = ({ data }) => {
-  console.log('kek');
   return (
     <Layout>
       <News data={data} />

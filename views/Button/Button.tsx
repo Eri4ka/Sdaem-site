@@ -4,6 +4,8 @@ export enum ButtonClass {
   adt = 'button_adt',
   search = 'button_search',
   purp = 'button_purp',
+  back = 'button_back',
+  blue = 'button_blue',
 }
 
 type ButtonProps = React.PropsWithChildren<{

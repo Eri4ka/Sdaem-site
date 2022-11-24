@@ -11,9 +11,10 @@ import styles from './SingleNews.module.scss';
 
 type SingleNewsProps = {
   data: NewsType;
+  similars: NewsType[];
 };
 
-const SingleNews: React.FC<SingleNewsProps> = ({ data }) => {
+const SingleNews: React.FC<SingleNewsProps> = ({ data, similars }) => {
   const { title, image, published, full_description } = data;
   const { asPath, getCrumbs } = useCrumbs({ title });
 
@@ -44,7 +45,7 @@ const SingleNews: React.FC<SingleNewsProps> = ({ data }) => {
           </div>
         </div>
       </section>
-      <SingleNewsRelated />
+      <SingleNewsRelated similars={similars} />
     </>
   );
 };

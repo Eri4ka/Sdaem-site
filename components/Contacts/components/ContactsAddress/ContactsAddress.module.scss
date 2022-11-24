@@ -1,0 +1,37 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.contacts-address {
+  @include d-flex-f-column-j-between;
+  font-style: normal;
+  max-height: 153px;
+  height: 100%;
+  &__element {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+  }
+  &__text {
+    margin: 0 0 0 20px;
+    font-weight: 600;
+    &_link {
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        bottom: -1px;
+        border-bottom: 1px solid $white;
+      }
+    }
+  }
+  &__span {
+    font-weight: 400;
+  }
+  &__social {
+    display: grid;
+    grid-template-columns: repeat(3, 30px);
+    grid-column-gap: 10px;
+    margin-left: 29px;
+  }
+}

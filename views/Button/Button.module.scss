@@ -33,4 +33,26 @@
     border-radius: 17px;
     color: $blue;
   }
+  &_blue {
+    background-color: $blue;
+    color: $white;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 33px;
+    &:hover {
+      background-color: $blue-hover;
+    }
+  }
+  &_back {
+    @include d-flex-j-center-a-center;
+    background-color: $yellow;
+    border-radius: 33px;
+    color: $black;
+    font-size: 16px;
+    font-weight: 700;
+    &:hover {
+      background-color: $yellow-strong;
+    }
+  }
 }

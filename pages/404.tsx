@@ -1,5 +1,12 @@
+import Layout from '@components/Layout';
+import NotFound from '@components/NotFound';
+
 const Error = () => {
-  return <h1>Error</h1>;
+  return (
+    <Layout>
+      <NotFound />
+    </Layout>
+  );
 };
 
 export default Error;

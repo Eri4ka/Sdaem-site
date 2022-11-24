@@ -1,9 +1,43 @@
+@import '@styles/variables.scss';
+
 .singlenews-related {
   background: linear-gradient(90deg, rgba(148, 175, 255, 0.1) 0%, rgba(78, 100, 249, 0.1) 94.5%);
   padding: 62px 0 100px 0;
   &__container {
     margin: 0 auto;
     max-width: 1280px;
-    width: 100%;
+  }
+  &__head {
+    font-size: 25px;
+    margin: 0 0 45px 0;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+  }
+}
+
+@media screen and (max-width: $desktop_view) {
+  .singlenews-related {
+    &__container {
+      margin: 0 20px;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet_large) {
+  .singlenews-related {
+    &__list {
+      grid-gap: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet_medium) {
+  .singlenews-related {
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 }
