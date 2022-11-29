@@ -10,8 +10,13 @@ export type NewsType = {
   published: string;
 };
 
-export type ApartmentsType = {
-  id: number;
-  title: string;
-  path: string;
+export type ContactFormValues = {
+  name: string;
+  email: string;
+  message: string;
+};
+
+export type ResponseData = {
+  status: string;
+  message: string;
 };

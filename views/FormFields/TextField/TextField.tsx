@@ -1,10 +1,7 @@
-import { useField, Field } from 'formik';
+import { useField, FastField } from 'formik';
+import { memo } from 'react';
 
 import styles from './TextField.module.scss';
-
-export enum TextFieldClass {
-  contacts = 'textfield_contacts',
-}
 
 export enum InputType {
   with_icon = 'textfield__input_icon',
@@ -19,18 +16,20 @@ type TextField = {
   Icon?: React.FC;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
-const TextField: React.FC<TextField> = ({ label, className, inputType, Icon, ...props }) => {
+const TextField: React.FC<TextField> = ({ label, inputType, Icon, ...props }) => {
   const [field, meta] = useField(props);
 
+  const errorWrapper = meta.touched && meta.error ? styles.textfield_error : '';
+  const errorField = meta.touched && meta.error ? styles.textfield__input_error : '';
   return (
-    <div className={`${styles.textfield} ${className ? styles[className] : ''}`}>
+    <div className={`${styles.textfield} ${errorWrapper}`}>
       {label && (
-        <label className={styles.textfield__label} htmlFor='name'>
+        <label className={styles.textfield__label} htmlFor={field.name}>
           {label}
         </label>
       )}
-      <Field
-        className={`${styles.textfield__input} ${inputType ? styles[inputType] : ''}`}
+      <FastField
+        className={`${styles.textfield__input} ${inputType ? styles[inputType] : ''} ${errorField}`}
         type='text'
         {...field}
         {...props}
@@ -44,4 +43,4 @@ const TextField: React.FC<TextField> = ({ label, className, inputType, Icon, ...
   );
 };
 
-export default TextField;
+export default memo(TextField);

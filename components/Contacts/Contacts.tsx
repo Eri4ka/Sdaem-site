@@ -9,7 +9,6 @@ import ContactsForm from './components/ContactsForm';
 import styles from './Contacts.module.scss';
 
 const Contacts: React.FC = () => {
-  console.log(window.location);
   return (
     <article className={styles.contacts}>
       <div className={styles.contacts__wrapper}>

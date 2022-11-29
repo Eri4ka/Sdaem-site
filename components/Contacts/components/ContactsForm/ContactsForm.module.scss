@@ -3,7 +3,7 @@
 
 .contacts-form {
   max-width: 625px;
-  width: 100%;
+  width: 50%;
   background-color: $white;
   box-shadow: 0px 20px 40px rgba(39, 95, 158, 0.2);
   border-radius: 10px;
@@ -11,8 +11,11 @@
   z-index: 1;
   &__top {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 30px;
+  }
+  &__wrapper {
+    width: 48%;
   }
   &__bottom {
     @include d-flex-f-column-a-center;
@@ -21,6 +24,19 @@
     height: 48px;
     max-width: 200px;
     width: 100%;
-    margin-top: 40px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: $tablet_large) {
+  .contacts-form {
+    width: 100%;
+    order: 1;
+  }
+}
+
+@media screen and (max-width: $mobile_large) {
+  .contacts-form {
+    padding: 30px 20px;
   }
 }

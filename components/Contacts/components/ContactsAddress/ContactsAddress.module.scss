@@ -32,6 +32,14 @@
     display: grid;
     grid-template-columns: repeat(3, 30px);
     grid-column-gap: 10px;
-    margin-left: 29px;
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: $mobile_large) {
+  .contacts-address {
+    &__element {
+      font-size: 16px;
+    }
   }
 }

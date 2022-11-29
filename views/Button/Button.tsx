@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 import styles from './Button.module.scss';
 
 export enum ButtonClass {
@@ -21,4 +23,4 @@ const Button: React.FC<ButtonProps> = ({ children, className, ...props }) => {
   );
 };
 
-export default Button;
+export default memo(Button);

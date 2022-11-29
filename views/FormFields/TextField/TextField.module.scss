@@ -8,8 +8,17 @@
   font-size: 14px;
   font-weight: 500;
   color: $text-grey-scnd;
-  &_contacts {
-    max-width: 260px;
+  margin-bottom: 30px;
+  &_error {
+    &::after {
+      content: '';
+      position: absolute;
+      background: url('../../../public/icons/form//error.svg');
+      right: 21px;
+      bottom: 16px;
+      width: 20px;
+      height: 20px;
+    }
   }
   &__label {
     margin-bottom: 15px;
@@ -38,13 +47,27 @@
     &_icon {
       padding-left: 57px;
     }
+    &_error {
+      border: 1px solid $red;
+      &:focus {
+        outline: 1px solid $red;
+      }
+    }
   }
   &__icon {
     @include d-flex-j-center-a-center;
     position: absolute;
     width: 20px;
     height: 20px;
-    top: 46px;
+    bottom: 16px;
     left: 21px;
+  }
+}
+
+@media screen and (max-width: $mobile_large) {
+  .textfield {
+    &_contacts {
+      width: 100%;
+    }
   }
 }

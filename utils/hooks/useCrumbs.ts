@@ -7,7 +7,7 @@ type useCrumbsProps = {
 
 export const useCrumbs = ({ title = '' }: useCrumbsProps) => {
   const { asPath } = useRouter();
-  // console.log('render');
+
   const getCrumbs = useMemo(() => {
     const routes = asPath.split('/').filter((item) => item.length > 0);
     let crumbTitle = '';
