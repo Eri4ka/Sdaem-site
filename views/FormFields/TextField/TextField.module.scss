@@ -8,7 +8,6 @@
   font-size: 14px;
   font-weight: 500;
   color: $text-grey-scnd;
-  margin-bottom: 30px;
   &_error {
     &::after {
       content: '';
@@ -36,6 +35,7 @@
       outline: 2px solid rgba(102, 78, 249, 0.8);
       + .textfield__icon {
         color: $blue;
+        opacity: 1;
       }
     }
     &_textArea {
@@ -47,11 +47,20 @@
     &_icon {
       padding-left: 57px;
     }
+    &_auth {
+      padding-left: 57px;
+      background-color: $grey-light;
+    }
     &_error {
       border: 1px solid $red;
       &:focus {
         outline: 1px solid $red;
       }
+    }
+  }
+  &__input[type='password'] {
+    &:not(:placeholder-shown) {
+      letter-spacing: 1px;
     }
   }
   &__icon {
@@ -61,6 +70,7 @@
     height: 20px;
     bottom: 16px;
     left: 21px;
+    opacity: 0.3;
   }
 }
 

@@ -4,11 +4,12 @@ import { useState } from 'react';
 
 import Map from '@public/icons/map.svg';
 import logo from '@public/images/logo.png';
-import { ApartmentsType } from '@utils/types';
 import Button, { ButtonClass } from '@views/Button';
 import Select from '@views/Select';
 
 import styles from './HeaderBottom.module.scss';
+
+type ApartmentsType = { id: number; title: string; path: string };
 
 const HeaderBottom: React.FC = () => {
   const [visibleSelect, setVisibleSelect] = useState<boolean>(false);
@@ -17,7 +18,7 @@ const HeaderBottom: React.FC = () => {
     { id: 1, title: 'Квартиры на сутки в Минске', path: '/minsk' },
     { id: 2, title: 'Квартиры на сутки в Гомеле', path: '/gomel' },
     { id: 3, title: 'Квартиры на сутки в Бресте', path: '/brest' },
-    { id: 4, title: 'Квартиры на сутки в Витебске', path: '/vbitebsk' },
+    { id: 4, title: 'Квартиры на сутки в Витебске', path: '/vitebsk' },
     { id: 5, title: 'Квартиры на сутки в Гродно', path: '/grodno' },
     { id: 6, title: 'Квартиры на сутки в Могилеве', path: '/mogilev' },
   ] as ApartmentsType[];
@@ -34,7 +35,10 @@ const HeaderBottom: React.FC = () => {
         <nav className={`list ${styles['header-bottom__nav']}`}>
           <ul className={`list ${styles['header-bottom__list']}`}>
             <li className={styles['header-bottom__item']}>
-              <Select items={apartments} visible={visibleSelect} setVisible={handleVisibleSelect}>
+              <Select<ApartmentsType>
+                items={apartments}
+                visible={visibleSelect}
+                setVisible={handleVisibleSelect}>
                 Квартиры на сутки
                 <div className={styles['header-bottom__item_icon']}>
                   <Map className={styles['header-bottom__svg']} />

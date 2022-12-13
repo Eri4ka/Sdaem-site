@@ -1,0 +1,79 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.header-account {
+  position: relative;
+  max-width: 116px;
+  width: 100%;
+  &__head {
+    @include d-flex-j-between-a-center;
+    cursor: pointer;
+  }
+  &__image {
+    position: relative;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  &__title {
+    color: $black;
+    font-weight: 500;
+  }
+  &__arrow {
+    position: relative;
+    height: 17px;
+    width: 18px;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: url('../../../../../../public/icons/header/arrow.svg') no-repeat 50%;
+      height: 100%;
+      width: 100%;
+      transition: 0.2s;
+    }
+    &_show {
+      &::before {
+        transform: rotateX(180deg);
+      }
+    }
+  }
+  &__list {
+    position: absolute;
+    background-color: $white;
+    box-shadow: 0px 0px 40px rgba(135, 124, 202, 0.3);
+    border-radius: 10px;
+    min-width: 100%;
+    white-space: nowrap;
+    top: 40px;
+    z-index: 2;
+  }
+  &__button {
+    text-align: start;
+    height: 37px;
+    width: 100%;
+    font-weight: 500;
+    font-size: 14px;
+    color: $black;
+    padding-left: 15px;
+    padding-right: 11px;
+    transition: 0.2s;
+    border: none;
+    background-color: transparent;
+    border-radius: inherit;
+    cursor: pointer;
+    &:hover {
+      background-color: $grey;
+    }
+  }
+  &__item {
+    &:nth-child(1) {
+      border-radius: 10px 10px 0 0;
+    }
+    &:nth-last-child(1) {
+      border-radius: 0 0 10px 10px;
+    }
+  }
+}

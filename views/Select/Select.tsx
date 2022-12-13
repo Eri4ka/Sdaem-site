@@ -1,28 +1,27 @@
 import Link from 'next/link';
 
-import { ApartmentsType } from '@utils/types';
-
 import styles from './Select.module.scss';
 
-type SelectProps = {
+type SelectProps<T> = {
   children: React.ReactNode;
-  items: ApartmentsType[];
+  items: T[];
   visible: boolean;
   setVisible: () => void;
 };
 
-const Select: React.FC<SelectProps> = ({ children, items, visible, setVisible }) => {
+const Select = <T,>({ children, items, visible, setVisible }: SelectProps<T>) => {
   return (
     <div className={styles.select}>
       <div className={styles.select__title} onClick={setVisible}>
         {children}
       </div>
-      <div className={`list ${styles.select__list}`}>
+      <div className={styles.select__list}>
         {visible &&
-          items.map(({ id, title, path }) => {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          items.map((item: any) => {
             return (
-              <Link className={styles.select__link} href={path} key={id}>
-                <div className={styles.select__item}>{title}</div>
+              <Link className={styles.select__link} href={item.path} key={item.id}>
+                <div className={styles.select__item}>{item.title}</div>
               </Link>
             );
           })}

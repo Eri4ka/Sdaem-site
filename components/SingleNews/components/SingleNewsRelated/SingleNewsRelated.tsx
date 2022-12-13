@@ -8,7 +8,6 @@ type SingleNewsRelatedProps = {
 };
 
 const SingleNewsRelated: React.FC<SingleNewsRelatedProps> = ({ similars }) => {
-  console.log(similars);
   return (
     <section className={styles['singlenews-related']}>
       <div className={styles['singlenews-related__container']}>

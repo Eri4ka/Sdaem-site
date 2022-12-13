@@ -1,1 +1,1 @@
-export { default, TextFieldClass, InputType } from './TextField';
+export { default, InputType } from './TextField';

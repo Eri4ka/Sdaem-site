@@ -20,3 +20,22 @@ export type ResponseData = {
   status: string;
   message: string;
 };
+
+export type SiginUpValues = {
+  login: string;
+  email: string;
+  password: string;
+  verifyPassword: string;
+  recaptcha: string;
+};
+
+export type SiginInValues = {
+  login: string;
+  password: string;
+  remember: boolean;
+};
+
+export type StatusType = {
+  status: string;
+  message: string;
+};

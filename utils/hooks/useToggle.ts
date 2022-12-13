@@ -1,6 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 
-export const useToggle = ({ modal = false }: { modal?: boolean }) => {
+type useToggleProps = {
+  modal?: boolean;
+};
+
+export const useToggle = ({ modal = false }: useToggleProps) => {
   const [toggle, setToggle] = useState<boolean>(false);
 
   useEffect(() => {
@@ -12,9 +16,9 @@ export const useToggle = ({ modal = false }: { modal?: boolean }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [toggle]);
 
-  const handleToggle = () => {
+  const handleToggle = useCallback(() => {
     setToggle((toggle) => !toggle);
-  };
+  }, []);
 
   return { toggle, handleToggle };
 };

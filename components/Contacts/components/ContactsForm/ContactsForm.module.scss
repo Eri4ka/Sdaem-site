@@ -16,6 +16,7 @@
   }
   &__wrapper {
     width: 48%;
+    margin-bottom: 30px;
   }
   &__bottom {
     @include d-flex-f-column-a-center;
@@ -24,7 +25,7 @@
     height: 48px;
     max-width: 200px;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 40px;
   }
 }
 
@@ -38,5 +39,11 @@
 @media screen and (max-width: $mobile_large) {
   .contacts-form {
     padding: 30px 20px;
+    &__wrapper {
+      width: 100%;
+    }
+    &__button {
+      margin-top: 30px;
+    }
   }
 }

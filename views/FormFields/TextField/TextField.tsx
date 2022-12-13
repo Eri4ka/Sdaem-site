@@ -1,10 +1,11 @@
-import { useField, FastField } from 'formik';
+import { useField, Field } from 'formik';
 import { memo } from 'react';
 
 import styles from './TextField.module.scss';
 
 export enum InputType {
   with_icon = 'textfield__input_icon',
+  auth = 'textfield__input_auth',
   textArea = 'textfield__input_textArea',
 }
 
@@ -28,7 +29,7 @@ const TextField: React.FC<TextField> = ({ label, inputType, Icon, ...props }) =>
           {label}
         </label>
       )}
-      <FastField
+      <Field
         className={`${styles.textfield__input} ${inputType ? styles[inputType] : ''} ${errorField}`}
         type='text'
         {...field}

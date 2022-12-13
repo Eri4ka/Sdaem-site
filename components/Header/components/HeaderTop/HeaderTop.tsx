@@ -3,11 +3,17 @@ import { useRouter } from 'next/router';
 
 import Heart from '@public/icons/heart.svg';
 import Map from '@public/icons/map.svg';
+import { useAppSelector, useAppDispatch } from '@utils/redux/reduxHooks';
+import { getAuthState } from '@utils/redux/selectors';
+import { fetchSignOut } from '@utils/redux/slices/authSlice';
 
+import HeaderTopAccount from './components/HeaderTopAccount';
 import styles from './HeaderTop.module.scss';
 
-const HeaderTop = () => {
+const HeaderTop: React.FC = () => {
   const { pathname } = useRouter();
+  const { user } = useAppSelector(getAuthState);
+  const dispatch = useAppDispatch();
 
   return (
     <div className={styles['header-top']}>
@@ -56,10 +62,17 @@ const HeaderTop = () => {
               <Heart className={styles['header-top__svg']} />
             </div>
           </Link>
-
-          <Link href='/' className={styles['header-top__user_account']}>
-            Вход и регистрация
-          </Link>
+          {user ? (
+            <HeaderTopAccount
+              login={user.login ? user.login : 'Профиль'}
+              photo={user.photoURL}
+              onClick={() => dispatch(fetchSignOut())}
+            />
+          ) : (
+            <Link href='/signin' className={styles['header-top__user_account']}>
+              Вход и регистрация
+            </Link>
+          )}
         </div>
       </nav>
     </div>
