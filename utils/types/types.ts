@@ -10,6 +10,42 @@ export type NewsType = {
   published: string;
 };
 
+export type SingleSectionType = {
+  id: number;
+  title: string;
+  alias: string;
+  content: string;
+};
+
+export type SectionType = {
+  apartments: SingleSectionType[];
+  cottages: SingleSectionType[];
+  baths: SingleSectionType[];
+  automobile: SingleSectionType[];
+};
+
+export type ApartmentOptions = {
+  id: number;
+  title: string;
+};
+
+export type ApartmentsType = {
+  id: number;
+  section_id: number;
+  title: string;
+  price: string;
+  description: string;
+  rooms: {
+    count: string;
+    type: string;
+  };
+  square: number;
+  adress: string;
+  metro: string;
+  district: string;
+  options: ApartmentOptions[];
+};
+
 export type ContactFormValues = {
   name: string;
   email: string;
@@ -38,4 +74,9 @@ export type SiginInValues = {
 export type StatusType = {
   status: string;
   message: string;
+};
+
+export type SelectType = {
+  id: number;
+  title: string;
 };

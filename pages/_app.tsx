@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { Provider } from 'react-redux';
 
 import '@styles/globals.scss';
+
 import { fetchUser } from '@utils/redux/slices/authSlice';
 import { wrapper } from '@utils/redux/store';
 

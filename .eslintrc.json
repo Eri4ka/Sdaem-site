@@ -31,7 +31,6 @@
         },
         "newlines-between": "always"
       }
-    ],
-    "react/dispay-name": "off"
+    ]
   }
 }

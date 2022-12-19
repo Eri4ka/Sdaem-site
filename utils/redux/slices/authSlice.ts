@@ -122,12 +122,6 @@ const authSlice = createSlice({
     logOut: () => initialState,
   },
   extraReducers: {
-    [HYDRATE]: (state, action) => {
-      return {
-        ...state,
-        ...action.payload.auth,
-      };
-    },
     [fetchCreateUser.pending.toString()]: (state) => {
       return {
         ...state,

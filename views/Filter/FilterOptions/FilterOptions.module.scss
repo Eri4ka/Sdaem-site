@@ -1,0 +1,18 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.filter-options {
+  @include d-flex-a-center;
+  height: 100%;
+  cursor: pointer;
+  &__text {
+    color: $black;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  &__icon {
+    margin-left: 4px;
+    width: 18px;
+    height: 18px;
+  }
+}

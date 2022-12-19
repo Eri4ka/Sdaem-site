@@ -1,0 +1,17 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.main-tab {
+  &__numbers {
+    @include d-flex-j-between-a-center;
+    width: 175px;
+    &-wrapper {
+      max-width: 80px;
+    }
+    &-separator {
+      color: $light-blue;
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+}

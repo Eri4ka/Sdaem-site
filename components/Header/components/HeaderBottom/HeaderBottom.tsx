@@ -1,31 +1,27 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { memo, useEffect } from 'react';
 
 import Map from '@public/icons/map.svg';
 import logo from '@public/images/logo.png';
+import { useToggle } from '@utils/hooks/useToggle';
+import { useAppDispatch, useAppSelector } from '@utils/redux/reduxHooks';
+import { getSectionState } from '@utils/redux/selectors';
+import { fetchSections } from '@utils/redux/slices/sectionsSlice';
 import Button, { ButtonClass } from '@views/Button';
-import Select from '@views/Select';
 
+import HeaderSelect from '../HeaderSelect';
 import styles from './HeaderBottom.module.scss';
 
-type ApartmentsType = { id: number; title: string; path: string };
-
 const HeaderBottom: React.FC = () => {
-  const [visibleSelect, setVisibleSelect] = useState<boolean>(false);
+  const { toggle, handleToggle } = useToggle({});
+  const dispatch = useAppDispatch();
+  const { apartments } = useAppSelector(getSectionState);
 
-  const apartments = [
-    { id: 1, title: 'Квартиры на сутки в Минске', path: '/minsk' },
-    { id: 2, title: 'Квартиры на сутки в Гомеле', path: '/gomel' },
-    { id: 3, title: 'Квартиры на сутки в Бресте', path: '/brest' },
-    { id: 4, title: 'Квартиры на сутки в Витебске', path: '/vitebsk' },
-    { id: 5, title: 'Квартиры на сутки в Гродно', path: '/grodno' },
-    { id: 6, title: 'Квартиры на сутки в Могилеве', path: '/mogilev' },
-  ] as ApartmentsType[];
+  useEffect(() => {
+    dispatch(fetchSections());
+  }, [dispatch]);
 
-  const handleVisibleSelect = () => {
-    setVisibleSelect((value) => !value);
-  };
   return (
     <div className={styles['header-bottom']}>
       <div className={styles['header-bottom__wrapper']}>
@@ -35,15 +31,16 @@ const HeaderBottom: React.FC = () => {
         <nav className={`list ${styles['header-bottom__nav']}`}>
           <ul className={`list ${styles['header-bottom__list']}`}>
             <li className={styles['header-bottom__item']}>
-              <Select<ApartmentsType>
+              <HeaderSelect
                 items={apartments}
-                visible={visibleSelect}
-                setVisible={handleVisibleSelect}>
+                parentPath='apartments'
+                visible={toggle}
+                setVisible={handleToggle}>
                 Квартиры на сутки
                 <div className={styles['header-bottom__item_icon']}>
                   <Map className={styles['header-bottom__svg']} />
                 </div>
-              </Select>
+              </HeaderSelect>
             </li>
             <li className={styles['header-bottom__item']}>
               <Link href='/'>Коттеджы и усадьбы</Link>
@@ -64,4 +61,4 @@ const HeaderBottom: React.FC = () => {
   );
 };
 
-export default HeaderBottom;
+export default memo(HeaderBottom);

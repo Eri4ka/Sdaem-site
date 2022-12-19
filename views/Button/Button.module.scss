@@ -63,4 +63,26 @@
       cursor: default;
     }
   }
+  &_show {
+    @include d-flex-j-between-a-center;
+    background-color: $yellow;
+    border-radius: 22px;
+    color: #242424;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 16px;
+    &:not([disabled]):hover {
+      background-color: $yellow-strong;
+    }
+    &:disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+    &::after {
+      content: '';
+      background: url('../../public/icons/main/filter/arrowBtn.svg') no-repeat 50% 70%;
+      height: 19px;
+      width: 19px;
+    }
+  }
 }

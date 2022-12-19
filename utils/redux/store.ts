@@ -2,11 +2,13 @@ import { configureStore, ThunkAction } from '@reduxjs/toolkit';
 import { createWrapper } from 'next-redux-wrapper';
 import { Action } from 'redux';
 
+import apartments from './slices/apartmentsSlice';
 import auth from './slices/authSlice';
+import section from './slices/sectionsSlice';
 
 const makeStore = () =>
   configureStore({
-    reducer: { auth },
+    reducer: { apartments, auth, section },
     devTools: process.env.NODE_ENV !== 'production',
   });
 

@@ -1,3 +1,4 @@
+/* COLORS */
 $grey: #f8f8f8;
 $grey-light: #f7f7f7;
 $black: #1e2123;
@@ -5,6 +6,7 @@ $white: #ffffff;
 $white-background: #fffefe;
 $blue: #664ef9;
 $blue-hover: #5c35f9;
+$light-blue: #4e64f9;
 $yellow: #ffd54f;
 $yellow-strong: #fec100;
 $text-grey-scnd: #686868;
@@ -13,7 +15,9 @@ $icon-grey: #fdfafa;
 $checkbox-grey: #bdbdbd;
 $red: #eb5757;
 
+/* VIEW-PORTS */
 $desktop_view: 1320px;
+$desktop_minimum: 1092px;
 $tablet_large: 992px;
 $tablet_medium: 876px;
 $tablet_minimum: 768px;

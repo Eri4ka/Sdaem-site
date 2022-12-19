@@ -9,6 +9,7 @@ type ToggleProps = {
 
 const Toggle: React.FC<ToggleProps> = ({ text, ...props }) => {
   const [field] = useField(props);
+
   return (
     <div className={styles.toggle}>
       <input

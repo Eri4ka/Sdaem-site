@@ -1,0 +1,70 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.main-head {
+  @include d-flex-j-center-a-center;
+  position: relative;
+  height: 430px;
+  max-width: 1280px;
+  margin: 0 auto;
+  background: linear-gradient(360deg, #7e6af3 15.95%, #6540cd 63.1%);
+  filter: drop-shadow(0px 20px 40px rgba(135, 124, 202, 0.15));
+  border-radius: 0 0 40px 40px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    background: url('../../../../public/images/main/head/back.png');
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    mix-blend-mode: overlay;
+    filter: blur(2px);
+  }
+  &__content {
+    @include d-flex-f-column-a-center;
+    max-width: 1062px;
+    width: 100%;
+    margin-top: -35px;
+    z-index: 1;
+  }
+  &__head {
+    color: $white;
+    font-size: 30px;
+    text-shadow: 0px 2px 5px rgba(0, 14, 142, 0.3);
+    margin-bottom: 50px;
+  }
+  &__text {
+    color: $yellow;
+  }
+}
+
+@media screen and (max-width: $tablet_large) {
+  .main-head {
+    &__content {
+      max-width: 760px;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet_minimum) {
+  .main-head {
+    &__content {
+      max-width: 565px;
+    }
+    &__head {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile_large) {
+  .main-head {
+    &__content {
+      max-width: 360px;
+    }
+  }
+}
