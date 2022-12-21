@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 import { SectionType } from '@utils/types';
 
 import MainTab from './components/MainTab';
@@ -20,4 +22,4 @@ const MainHead: React.FC<MainHeadProps> = ({ sections }) => {
   );
 };
 
-export default MainHead;
+export default memo(MainHead);

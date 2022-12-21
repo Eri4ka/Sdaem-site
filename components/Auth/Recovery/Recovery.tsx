@@ -7,7 +7,7 @@ import { auth, sendPasswordResetEmail } from '@utils/firebase';
 import { useErrorStatus } from '@utils/hooks/useErrorStatus';
 import { useToggle } from '@utils/hooks/useToggle';
 import { StatusType } from '@utils/types';
-import Button, { ButtonClass } from '@views/Button';
+import Button, { ButtonClass } from '@views/Buttons/Button';
 import TextField, { InputType } from '@views/FormFields/TextField';
 import Caution from '@views/Сaution';
 

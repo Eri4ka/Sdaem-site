@@ -11,7 +11,7 @@ import { useAppDispatch, useAppSelector } from '@utils/redux/reduxHooks';
 import { getAuthState } from '@utils/redux/selectors';
 import { fetchLoginUser } from '@utils/redux/slices/authSlice';
 import { SiginInValues } from '@utils/types';
-import Button, { ButtonClass } from '@views/Button';
+import Button, { ButtonClass } from '@views/Buttons/Button';
 import TextField, { InputType } from '@views/FormFields/TextField';
 import Toggle from '@views/FormFields/Toggle';
 import Caution from '@views/Сaution';

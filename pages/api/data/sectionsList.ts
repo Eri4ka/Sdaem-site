@@ -37,7 +37,44 @@ export const sectionsList = {
       content: 'Квартиры на сутки в Могилеве',
     },
   ],
-  cottages: [],
+  cottages: [
+    {
+      id: 1,
+      title: 'Аггроусадьбы',
+      alias: 'aggrousadbi',
+      content: 'Аггроусадьбы',
+    },
+    {
+      id: 2,
+      title: 'Коттеджи',
+      alias: 'gomel',
+      content: 'Коттеджи',
+    },
+    {
+      id: 3,
+      title: 'Загородный комплекс',
+      alias: 'complex',
+      content: 'Загородный комплекс',
+    },
+    {
+      id: 4,
+      title: 'Базы отдыха',
+      alias: 'bases',
+      content: 'Базы отдыха',
+    },
+    {
+      id: 5,
+      title: 'Дачи',
+      alias: 'dacha',
+      content: 'Дачи',
+    },
+    {
+      id: 6,
+      title: 'Лесные усадьбы',
+      alias: 'forestusadbi',
+      content: 'Лесные усадьбы',
+    },
+  ],
   baths: [],
   automobile: [],
 };

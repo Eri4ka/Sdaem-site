@@ -3,7 +3,7 @@ import { memo, useState, useCallback } from 'react';
 import MapIc from '@public/icons/main/filter/map.svg';
 import { useToggle } from '@utils/hooks/useToggle';
 import { SelectType } from '@utils/types';
-import Button, { ButtonClass } from '@views/Button';
+import Button, { ButtonClass } from '@views/Buttons/Button';
 import FilterOptions from '@views/Filter/FilterOptions';
 import FilterSelect from '@views/Filter/FilterSelect';
 

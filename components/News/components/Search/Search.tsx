@@ -1,5 +1,5 @@
 import SearchIcon from '@public/icons/search.svg';
-import Button, { ButtonClass } from '@views/Button';
+import Button, { ButtonClass } from '@views/Buttons/Button';
 
 import styles from './Search.module.scss';
 

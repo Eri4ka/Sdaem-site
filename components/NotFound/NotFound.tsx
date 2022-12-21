@@ -5,7 +5,7 @@ import HomeIcon from '@public/icons/home.svg';
 import ErrorImage from '@public/images/404.svg';
 import dots from '@public/images/dots.png';
 import whiteDots from '@public/images/whitedots.png';
-import Button, { ButtonClass } from '@views/Button';
+import Button, { ButtonClass } from '@views/Buttons/Button';
 
 import styles from './NotFound.module.scss';
 

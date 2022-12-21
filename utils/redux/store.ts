@@ -4,11 +4,12 @@ import { Action } from 'redux';
 
 import apartments from './slices/apartmentsSlice';
 import auth from './slices/authSlice';
+import cottages from './slices/cottagesSlice';
 import section from './slices/sectionsSlice';
 
 const makeStore = () =>
   configureStore({
-    reducer: { apartments, auth, section },
+    reducer: { apartments, cottages, auth, section },
     devTools: process.env.NODE_ENV !== 'production',
   });
 

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import Button, { ButtonClass } from '@views/Button';
+import Button, { ButtonClass } from '@views/Buttons/Button';
 
 import styles from './Submit.module.scss';
 

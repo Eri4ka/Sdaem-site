@@ -1,0 +1,23 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  &:nth-last-child(1) {
+    margin-bottom: 15px;
+  }
+  &__title {
+    font-size: 14px;
+    color: #feb700;
+    transition: 0.2s;
+    &:hover {
+      margin-left: 10px;
+    }
+  }
+  &__total {
+    font-size: 14px;
+    color: $checkbox-grey;
+  }
+}

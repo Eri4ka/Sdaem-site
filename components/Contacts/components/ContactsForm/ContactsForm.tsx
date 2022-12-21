@@ -7,7 +7,7 @@ import UserIc from '@public/icons/form/user.svg';
 import { API_URL } from '@utils/constants';
 import { useToggle } from '@utils/hooks/useToggle';
 import { ContactFormValues, ResponseData } from '@utils/types';
-import Button, { ButtonClass } from '@views/Button';
+import Button, { ButtonClass } from '@views/Buttons/Button';
 import TextField, { InputType } from '@views/FormFields/TextField';
 import Modal from '@views/Modal';
 

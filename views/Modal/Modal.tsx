@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
-import Button, { ButtonClass } from '@views/Button';
+import Button, { ButtonClass } from '@views/Buttons/Button';
 
 import styles from './Modal.module.scss';
 

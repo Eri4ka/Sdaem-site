@@ -24,6 +24,7 @@ const sectionsSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(fetchSections.fulfilled, (state, action: PayloadAction<SectionType>) => {
       state.apartments = action.payload.apartments;
+      state.cottages = action.payload.cottages;
     });
   },
 });

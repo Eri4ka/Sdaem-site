@@ -1,15 +1,17 @@
 import { useAppSelector } from '@utils/redux/reduxHooks';
-import { getSectionState } from '@utils/redux/selectors';
+import { getSectionCount } from '@utils/redux/selectors';
 
+import MainCategory from './components/MainCategory';
 import MainHead from './components/MainHead';
 import styles from './Main.module.scss';
 
 const Main: React.FC = () => {
-  const sections = useAppSelector(getSectionState);
+  const sections = useAppSelector(getSectionCount);
 
   return (
     <article className={styles.main}>
       <MainHead sections={sections} />
+      <MainCategory sections={sections} />
     </article>
   );
 };

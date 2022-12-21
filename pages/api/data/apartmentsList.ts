@@ -210,4 +210,49 @@ export const apartmentsList = [
       },
     ],
   },
+  {
+    id: 4,
+    section_id: 2,
+    title: '1-комн. апартаменты на Пушкина',
+    price: '25.00',
+    description:
+      'Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры',
+    rooms: {
+      count: '1',
+      type: '1 (1)',
+    },
+    square: 150,
+    adress: 'Гомель, ул Пушикна, д. 14',
+    metro: 'Пушкинское',
+    district: '№9',
+    contacts: {
+      name: 'Dmitriy',
+      phone: '+375 (29) 291-14-44',
+      email: 'vladimir6234@tut.by',
+      viber: 'someviber',
+      whatsapp: 'somewhatsapp',
+    },
+    options: [
+      {
+        id: 2,
+        title: 'Духовка',
+      },
+      {
+        id: 4,
+        title: 'Микроволновая печь',
+      },
+      {
+        id: 5,
+        title: 'Посуда',
+      },
+      {
+        id: 7,
+        title: 'ТВ',
+      },
+      {
+        id: 8,
+        title: 'WI-FI',
+      },
+    ],
+  },
 ];

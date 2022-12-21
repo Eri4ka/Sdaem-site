@@ -8,7 +8,7 @@ import { useToggle } from '@utils/hooks/useToggle';
 import { useAppDispatch, useAppSelector } from '@utils/redux/reduxHooks';
 import { getSectionState } from '@utils/redux/selectors';
 import { fetchSections } from '@utils/redux/slices/sectionsSlice';
-import Button, { ButtonClass } from '@views/Button';
+import Button, { ButtonClass } from '@views/Buttons/Button';
 
 import HeaderSelect from '../HeaderSelect';
 import styles from './HeaderBottom.module.scss';
