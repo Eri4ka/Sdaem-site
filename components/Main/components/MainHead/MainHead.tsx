@@ -11,14 +11,14 @@ type MainHeadProps = {
 
 const MainHead: React.FC<MainHeadProps> = ({ sections }) => {
   return (
-    <section className={styles['main-head']}>
-      <div className={styles['main-head__content']}>
-        <h1 className={styles['main-head__head']}>
-          Sdaem.by - у нас живут <span className={styles['main-head__text']}>ваши объявления</span>
+    <article className={styles.head}>
+      <div className={styles.head__content}>
+        <h1 className={styles.head__title}>
+          Sdaem.by - у нас живут <span className={styles.head__text}>ваши объявления</span>
         </h1>
         <MainTab sections={sections} />
       </div>
-    </section>
+    </article>
   );
 };
 

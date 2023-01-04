@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 
 import dots from '@public/images/dots.png';
@@ -6,8 +7,9 @@ import { NewsType } from '@utils/types';
 import BreadCrumbs from '@views/BreadCrumbs';
 
 import SingleNewsIcons from './components/SingleNewsIcons';
-import SingleNewsRelated from './components/SingleNewsRelated';
 import styles from './SingleNews.module.scss';
+
+const SingleNewsRelated = dynamic(() => import('./components/SingleNewsRelated'));
 
 type SingleNewsProps = {
   data: NewsType;

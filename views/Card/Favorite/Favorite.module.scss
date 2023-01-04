@@ -1,0 +1,17 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.favorite {
+  @include d-flex-j-center-a-center;
+  background-color: rgba($color: $red, $alpha: 0.1);
+  border-radius: 22px;
+  height: 33px;
+  max-width: 133px;
+  min-width: 33px;
+  transition: 0.2s;
+  color: transparent;
+  cursor: pointer;
+  &:hover {
+    color: rgba($color: $red, $alpha: 0.4);
+  }
+}

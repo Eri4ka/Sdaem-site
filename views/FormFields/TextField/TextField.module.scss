@@ -28,11 +28,13 @@
     background-color: $grey;
     color: $black;
     border-radius: 30px;
-    border: none;
-    padding: 0 20px 0 20px;
+    border: 2px solid $grey;
+    outline: none;
+    padding: 0 20px;
+    box-sizing: border-box;
     &:focus {
       background-color: $white;
-      outline: 2px solid rgba(102, 78, 249, 0.8);
+      border: 2px solid rgba(102, 78, 249, 0.8);
       + .textfield__icon {
         color: $blue;
         opacity: 1;
@@ -54,7 +56,7 @@
     &_error {
       border: 1px solid $red;
       &:focus {
-        outline: 1px solid $red;
+        border: 1px solid $red;
       }
     }
   }

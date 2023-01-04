@@ -1,19 +1,33 @@
+import dynamic from 'next/dynamic';
+import { memo } from 'react';
+
 import { useAppSelector } from '@utils/redux/reduxHooks';
 import { getSectionCount } from '@utils/redux/selectors';
+import { NewsType } from '@utils/types';
 
 import MainCategory from './components/MainCategory';
 import MainHead from './components/MainHead';
-import styles from './Main.module.scss';
+import MainItems from './components/MainItems';
 
-const Main: React.FC = () => {
+const MainMap = dynamic(() => import('./components/MainMap'), { ssr: false });
+const MainAbout = dynamic(() => import('./components/MainAbout'), { ssr: false });
+
+type MainProps = {
+  data: NewsType[];
+};
+
+const Main: React.FC<MainProps> = ({ data }) => {
   const sections = useAppSelector(getSectionCount);
 
   return (
-    <article className={styles.main}>
+    <section>
       <MainHead sections={sections} />
       <MainCategory sections={sections} />
-    </article>
+      <MainItems />
+      <MainMap />
+      <MainAbout news={data} />
+    </section>
   );
 };
 
-export default Main;
+export default memo(Main);

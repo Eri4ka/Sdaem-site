@@ -1,6 +1,10 @@
 @import '@styles/variables.scss';
 
 .section {
+  margin-bottom: 40px;
+  &:nth-last-child(1) {
+    margin-bottom: 0;
+  }
   &__head {
     color: $black;
     font-size: 18px;

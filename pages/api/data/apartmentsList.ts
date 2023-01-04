@@ -1,3 +1,7 @@
+import verticalImg from '@public/images/card/apartmentVertical.jpg';
+import cardimg from '@public/images/cardnews.png';
+import boyPic from '@public/images/profile/boy.png';
+
 export const apartmentsList = [
   {
     id: 1,
@@ -14,7 +18,10 @@ export const apartmentsList = [
     adress: 'Минск, б-р Мулявина, д. 10',
     metro: 'Киевское',
     district: 'Шабаны',
+    image: verticalImg,
+    tag: 'Gold',
     contacts: {
+      image: boyPic,
       name: 'Dmitriy',
       phone: '+375 (29) 291-14-44',
       email: 'vladimir6234@tut.by',
@@ -91,7 +98,10 @@ export const apartmentsList = [
     adress: 'Минск, б-р Мулявина, д. 1',
     metro: 'Гршуевка',
     district: 'Кабаны',
+    image: cardimg,
+    tag: 'Gold',
     contacts: {
+      image: boyPic,
       name: 'Dmitriy',
       phone: '+375 (29) 291-14-44',
       email: 'vladimir6234@tut.by',
@@ -160,7 +170,10 @@ export const apartmentsList = [
     adress: 'Минск, б-р Мулявина, д. 15',
     metro: 'Гршуевка',
     district: 'Шабаны',
+    image: cardimg,
+    tag: 'Gold',
     contacts: {
+      image: boyPic,
       name: 'Dmitriy',
       phone: '+375 (29) 291-14-44',
       email: 'vladimir6234@tut.by',
@@ -225,7 +238,10 @@ export const apartmentsList = [
     adress: 'Гомель, ул Пушикна, д. 14',
     metro: 'Пушкинское',
     district: '№9',
+    image: cardimg,
+    tag: 'Gold',
     contacts: {
+      image: boyPic,
       name: 'Dmitriy',
       phone: '+375 (29) 291-14-44',
       email: 'vladimir6234@tut.by',

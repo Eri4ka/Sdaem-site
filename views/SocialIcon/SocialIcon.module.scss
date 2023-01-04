@@ -45,4 +45,22 @@
       background-color: rgba(102, 78, 249, 0.1);
     }
   }
+  &_violet {
+    background-color: $violet;
+    &:hover {
+      background-color: $violet-hover;
+    }
+  }
+  &_green {
+    background-color: $green;
+    &:hover {
+      background-color: $green-hover;
+    }
+  }
+  &_blue {
+    background-color: $blue;
+    &:hover {
+      background-color: $blue-hover;
+    }
+  }
 }

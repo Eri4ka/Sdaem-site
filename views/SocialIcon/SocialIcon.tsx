@@ -6,6 +6,9 @@ export enum SocialIconClass {
   default = 'icon_default',
   contactsMini = 'icon_contactsMini',
   large = 'icon_large',
+  violet = 'icon_violet',
+  green = 'icon_green',
+  blue = 'icon_blue',
 }
 
 type SocialIconProps = {

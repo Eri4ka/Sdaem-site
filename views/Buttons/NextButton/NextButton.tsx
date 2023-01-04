@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 import BtnArrowIc from '@public/icons/button/btnArrow.svg';
 
 import styles from './NextButton.module.scss';
@@ -9,15 +11,19 @@ export enum NextButtonClass {
 
 type NextButtonProps = {
   className: string;
-  onClick?: () => void;
-};
+  prev?: boolean;
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-const NextButton: React.FC<NextButtonProps> = ({ className, onClick }) => {
+const NextButton: React.FC<NextButtonProps> = ({ className, prev = false, ...props }) => {
+  const clazz = `${styles['next-button']} ${className ? styles[className] : ''} ${
+    prev ? styles['next-button_rotated'] : ''
+  }`;
+
   return (
-    <div className={`${styles['next-button']} ${className ? styles[className] : ''}`}>
+    <button className={clazz} {...props}>
       <BtnArrowIc />
-    </div>
+    </button>
   );
 };
 
-export default NextButton;
+export default memo(NextButton);

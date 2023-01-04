@@ -19,7 +19,7 @@ const MainCategorySectionItem: React.FC<MainCategorySectionItemProps> = ({
       <span className={styles.item__title}>
         <Link href={href}>{title}</Link>
       </span>
-      <span className={styles.item__total}>{total}</span>
+      {total >= 0 && <span className={styles.item__total}>{total}</span>}
     </li>
   );
 };

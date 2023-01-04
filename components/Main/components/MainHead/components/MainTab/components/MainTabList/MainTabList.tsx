@@ -16,9 +16,7 @@ const MainTabList: React.FC<MainTabListProps> = ({ title, id, activeTab, setActi
 
   return (
     <li
-      className={`${styles['main-tab__list']} ${
-        activeTab === id ? styles['main-tab__list_active'] : ''
-      }`}
+      className={`${styles.tab__list} ${activeTab === id ? styles.tab__list_active : ''}`}
       onClick={onHandleClick}>
       {title}
     </li>

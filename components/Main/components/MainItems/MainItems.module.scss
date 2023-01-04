@@ -1,0 +1,104 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.items {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-bottom: 92px;
+  &::before {
+    content: '';
+    position: absolute;
+    top: -105px;
+    left: -35px;
+    background: url('../../../../public/images/dots.png');
+    width: 71px;
+    height: 71px;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    background: linear-gradient(90deg, #94afff 0%, #4e64f9 94.5%);
+    border-radius: 40px 40px 40px 0px;
+    opacity: 0.1;
+    top: -32px;
+    left: 43%;
+    height: calc(100% + 32px);
+    width: 100vw;
+    z-index: -1;
+  }
+  &__top {
+    @include d-flex-j-between-a-end;
+    margin-bottom: 60px;
+  }
+  &__heading {
+    &-section {
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      background: linear-gradient(90deg, #9d94ff 0%, #6b50e9 94.5%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+    &-text {
+      font-size: 25px;
+      white-space: nowrap;
+    }
+  }
+  &__filters {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: -5px;
+  }
+  &__select {
+    height: 40px;
+    width: 185px;
+  }
+  &__icon {
+    margin-right: 8px;
+  }
+}
+
+@media screen and (max-width: $desktop_view) {
+  .items {
+    margin: 0 20px;
+    &::before {
+      margin-left: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet_medium) {
+  .items {
+    &__filters {
+      gap: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet_minimum) {
+  .items {
+    &__heading {
+      &-section {
+        font-size: 12px;
+      }
+      &-text {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile_large) {
+  .items {
+    &__top {
+      flex-wrap: wrap;
+      row-gap: 15px;
+    }
+  }
+}

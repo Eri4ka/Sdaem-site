@@ -34,4 +34,17 @@
     display: flex;
     flex-wrap: wrap;
   }
+  &__button {
+    position: absolute;
+    bottom: 19px;
+    right: 21px;
+    height: 39px;
+    width: 39px;
+  }
+}
+
+@media screen and (max-width: $tablet_minimum) {
+  .main-category-card {
+    padding: 25px;
+  }
 }

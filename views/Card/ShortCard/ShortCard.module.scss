@@ -1,0 +1,73 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.short-card {
+  position: relative;
+  background-color: $white-background;
+  box-shadow: 0px 20px 40px rgba(135, 124, 202, 0.1);
+  max-width: 406px;
+  border-radius: 10px;
+  &__image {
+    @include d-flex-j-center-a-center;
+    position: relative;
+    background-color: $brown-light;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  &__content {
+    @include d-flex-f-column;
+    padding: 21px 20px 13px 20px;
+    &-top {
+      @include d-flex-j-between-a-start;
+      margin-bottom: 23.8px;
+    }
+    &-badges {
+      @include d-flex-j-between-a-center;
+      flex-wrap: wrap;
+      min-width: 175px;
+      max-width: 230px;
+      gap: 7.5px;
+    }
+    &-tags {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 30px;
+      gap: 11px 30px;
+      margin-bottom: 20px;
+    }
+    &-description {
+      font-size: 12px;
+      color: $text-grey;
+    }
+  }
+  &__price {
+    @include d-flex-f-column;
+    &-value {
+      font-weight: 700;
+      font-size: 20px;
+      color: $blue;
+      white-space: nowrap;
+    }
+    &-text {
+      font-size: 14px;
+      color: $checkbox-grey;
+    }
+  }
+  &__bottom {
+    padding: 14px 20px;
+    &-wrapper {
+      @include d-flex-j-between-a-center;
+      position: relative;
+      width: 100%;
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        top: -13px;
+        left: 0;
+        border-top: 1px solid $blue;
+        opacity: 0.1;
+      }
+    }
+  }
+}

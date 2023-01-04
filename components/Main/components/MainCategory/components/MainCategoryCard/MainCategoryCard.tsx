@@ -85,7 +85,9 @@ const MainCategoryCard: React.FC<MainCategoryCardProps> = ({ category, categoryE
       <>
         <p className={styles['main-category-card__description']}>{description}</p>
         <h2 className={styles['main-category-card__title']}>{title}</h2>
-        <NextButton className={NextButtonClass.white} />
+        <div className={styles['main-category-card__button']}>
+          <NextButton className={NextButtonClass.white} />
+        </div>
       </>
     );
   }, [category, categoryElems, description, title]);

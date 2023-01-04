@@ -1,0 +1,20 @@
+@import '@styles/variables.scss';
+
+.card-info {
+  display: flex;
+  max-width: 110px;
+  width: 100%;
+  background-color: rgba($color: $yellow, $alpha: 0.1);
+  border-radius: 17px;
+  padding: 10px 15px;
+  transition: 0.2s;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba($color: $yellow, $alpha: 0.2);
+  }
+  &__text {
+    color: $yellow-strong;
+    font-size: 14px;
+    font-weight: 700;
+  }
+}

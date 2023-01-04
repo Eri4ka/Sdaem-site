@@ -5,7 +5,7 @@ import { useToggle } from '@utils/hooks/useToggle';
 import { SelectType } from '@utils/types';
 import Button, { ButtonClass } from '@views/Buttons/Button';
 import FilterOptions from '@views/Filter/FilterOptions';
-import FilterSelect from '@views/Filter/FilterSelect';
+import Select, { SelectClass } from '@views/Select';
 
 import MainTabField from '../MainTabField';
 import MainTabNumbers from '../MainTabNumbers';
@@ -81,14 +81,28 @@ const MainTabPanel: React.FC<MainTabPanelProps> = ({
   }, []);
 
   return id === activeTab ? (
-    <form className={styles['main-tab-panel']} onSubmit={onSubmit}>
-      <div className={styles['main-tab-panel__wrapper']}>
-        <div className={styles['main-tab-panel__form']}>
+    <form className={styles['tab-panel']} onSubmit={onSubmit}>
+      <div className={styles['tab-panel__wrapper']}>
+        <div className={styles['tab-panel__form']}>
           <MainTabField label='Город'>
-            <FilterSelect items={city} name='city' handleSetValue={handleSetValue} />
+            <div className={styles['tab-panel__select']}>
+              <Select
+                className={SelectClass.filter}
+                items={city}
+                name='city'
+                handleSetValue={handleSetValue}
+              />
+            </div>
           </MainTabField>
           <MainTabField label='Комнаты'>
-            <FilterSelect items={rooms} name='rooms' handleSetValue={handleSetValue} />
+            <div className={styles['tab-panel__select']}>
+              <Select
+                className={SelectClass.filter}
+                items={rooms}
+                name='rooms'
+                handleSetValue={handleSetValue}
+              />
+            </div>
           </MainTabField>
           <MainTabField label='Цена за сутки (BYN)'>
             <MainTabNumbers handleSetValue={handleSetValue} />
@@ -97,33 +111,52 @@ const MainTabPanel: React.FC<MainTabPanelProps> = ({
             <FilterOptions onClick={handleToggle} />
           </MainTabField>
         </div>
-        <div className={styles['main-tab-panel__display']}>
-          <div className={styles['main-tab-panel__map']}>
-            <span className={styles['main-tab-panel__map-text']}>На карте</span>
-            <div className={styles['main-tab-panel__map-icon']}>
+        <div className={styles['tab-panel__display']}>
+          <div className={styles['tab-panel__map']}>
+            <span className={styles['tab-panel__map-text']}>На карте</span>
+            <div className={styles['tab-panel__map-icon']}>
               <MapIc />
             </div>
           </div>
-          <div className={styles['main-tab-panel__button']}>
+          <div className={styles['tab-panel__button']}>
             <Button type='submit' className={ButtonClass.show}>
               Показать
             </Button>
           </div>
         </div>
       </div>
-      {toggle && (
-        <MainTabOptions options={options} handleSetOptions={handleSetOptions}>
-          <MainTabField label='Спальные места' border={false}>
-            <FilterSelect items={roomsType} name='roomsType' handleSetValue={handleSetValue} />
-          </MainTabField>
-          <MainTabField label='Район' border={false}>
-            <FilterSelect items={districts} name='district' handleSetValue={handleSetValue} />
-          </MainTabField>
-          <MainTabField label='Метро' border={false}>
-            <FilterSelect items={metro} name='metro' handleSetValue={handleSetValue} />
-          </MainTabField>
-        </MainTabOptions>
-      )}
+      <MainTabOptions isVisible={toggle} options={options} handleSetOptions={handleSetOptions}>
+        <MainTabField label='Спальные места' border={false}>
+          <div className={styles['tab-panel__select']}>
+            <Select
+              className={SelectClass.filter}
+              items={roomsType}
+              name='roomsType'
+              handleSetValue={handleSetValue}
+            />
+          </div>
+        </MainTabField>
+        <MainTabField label='Район' border={false}>
+          <div className={styles['tab-panel__select']}>
+            <Select
+              className={SelectClass.filter}
+              items={districts}
+              name='district'
+              handleSetValue={handleSetValue}
+            />
+          </div>
+        </MainTabField>
+        <MainTabField label='Метро' border={false}>
+          <div className={styles['tab-panel__select']}>
+            <Select
+              className={SelectClass.filter}
+              items={metro}
+              name='metro'
+              handleSetValue={handleSetValue}
+            />
+          </div>
+        </MainTabField>
+      </MainTabOptions>
     </form>
   ) : null;
 };

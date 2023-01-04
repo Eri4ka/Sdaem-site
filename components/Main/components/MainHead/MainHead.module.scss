@@ -1,7 +1,7 @@
 @import '@styles/variables.scss';
 @import '@styles/mixins.scss';
 
-.main-head {
+.head {
   @include d-flex-j-center-a-center;
   position: relative;
   height: 430px;
@@ -9,8 +9,10 @@
   margin: 0 auto;
   background: linear-gradient(360deg, #7e6af3 15.95%, #6540cd 63.1%);
   filter: drop-shadow(0px 20px 40px rgba(135, 124, 202, 0.15));
+  -webkit-filter: drop-shadow(0px 20px 40px rgba(135, 124, 202, 0.15));
   border-radius: 0 0 40px 40px;
-
+  margin-bottom: 84px;
+  z-index: 1;
   &::before {
     content: '';
     position: absolute;
@@ -29,7 +31,7 @@
     margin-top: -35px;
     z-index: 1;
   }
-  &__head {
+  &__title {
     color: $white;
     font-size: 30px;
     text-shadow: 0px 2px 5px rgba(0, 14, 142, 0.3);
@@ -40,8 +42,14 @@
   }
 }
 
+@media screen and (max-width: $desktop_minimum) {
+  .head {
+    margin-bottom: 35px;
+  }
+}
+
 @media screen and (max-width: $tablet_large) {
-  .main-head {
+  .head {
     &__content {
       max-width: 760px;
     }
@@ -49,11 +57,11 @@
 }
 
 @media screen and (max-width: $tablet_minimum) {
-  .main-head {
+  .head {
     &__content {
       max-width: 565px;
     }
-    &__head {
+    &__title {
       text-align: center;
       font-size: 20px;
       margin-bottom: 10px;
@@ -62,7 +70,7 @@
 }
 
 @media screen and (max-width: $mobile_large) {
-  .main-head {
+  .head {
     &__content {
       max-width: 360px;
     }

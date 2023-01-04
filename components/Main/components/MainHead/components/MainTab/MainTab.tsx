@@ -29,8 +29,8 @@ const MainTab: React.FC<MainTabProps> = ({ sections }) => {
   const { apartments, cottages, baths, automobile } = sections;
 
   return (
-    <div className={styles['main-tab']}>
-      <ul className={`list ${styles['main-tab__tabs']}`}>
+    <div className={styles.tab}>
+      <ul className={`list ${styles.tab__tabs}`}>
         <MainTabList
           title='Квартиры на сутки'
           id='apartment'
@@ -46,6 +46,12 @@ const MainTab: React.FC<MainTabProps> = ({ sections }) => {
         <MainTabList
           title='Бани и сауны'
           id='bath'
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+        />
+        <MainTabList
+          title='Авто напрокат'
+          id='automobile'
           activeTab={activeTab}
           setActiveTab={setActiveTab}
         />

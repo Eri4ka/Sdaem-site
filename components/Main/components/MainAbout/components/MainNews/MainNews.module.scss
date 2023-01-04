@@ -1,0 +1,38 @@
+@import '@styles/variables.scss';
+
+.main-news {
+  height: fit-content;
+  width: 32%;
+  min-width: 300px;
+  max-width: 406px;
+  background-color: $white-background;
+  box-shadow: 0px 20px 40px rgba(135, 124, 202, 0.15);
+  border-radius: 10px;
+  padding: 33px 23px 31px 23px;
+  margin-top: 14px;
+  &__heading {
+    color: $black;
+    font-size: 25px;
+    margin-bottom: 16px;
+  }
+  &__list {
+    margin-bottom: 22px;
+  }
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: $blue;
+    &-text {
+      font-size: 14px;
+      font-weight: 700;
+      margin-right: 5px;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet_minimum) {
+  .main-news {
+    width: 100%;
+  }
+}

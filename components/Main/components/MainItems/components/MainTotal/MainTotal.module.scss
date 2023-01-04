@@ -1,0 +1,42 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.main-total {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 405px;
+  width: 100%;
+  &::after {
+    content: '';
+    position: absolute;
+    background: linear-gradient(#94afff, #4e64f9);
+    opacity: 0.1;
+    width: 1px;
+    height: 70%;
+    left: 50%;
+  }
+  &__info {
+  }
+  &__count {
+    color: $black;
+    font-size: 60px;
+    font-weight: 700;
+  }
+  &__plus {
+    margin-left: 15px;
+    color: $blue;
+  }
+  &__text {
+    font-size: 14px;
+    font-weight: 500;
+    color: $text-grey;
+    opacity: 0.6;
+  }
+  &__button {
+    height: 37px;
+    max-width: 177px;
+    width: 100%;
+  }
+}

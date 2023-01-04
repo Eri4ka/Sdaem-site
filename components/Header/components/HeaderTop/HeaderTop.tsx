@@ -33,15 +33,15 @@ const HeaderTop: React.FC = () => {
           </li>
           <li
             className={`${styles['header-top__item']} ${
-              pathname === '/' ? styles['header-top__item_active'] : ''
+              pathname === '/tariffs' ? styles['header-top__item_active'] : ''
             } `}>
-            <Link href='/'>Размещение и тарифы</Link>
+            <Link href='/tariffs'>Размещение и тарифы</Link>
           </li>
           <li
             className={`${styles['header-top__item']} ${
-              pathname === '/' ? styles['header-top__item_active'] : ''
+              pathname === '/map' ? styles['header-top__item_active'] : ''
             } `}>
-            <Link href='/' className={styles['header-top__item_wrapper']}>
+            <Link href='/map' className={styles['header-top__item_wrapper']}>
               <div className={styles['header-top__item_icon']}>
                 <Map className={styles['header-top__svg']} />
               </div>

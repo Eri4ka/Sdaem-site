@@ -1,5 +1,5 @@
 import { NewsType } from '@utils/types';
-import Card from '@views/Card';
+import NewsCard from '@views/Card/NewsCard';
 
 import styles from './SingleNewsRelated.module.scss';
 
@@ -14,7 +14,7 @@ const SingleNewsRelated: React.FC<SingleNewsRelatedProps> = ({ similars }) => {
         <h2 className={styles['singlenews-related__head']}>Читайте также</h2>
         <ul className={`list ${styles['singlenews-related__list']}`}>
           {similars.map((item) => (
-            <Card key={item.id} data={item} />
+            <NewsCard key={item.id} data={item} />
           ))}
         </ul>
       </div>

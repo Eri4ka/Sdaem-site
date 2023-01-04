@@ -8,6 +8,7 @@ export type NewsType = {
   full_description: string[];
   image: StaticImageData;
   published: string;
+  published_date: string;
 };
 
 export type SingleSectionType = {
@@ -15,7 +16,7 @@ export type SingleSectionType = {
   title: string;
   alias: string;
   content: string;
-  total: number;
+  total?: number;
 };
 
 export type SectionType = {
@@ -35,6 +36,15 @@ export type roomsType = {
   type: string;
 };
 
+export type ContactsType = {
+  image: string;
+  name: string;
+  phone: string;
+  email: string;
+  viber: string;
+  whatsapp: string;
+};
+
 export type ApartmentsType = {
   id: number;
   section_id: number;
@@ -49,6 +59,9 @@ export type ApartmentsType = {
   adress: string;
   metro: string;
   district: string;
+  image: string;
+  tag?: string;
+  contacts: ContactsType;
   options: ApartmentOptions[];
 };
 

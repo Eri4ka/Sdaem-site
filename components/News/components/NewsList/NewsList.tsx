@@ -1,5 +1,5 @@
 import { NewsType } from '@utils/types';
-import Card from '@views/Card';
+import NewsCard from '@views/Card/NewsCard';
 
 import styles from './NewsList.module.scss';
 
@@ -13,7 +13,7 @@ const NewsList: React.FC<NewsListProps> = ({ data, firstContentIndex, lastConten
   return (
     <ul className={`list ${styles['news-list']}`}>
       {data.slice(firstContentIndex, lastContentIndex).map((item) => {
-        return <Card key={item.id} data={item} />;
+        return <NewsCard key={item.id} data={item} />;
       })}
     </ul>
   );

@@ -4,6 +4,8 @@ import { ApartmentOptions } from '@utils/types';
 
 import type { AppState } from '../store';
 
+export const getApartmentsSelector = (state: AppState) => state.apartments.apartments;
+
 export const getOptionsSelector = createSelector(
   (state: AppState) => state.apartments.apartments,
   (apartments) => {

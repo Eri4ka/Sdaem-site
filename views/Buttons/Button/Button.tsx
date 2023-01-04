@@ -9,6 +9,9 @@ export enum ButtonClass {
   back = 'button_back',
   blue = 'button_blue',
   show = 'button_show',
+  blue_gradient = 'button_gradient',
+  blueDark_gradient = 'button_gradient_blue',
+  yellow_gradient = 'button_gradient-yellow',
 }
 
 type ButtonProps = React.PropsWithChildren<{

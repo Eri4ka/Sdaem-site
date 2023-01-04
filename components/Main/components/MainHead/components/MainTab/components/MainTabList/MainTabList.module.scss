@@ -1,6 +1,6 @@
 @import '@styles/variables.scss';
 
-.main-tab {
+.tab {
   &__list {
     color: $white;
     background-color: rgba(45, 57, 136, 0.5);
@@ -26,6 +26,15 @@
       color: $blue;
       background-color: $white;
       border-radius: 10px 10px 0 0;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile_large) {
+  .tab {
+    &__list {
+      font-size: 12px;
+      padding: 10px 15px;
     }
   }
 }

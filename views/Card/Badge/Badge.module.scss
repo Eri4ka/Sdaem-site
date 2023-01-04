@@ -1,0 +1,15 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.badge {
+  @include d-flex-a-center;
+  font-size: 14px;
+  font-weight: 500;
+  color: $text-grey-scnd;
+  background-color: $grey;
+  border-radius: 18px;
+  padding: 8.5px 8px;
+  &__icon {
+    margin-right: 6px;
+  }
+}

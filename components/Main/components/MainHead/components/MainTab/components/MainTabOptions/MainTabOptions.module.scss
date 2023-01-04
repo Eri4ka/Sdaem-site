@@ -7,6 +7,14 @@
   max-width: 1062px;
   width: 100%;
   border-radius: 0 0 10px 10px;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in-out;
+  -webkit-transition: max-height 0.2s ease-in-out;
+  -moz-transition: max-height 0.2s ease-in-out;
+  max-height: 0;
+  &_show {
+    max-height: 700px;
+  }
   &__wrapper {
     display: flex;
     flex-wrap: wrap;

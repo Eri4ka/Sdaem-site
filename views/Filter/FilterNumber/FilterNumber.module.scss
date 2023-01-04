@@ -10,7 +10,8 @@
     font-size: 14px;
     background-color: $grey;
     -moz-appearance: textfield;
-    border: none;
+    border: 2px solid $grey;
+    outline: none;
     border-radius: 20px;
     padding: 10px 14px;
     &::-webkit-outer-spin-button {
@@ -21,12 +22,13 @@
       -webkit-appearance: none;
       margin: 0;
     }
+    &:hover {
+      border: 2px solid rgba(102, 78, 249, 0.01);
+      background-color: rgba(102, 78, 249, 0.1);
+    }
     &:focus {
       background-color: $white;
-      outline: 2px solid rgba(102, 78, 249, 0.8);
-    }
-    &:hover {
-      background-color: rgba(102, 78, 249, 0.1);
+      border: 2px solid rgba(102, 78, 249, 0.8);
     }
     &::placeholder {
       color: $text-grey-scnd;

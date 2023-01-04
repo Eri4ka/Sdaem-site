@@ -30,13 +30,13 @@ const Contacts: React.FC = () => {
         <ContactsForm />
         <aside className={styles.contacts__social}>
           <SocialIcon className={SocialIconClass.large} href='https://instagram.com'>
-            <Inst className='svg' />
+            <Inst className='svg' alt='instagram' />
           </SocialIcon>
           <SocialIcon className={SocialIconClass.large} href='https://vk.com'>
-            <Vk className='svg' />
+            <Vk className='svg' alt='vk' />
           </SocialIcon>
           <SocialIcon className={SocialIconClass.large} href='https://facebook.com'>
-            <Fb className='svg' />
+            <Fb className='svg' alt='facebook' />
           </SocialIcon>
         </aside>
       </div>
