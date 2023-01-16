@@ -1,0 +1,10 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.numbers {
+  @include d-flex-j-between-a-center;
+  width: 220px;
+  &__wrapper {
+    max-width: 100px;
+  }
+}

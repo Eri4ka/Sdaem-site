@@ -1,4 +1,11 @@
 import verticalImg from '@public/images/card/apartmentVertical.jpg';
+import room1 from '@public/images/card/room1.jpg';
+import room1Wide from '@public/images/card/room1Wide.jpg';
+import room2 from '@public/images/card/room2.jpg';
+import room2Wide from '@public/images/card/room2Wide.jpg';
+import room3 from '@public/images/card/room3.jpg';
+import room3Wide from '@public/images/card/room3Wide.jpg';
+import verticalTall from '@public/images/card/verticalTall.jpg';
 import cardimg from '@public/images/cardnews.png';
 import boyPic from '@public/images/profile/boy.png';
 
@@ -11,14 +18,14 @@ export const apartmentsList = [
     description:
       'Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры',
     rooms: {
-      count: '4',
+      count: '4 комн.',
       type: '4 (2+2)',
     },
     square: 179,
     adress: 'Минск, б-р Мулявина, д. 10',
     metro: 'Киевское',
     district: 'Шабаны',
-    image: verticalImg,
+    images: [{ short: verticalImg, wide: verticalTall }],
     tag: 'Gold',
     contacts: {
       image: boyPic,
@@ -32,54 +39,67 @@ export const apartmentsList = [
       {
         id: 1,
         title: 'Газовая плита',
+        option_name: 'gas',
       },
       {
         id: 2,
         title: 'Духовка',
+        option_name: 'oven',
       },
       {
         id: 3,
         title: 'Кофеварка',
+        option_name: 'coffee',
       },
       {
         id: 4,
         title: 'Микроволновая печь',
+        option_name: 'microwave',
       },
       {
         id: 5,
         title: 'Посуда',
+        option_name: 'dishes',
       },
       {
         id: 6,
         title: 'Посудомоечная машина',
+        option_name: 'dishwasher',
       },
       {
         id: 7,
         title: 'ТВ',
+        option_name: 'tv',
       },
       {
         id: 8,
         title: 'WI-FI',
+        option_name: 'wifi',
       },
       {
         id: 9,
         title: 'Чайник',
+        option_name: 'teapot',
       },
       {
         id: 10,
         title: 'Балкон',
+        option_name: 'balcony',
       },
       {
         id: 11,
         title: 'Консъерж',
+        option_name: 'concierge',
       },
       {
         id: 12,
         title: 'Охрана',
+        option_name: 'security',
       },
       {
         id: 13,
         title: 'Ванная',
+        option_name: 'bath',
       },
     ],
   },
@@ -91,14 +111,18 @@ export const apartmentsList = [
     description:
       'Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры',
     rooms: {
-      count: '2',
+      count: '2 комн.',
       type: '2 (1+1)',
     },
     square: 65,
     adress: 'Минск, б-р Мулявина, д. 1',
-    metro: 'Гршуевка',
+    metro: 'Грушевка',
     district: 'Кабаны',
-    image: cardimg,
+    images: [
+      { short: room3, wide: room3Wide },
+      { short: room1, wide: room1Wide },
+      { short: room2, wide: room2Wide },
+    ],
     tag: 'Gold',
     contacts: {
       image: boyPic,
@@ -112,46 +136,57 @@ export const apartmentsList = [
       {
         id: 15,
         title: 'Электрическая плита',
+        option_name: 'electric_stove',
       },
       {
         id: 2,
         title: 'Духовка',
+        option_name: 'oven',
       },
       {
         id: 3,
         title: 'Кофеварка',
+        option_name: 'coffee',
       },
       {
         id: 4,
         title: 'Микроволновая печь',
+        option_name: 'microwave',
       },
       {
         id: 5,
         title: 'Посуда',
+        option_name: 'dishes',
       },
       {
         id: 6,
         title: 'Посудомоечная машина',
+        option_name: 'dishwasher',
       },
       {
         id: 7,
         title: 'ТВ',
+        option_name: 'tv',
       },
       {
         id: 8,
         title: 'WI-FI',
+        option_name: 'wifi',
       },
       {
         id: 9,
         title: 'Чайник',
+        option_name: 'teapot',
       },
       {
         id: 10,
         title: 'Балкон',
+        option_name: 'balcony',
       },
       {
         id: 14,
         title: 'Душевая',
+        option_name: 'shower',
       },
     ],
   },
@@ -163,14 +198,14 @@ export const apartmentsList = [
     description:
       'Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры',
     rooms: {
-      count: '4',
+      count: '4 комн.',
       type: '4 (3+1)',
     },
     square: 150,
     adress: 'Минск, б-р Мулявина, д. 15',
-    metro: 'Гршуевка',
+    metro: 'Грушевка',
     district: 'Шабаны',
-    image: cardimg,
+    images: [{ short: room3, wide: room3Wide }],
     tag: 'Gold',
     contacts: {
       image: boyPic,
@@ -184,42 +219,52 @@ export const apartmentsList = [
       {
         id: 1,
         title: 'Газовая плита',
+        option_name: 'gas',
       },
       {
         id: 2,
         title: 'Духовка',
+        option_name: 'oven',
       },
       {
         id: 4,
         title: 'Микроволновая печь',
+        option_name: 'microwave',
       },
       {
         id: 5,
         title: 'Посуда',
+        option_name: 'dishes',
       },
       {
         id: 7,
         title: 'ТВ',
+        option_name: 'tv',
       },
       {
         id: 8,
         title: 'WI-FI',
+        option_name: 'wifi',
       },
       {
         id: 9,
         title: 'Чайник',
+        option_name: 'teapot',
       },
       {
         id: 10,
         title: 'Балкон',
+        option_name: 'balcony',
       },
       {
         id: 11,
         title: 'Консъерж',
+        option_name: 'concierge',
       },
       {
         id: 13,
         title: 'Ванная',
+        option_name: 'bath',
       },
     ],
   },
@@ -231,14 +276,14 @@ export const apartmentsList = [
     description:
       'Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры',
     rooms: {
-      count: '1',
+      count: '1 комн.',
       type: '1 (1)',
     },
     square: 150,
     adress: 'Гомель, ул Пушикна, д. 14',
     metro: 'Пушкинское',
     district: '№9',
-    image: cardimg,
+    images: [{ short: room3, wide: room2Wide }],
     tag: 'Gold',
     contacts: {
       image: boyPic,
@@ -252,22 +297,114 @@ export const apartmentsList = [
       {
         id: 2,
         title: 'Духовка',
+        option_name: 'oven',
       },
       {
         id: 4,
         title: 'Микроволновая печь',
+        option_name: 'microwave',
       },
       {
         id: 5,
         title: 'Посуда',
+        option_name: 'dishes',
       },
       {
         id: 7,
         title: 'ТВ',
+        option_name: 'tv',
       },
       {
         id: 8,
         title: 'WI-FI',
+        option_name: 'wifi',
+      },
+    ],
+  },
+  {
+    id: 5,
+    section_id: 1,
+    title: '2-комн. апартаменты на Московсокм',
+    price: '75.00',
+    description:
+      'Большая четырехкомнатная студия! Большая джкакузи на двоих, на теливизоре есть приложение Megogo, YouTube, Smart TV, сможете выбрать фильм по вкусу!) Цена зависит от количества проживающих, уточняйте, пожалуйста, по телефону! В пяти минутах ходьбы Минск-Арена,  рядом несколько супермаркетов и ТЦ "Мега"',
+    rooms: {
+      count: '3 комн.',
+      type: '3 (2+1)',
+    },
+    square: 59,
+    adress: 'Минск, ул. Московская, д. 19',
+    metro: 'Московское',
+    district: 'Московский',
+    images: [
+      { short: room3, wide: room3Wide },
+      { short: room1, wide: room1Wide },
+      { short: room2, wide: room2Wide },
+    ],
+    tag: 'Gold',
+    contacts: {
+      image: boyPic,
+      name: 'Dmitriy',
+      phone: '+375 (29) 291-14-44',
+      email: 'vladimir6234@tut.by',
+      viber: 'someviber',
+      whatsapp: 'somewhatsapp',
+    },
+    options: [
+      {
+        id: 15,
+        title: 'Электрическая плита',
+        option_name: 'electric_stove',
+      },
+      {
+        id: 2,
+        title: 'Духовка',
+        option_name: 'oven',
+      },
+      {
+        id: 3,
+        title: 'Кофеварка',
+        option_name: 'coffee',
+      },
+      {
+        id: 4,
+        title: 'Микроволновая печь',
+        option_name: 'microwave',
+      },
+      {
+        id: 5,
+        title: 'Посуда',
+        option_name: 'dishes',
+      },
+      {
+        id: 6,
+        title: 'Посудомоечная машина',
+        option_name: 'dishwasher',
+      },
+      {
+        id: 7,
+        title: 'ТВ',
+        option_name: 'tv',
+      },
+      {
+        id: 8,
+        title: 'WI-FI',
+        option_name: 'wifi',
+      },
+      {
+        id: 9,
+        title: 'Чайник',
+        option_name: 'teapot',
+      },
+      {
+        id: 10,
+        title: 'Балкон',
+        option_name: 'balcony',
+      },
+      {
+        id: 14,
+        title: 'Душевая',
+        option_name: 'shower',
       },
     ],
   },

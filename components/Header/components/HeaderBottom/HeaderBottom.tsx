@@ -31,11 +31,7 @@ const HeaderBottom: React.FC = () => {
         <nav className={`list ${styles['header-bottom__nav']}`}>
           <ul className={`list ${styles['header-bottom__list']}`}>
             <li className={styles['header-bottom__item']}>
-              <HeaderSelect
-                items={apartments}
-                parentPath='apartments'
-                visible={toggle}
-                setVisible={handleToggle}>
+              <HeaderSelect items={apartments} visible={toggle} setVisible={handleToggle}>
                 Квартиры на сутки
                 <div className={styles['header-bottom__item_icon']}>
                   <Map className={styles['header-bottom__svg']} />

@@ -58,3 +58,8 @@
   display: flex;
   flex-direction: column;
 }
+
+@mixin d-flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}

@@ -29,7 +29,6 @@ const Tag: React.FC<TagProps> = ({ type, text, wide = false }) => {
     }
   }, [type, wide]);
 
-  console.log();
   return (
     <div className={styles.tag}>
       {getIcon}

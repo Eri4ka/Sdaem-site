@@ -47,3 +47,23 @@ export const getStringifyDate = (date: string) => {
 
   return `${day} ${stringMonth}`;
 };
+
+export const declinationCityName = (text: string) => {
+  const vowelsLetters = ['е', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я'];
+  const specificLetters = ['ь'];
+
+  if (vowelsLetters.includes(text.slice(-1))) {
+    return text;
+  }
+
+  if (specificLetters.includes(text.slice(-1))) {
+    return text.slice(0, -1) + 'e';
+  }
+
+  return text + 'e';
+};
+
+export const clearURLQueries = (path: string) => path.replace(/\?.*/gi, '');
+
+export const getDescriptionSlice = (description: string, count: number) =>
+  description.length > count ? description.slice(0, count + 1) + '...' : description;

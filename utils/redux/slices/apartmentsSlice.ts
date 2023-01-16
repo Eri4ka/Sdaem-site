@@ -1,15 +1,20 @@
-import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import { HYDRATE } from 'next-redux-wrapper';
 
-import { API_URL } from '@utils/constants';
-import { ApartmentsType, SectionType } from '@utils/types';
+import { ApartmentsType, ViewType, SortType, fielValuesType } from '@utils/types';
 
 type apartmentsState = {
   apartments: ApartmentsType[];
+  filters: fielValuesType;
+  view: ViewType;
+  sort: SortType;
 };
 
 const initialState: apartmentsState = {
   apartments: [],
+  filters: {},
+  view: 'tiles',
+  sort: 'default',
 };
 
 const apartmentsSlice = createSlice({
@@ -19,12 +24,21 @@ const apartmentsSlice = createSlice({
     addApartments(state, action) {
       state.apartments = action.payload;
     },
+    addFilters(state, action) {
+      state.filters = action.payload;
+    },
+    changeView(state, action) {
+      state.view = action.payload;
+    },
+    changeSort(state, action) {
+      state.sort = action.payload;
+    },
   },
   extraReducers: {
     [HYDRATE]: (state, action) => {
       return {
         ...state,
-        ...action.payload.apartments,
+        apartments: action.payload.apartments.apartments,
       };
     },
   },
@@ -32,6 +46,6 @@ const apartmentsSlice = createSlice({
 
 const { actions, reducer } = apartmentsSlice;
 
-export const { addApartments } = actions;
+export const { addApartments, addFilters, changeView, changeSort } = actions;
 
 export default reducer;

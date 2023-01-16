@@ -72,7 +72,7 @@ const MainSlider: React.FC<MainSliderProps> = ({ items }) => {
   );
 };
 
-const Arrow = memo((props: ArrowProps) => {
+const Arrow: React.FC<ArrowProps> = memo((props) => {
   const { className, onClick, prev } = props;
   const isDisabled = className?.includes('slick-disabled');
   const clazz = `${styles.slider__button} ${

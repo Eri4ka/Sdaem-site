@@ -47,6 +47,13 @@
       border-radius: 20px;
       padding: 12px 13px;
     }
+    &_sorting {
+      background-color: $white;
+      box-shadow: 0px 10px 20px rgba(0, 96, 206, 0.1);
+      border: 2px solid $white;
+      border-radius: 18px;
+      padding: 9.5px 10px;
+    }
   }
   &__list {
     position: absolute;
@@ -74,5 +81,8 @@
     &:hover {
       background-color: $grey;
     }
+  }
+  &__label {
+    @include d-flex-a-center;
   }
 }

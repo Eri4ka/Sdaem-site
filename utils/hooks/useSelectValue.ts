@@ -1,12 +1,21 @@
 import { useState, useEffect, useCallback } from 'react';
 
 type useSelectValueProps = {
+  initialValue?: string;
   handleSetValue: (field: string, value: string) => void;
+  isReset?: boolean;
   name: string;
 };
 
-export const useSelectValue = ({ handleSetValue, name }: useSelectValueProps) => {
-  const [selectValue, setSelectValue] = useState<string>('');
+export const useSelectValue = ({
+  initialValue,
+  handleSetValue,
+  name,
+  isReset,
+}: useSelectValueProps) => {
+  const _stateValue = initialValue ?? '';
+
+  const [selectValue, setSelectValue] = useState<string>(_stateValue);
 
   const handleSelect = useCallback(
     (value: string) => {
@@ -19,8 +28,18 @@ export const useSelectValue = ({ handleSetValue, name }: useSelectValueProps) =>
   );
 
   useEffect(() => {
+    setSelectValue(_stateValue);
+  }, [_stateValue]);
+
+  useEffect(() => {
     handleSetValue(name, selectValue);
   }, [name, handleSetValue, selectValue]);
+
+  useEffect(() => {
+    if (isReset) {
+      setSelectValue('');
+    }
+  }, [isReset]);
 
   return { selectValue, handleSelect };
 };

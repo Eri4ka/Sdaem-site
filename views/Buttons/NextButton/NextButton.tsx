@@ -1,12 +1,14 @@
 import { memo } from 'react';
 
 import BtnArrowIc from '@public/icons/button/btnArrow.svg';
+import SliderArrowIc from '@public/icons/button/sliderArrow.svg';
 
 import styles from './NextButton.module.scss';
 
 export enum NextButtonClass {
   white = 'next-button_white',
   blue = 'next-button_blue',
+  grey = 'next-button_grey',
 }
 
 type NextButtonProps = {
@@ -21,7 +23,7 @@ const NextButton: React.FC<NextButtonProps> = ({ className, prev = false, ...pro
 
   return (
     <button className={clazz} {...props}>
-      <BtnArrowIc />
+      {className === 'next-button_grey' ? <SliderArrowIc /> : <BtnArrowIc />}
     </button>
   );
 };

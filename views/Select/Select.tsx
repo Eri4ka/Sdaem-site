@@ -9,10 +9,13 @@ import styles from './Select.module.scss';
 export enum SelectClass {
   filter = 'select__output_filter',
   slider = 'select__output_slider',
+  sorting = 'select__output_sorting',
 }
 
 type SelectProps = {
+  initialValue?: string;
   handleSetValue: (field: string, value: string) => void;
+  isReset?: boolean;
   className: string;
   items?: SelectType[];
   name: string;
@@ -21,7 +24,9 @@ type SelectProps = {
 };
 
 const Select: React.FC<SelectProps> = ({
+  initialValue,
   handleSetValue,
+  isReset,
   className,
   items,
   name,
@@ -29,16 +34,29 @@ const Select: React.FC<SelectProps> = ({
   icon,
 }) => {
   const { toggle, handleToggle, triggerRef } = useToggle({});
-  const { selectValue, handleSelect } = useSelectValue({ handleSetValue, name });
+  const { selectValue, handleSelect } = useSelectValue({
+    initialValue,
+    handleSetValue,
+    name,
+    isReset,
+  });
   const btnRef = useRef<HTMLButtonElement>(null);
 
-  // ref for Safari and Firebox
+  // ref for Safari and Firefox
   const handleButtonClick = useCallback(() => {
     if (btnRef.current) {
       btnRef.current.focus();
     }
     handleToggle();
   }, [handleToggle]);
+
+  const handleValueClick = useCallback(
+    (title: string) => {
+      handleSelect(title);
+      handleToggle();
+    },
+    [handleSelect, handleToggle],
+  );
 
   const clazz = `${styles.select__output} ${styles[className]} ${
     toggle ? styles.select__output_show : ''
@@ -49,7 +67,7 @@ const Select: React.FC<SelectProps> = ({
 
     if (icon) {
       return (
-        <div>
+        <div className={styles.select__label}>
           {icon}
           {value}
         </div>
@@ -61,14 +79,14 @@ const Select: React.FC<SelectProps> = ({
 
   return (
     <div ref={triggerRef} className={styles.select}>
-      <button ref={btnRef} className={clazz} onClick={handleButtonClick}>
+      <button ref={btnRef} className={clazz} onClick={handleButtonClick} type='button'>
         {renderValue}
       </button>
       {toggle && (
         <ul className={`list ${styles.select__list}`}>
           {items?.map(({ id, title }) => {
             return (
-              <li key={id} className={styles.select__item} onClick={() => handleSelect(title)}>
+              <li key={id} className={styles.select__item} onClick={() => handleValueClick(title)}>
                 {title}
               </li>
             );

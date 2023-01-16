@@ -8,10 +8,11 @@ import ContactsModal from '../ContactsModal';
 import styles from './CardContacts.module.scss';
 
 type CardContactsProps = {
+  catalog?: boolean;
   contacts: ContactsType;
 };
 
-const CardContacts: React.FC<CardContactsProps> = ({ contacts }) => {
+const CardContacts: React.FC<CardContactsProps> = ({ ...props }) => {
   const { toggle, handleToggle, triggerRef, innerRef } = useToggle({});
 
   return (
@@ -20,7 +21,7 @@ const CardContacts: React.FC<CardContactsProps> = ({ contacts }) => {
         <PhoneIc alt='contacts-phone' />
         <span className={styles['card-contacts__text']}>Контакты</span>
       </div>
-      <ContactsModal ref={innerRef} toggle={toggle} contacts={contacts} />
+      <ContactsModal ref={innerRef} toggle={toggle} {...props} />
     </>
   );
 };

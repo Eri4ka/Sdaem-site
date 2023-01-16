@@ -19,7 +19,7 @@ type FilterType = {
 };
 
 const MainItems: React.FC = () => {
-  const apartmentsDistricts = useAppSelector(getDistrictSelector);
+  const apartmentsDistrict = useAppSelector(getDistrictSelector);
   const apartmentsMetro = useAppSelector(getMetroSelector);
   const apartments = useAppSelector(getApartmentsSelector);
 
@@ -35,6 +35,7 @@ const MainItems: React.FC = () => {
     if (values.metro) {
       apartmentsCopy = apartmentsCopy.filter((item) => item.metro === values.metro);
     }
+
     setFilteredApartments(apartmentsCopy);
   }, [values.district, values.metro, apartments]);
 
@@ -66,7 +67,7 @@ const MainItems: React.FC = () => {
           <div className={styles.items__select}>
             <Select
               className={SelectClass.slider}
-              items={apartmentsDistricts}
+              items={apartmentsDistrict}
               name='district'
               label='Район'
               handleSetValue={handleSetValue}

@@ -22,7 +22,7 @@ const MainTab: React.FC<MainTabProps> = ({ sections }) => {
   const [activeTab, setActiveTab] = useState<string>('apartment');
   const apartmentsRooms = useAppSelector(getRoomsSelector);
   const apartmentsTypeRooms = useAppSelector(getRoomsTypeSelector);
-  const apartmentsDistricts = useAppSelector(getDistrictSelector);
+  const apartmentsDistrict = useAppSelector(getDistrictSelector);
   const apartmentsMetro = useAppSelector(getMetroSelector);
   const apartmentsOptions = useAppSelector(getOptionsSelector);
 
@@ -57,10 +57,10 @@ const MainTab: React.FC<MainTabProps> = ({ sections }) => {
         />
       </ul>
       <MainTabPanel
-        city={apartments}
+        apartments={apartments}
         rooms={apartmentsRooms}
         roomsType={apartmentsTypeRooms}
-        districts={apartmentsDistricts}
+        district={apartmentsDistrict}
         metro={apartmentsMetro}
         options={apartmentsOptions}
         id='apartment'

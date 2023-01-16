@@ -9,7 +9,14 @@
   background-color: $grey;
   border-radius: 18px;
   padding: 8.5px 8px;
+  &_wide {
+    height: 34px;
+    padding: 8.5px 14px;
+  }
   &__icon {
     margin-right: 6px;
+  }
+  &__text {
+    color: $blue;
   }
 }

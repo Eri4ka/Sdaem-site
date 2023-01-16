@@ -1,23 +1,65 @@
 import Image from 'next/image';
-import { memo, forwardRef } from 'react';
+import { memo, forwardRef, useEffect, useMemo } from 'react';
 
 import MailPic from '@public/icons/card/cardContacts/mail.svg';
 import ViberPic from '@public/icons/card/cardContacts/viber.svg';
 import WhatsPic from '@public/icons/card/cardContacts/whatsapp.svg';
 import userPic from '@public/images/profile/user.jpg';
+import { useAppSelector } from '@utils/redux/reduxHooks';
+import {
+  getDesktopMinimum,
+  getTabletMinimum,
+} from '@utils/redux/selectors/systemInfromationSelectors';
 import { ContactsType } from '@utils/types';
 import SocialIcon, { SocialIconClass } from '@views/SocialIcon';
 
 import styles from './ContactsModal.module.scss';
 
 type ContactsModalProps = {
+  catalog?: boolean;
   toggle: boolean;
   contacts: ContactsType;
 };
 
 const ContactsModal = forwardRef<HTMLDivElement, ContactsModalProps>(
-  ({ toggle, contacts }, ref) => {
+  ({ catalog, toggle, contacts }, ref) => {
+    const isDesktopMinimum = useAppSelector(getDesktopMinimum);
+    const isTabletMinimum = useAppSelector(getTabletMinimum);
+
     const { image, name, phone, email, viber, whatsapp } = contacts;
+    const hasWindow = typeof document !== 'undefined';
+    const contactsModal = hasWindow
+      ? document.querySelectorAll<HTMLElement>('[datatype="contacts-modal"]')
+      : null;
+
+    const elementValue = useMemo(() => {
+      if (isTabletMinimum) {
+        return 1;
+      }
+      if (isDesktopMinimum) {
+        return 3;
+      }
+      return 4;
+    }, [isDesktopMinimum, isTabletMinimum]);
+
+    const changeContactsModalPosition = () => {
+      contactsModal?.forEach((item, i) => {
+        const element = (i + 1) % elementValue === 0 || i === 0;
+
+        item.style.removeProperty('left');
+
+        if (element) {
+          item.style.left = '0px';
+        }
+      });
+    };
+
+    useEffect(() => {
+      if (catalog) {
+        changeContactsModalPosition();
+      }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [contactsModal]);
 
     return (
       <div

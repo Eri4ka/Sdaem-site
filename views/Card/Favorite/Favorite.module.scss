@@ -5,12 +5,21 @@
   @include d-flex-j-center-a-center;
   background-color: rgba($color: $red, $alpha: 0.1);
   border-radius: 22px;
-  height: 33px;
-  max-width: 133px;
+  max-width: 134px;
   min-width: 33px;
   transition: 0.2s;
   color: transparent;
+  gap: 10px;
+  padding: 9px;
   cursor: pointer;
+  &_wide {
+    padding: 9px 15px;
+  }
+  &__text {
+    color: $red;
+    font-weight: 600;
+    font-size: 14px;
+  }
   &:hover {
     color: rgba($color: $red, $alpha: 0.4);
   }

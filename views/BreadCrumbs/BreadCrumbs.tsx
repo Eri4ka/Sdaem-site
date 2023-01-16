@@ -1,6 +1,8 @@
 import Link from 'next/link';
+import { memo, useMemo } from 'react';
 
 import HomeIcon from '@public/icons/home.svg';
+import { clearURLQueries } from '@utils/helpers';
 
 import styles from './BreadCrumbs.module.scss';
 
@@ -15,6 +17,8 @@ type BreadCrumbsProps = {
 };
 
 const BreadCrumbs: React.FC<BreadCrumbsProps> = ({ crumbList, pathname }) => {
+  const cleanPath = useMemo(() => clearURLQueries(pathname), [pathname]);
+
   return (
     <ul className={`list ${styles.breadcrumbs}`}>
       {crumbList.map(({ path, title }, i) => {
@@ -31,7 +35,7 @@ const BreadCrumbs: React.FC<BreadCrumbsProps> = ({ crumbList, pathname }) => {
           <li
             key={i}
             className={`${styles.breadcrumbs__item} ${
-              pathname === path ? styles.breadcrumbs__item_active : ''
+              cleanPath === path ? styles.breadcrumbs__item_active : ''
             }`}>
             <Link href={path}>{title}</Link>
           </li>
@@ -41,4 +45,4 @@ const BreadCrumbs: React.FC<BreadCrumbsProps> = ({ crumbList, pathname }) => {
   );
 };
 
-export default BreadCrumbs;
+export default memo(BreadCrumbs);

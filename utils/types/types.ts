@@ -13,6 +13,7 @@ export type NewsType = {
 
 export type SingleSectionType = {
   id: number;
+  section_name: string;
   title: string;
   alias: string;
   content: string;
@@ -29,6 +30,7 @@ export type SectionType = {
 export type ApartmentOptions = {
   id: number;
   title: string;
+  option_name: string;
 };
 
 export type roomsType = {
@@ -37,12 +39,17 @@ export type roomsType = {
 };
 
 export type ContactsType = {
-  image: string;
+  image: string | StaticImageData;
   name: string;
   phone: string;
   email: string;
   viber: string;
   whatsapp: string;
+};
+
+export type ImagesType = {
+  short: string | StaticImageData;
+  wide: string | StaticImageData;
 };
 
 export type ApartmentsType = {
@@ -59,7 +66,7 @@ export type ApartmentsType = {
   adress: string;
   metro: string;
   district: string;
-  image: string;
+  images: ImagesType[];
   tag?: string;
   contacts: ContactsType;
   options: ApartmentOptions[];
@@ -112,4 +119,16 @@ export type StatusType = {
 export type SelectType = {
   id: number;
   title: string;
+};
+
+export type fielValuesType = {
+  [field: string]: string | number | boolean;
+};
+
+export type ViewType = 'tiles' | 'list';
+
+export type SortType = 'default' | 'decrease' | 'increase';
+
+export type ApartmentBadgesType = {
+  [key: string]: string;
 };

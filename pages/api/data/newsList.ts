@@ -20,7 +20,7 @@ export const newsList = [
     ],
     image: cardimg,
     published: '14 января 2008',
-    published_date: '2008.01.14',
+    published_date: '2008-01-14',
   },
   {
     id: 2,
@@ -41,7 +41,7 @@ export const newsList = [
     ],
     image: cardimg,
     published: '14 января 2008',
-    published_date: '2008.01.14',
+    published_date: '2008-01-14',
   },
   {
     id: 3,
@@ -62,7 +62,7 @@ export const newsList = [
     ],
     image: cardimg,
     published: '14 января 2008',
-    published_date: '2008.01.14',
+    published_date: '2008-01-14',
   },
   {
     id: 4,
@@ -83,7 +83,7 @@ export const newsList = [
     ],
     image: cardimg,
     published: '14 января 2008',
-    published_date: '2008.01.14',
+    published_date: '2008-01-14',
   },
   {
     id: 5,
@@ -104,7 +104,7 @@ export const newsList = [
     ],
     image: cardimg,
     published: '14 января 2008',
-    published_date: '2008.01.14',
+    published_date: '2008-01-14',
   },
   {
     id: 6,
@@ -125,7 +125,7 @@ export const newsList = [
     ],
     image: cardimg,
     published: '14 января 2008',
-    published_date: '2008.01.14',
+    published_date: '2008-01-14',
   },
   {
     id: 7,
@@ -146,7 +146,7 @@ export const newsList = [
     ],
     image: cardimg,
     published: '14 января 2008',
-    published_date: '2008.01.14',
+    published_date: '2008-01-14',
   },
   {
     id: 8,
@@ -167,7 +167,7 @@ export const newsList = [
     ],
     image: cardimg,
     published: '14 января 2008',
-    published_date: '2008.01.14',
+    published_date: '2008-01-14',
   },
   {
     id: 9,
@@ -188,7 +188,7 @@ export const newsList = [
     ],
     image: cardimg,
     published: '14 января 2008',
-    published_date: '2008.01.14',
+    published_date: '2008-01-14',
   },
   {
     id: 10,
@@ -209,7 +209,7 @@ export const newsList = [
     ],
     image: cardimg,
     published: '14 января 2008',
-    published_date: '2008.01.14',
+    published_date: '2008-01-14',
   },
   {
     id: 11,
@@ -230,6 +230,6 @@ export const newsList = [
     ],
     image: cardimg,
     published: '14 января 2008',
-    published_date: '2008.01.14',
+    published_date: '2008-01-14',
   },
 ];

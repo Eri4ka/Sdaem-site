@@ -32,6 +32,9 @@
     line-height: 17px;
     border-radius: 17px;
     color: $blue;
+    &:hover {
+      background: rgba(102, 78, 249, 0.2);
+    }
   }
   &_blue {
     background-color: $blue;
@@ -81,6 +84,28 @@
     &::after {
       content: '';
       background: url('../../../public/icons/main/filter/arrowBtn.svg') no-repeat 50% 70%;
+      height: 19px;
+      width: 19px;
+    }
+  }
+  &_show-blue {
+    @include d-flex-j-between-a-center;
+    background-color: $blue;
+    border-radius: 22px;
+    color: $white;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 16px;
+    &:not([disabled]):hover {
+      background-color: $blue-hover;
+    }
+    &:disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+    &::after {
+      content: '';
+      background: url('../../../public/icons/button/whiteArrow.svg') no-repeat 50% 70%;
       height: 19px;
       width: 19px;
     }
@@ -139,6 +164,21 @@
     font-weight: 700;
     &:not([disabled]):hover {
       background: $blue_grad_dark_hover;
+    }
+    &:disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+  }
+  &_reset {
+    border-radius: 22px;
+    background-color: $grey;
+    color: $black;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 16px;
+    &:not([disabled]):hover {
+      background-color: $grey-hover;
     }
     &:disabled {
       opacity: 0.5;

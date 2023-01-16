@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { memo } from 'react';
 
-import roomImg from '@public/images/main/about/room.webp';
+import roomImg from '@public/images/card/room1.jpg';
 import { NewsType } from '@utils/types';
 
 import MainNews from './components/MainNews';

@@ -3,17 +3,51 @@ import { Provider } from 'react-redux';
 
 import '@styles/globals.scss';
 
+import { useResize } from '@utils/hooks/useResize';
 import { fetchUser } from '@utils/redux/slices/authSlice';
+import { changeBreakPoint } from '@utils/redux/slices/systemInformationSlice';
 import { wrapper } from '@utils/redux/store';
 
 import type { AppProps } from 'next/app';
 
 const App = ({ Component, ...rest }: AppProps) => {
   const { store, props } = wrapper.useWrappedStore(rest);
+  const {
+    isDesktopView,
+    isDesktopMinimum,
+    isTabletLarge,
+    isTabletMedium,
+    isTabletMinimum,
+    isMobileLarge,
+    isMobileMedium,
+  } = useResize();
 
   useEffect(() => {
     store.dispatch(fetchUser());
   }, [store]);
+
+  useEffect(() => {
+    store.dispatch(
+      changeBreakPoint({
+        isDesktopView,
+        isDesktopMinimum,
+        isTabletLarge,
+        isTabletMedium,
+        isTabletMinimum,
+        isMobileLarge,
+        isMobileMedium,
+      }),
+    );
+  }, [
+    isDesktopView,
+    isDesktopMinimum,
+    isTabletLarge,
+    isTabletMedium,
+    isTabletMinimum,
+    isMobileLarge,
+    isMobileMedium,
+    store,
+  ]);
 
   return (
     <Provider store={store}>

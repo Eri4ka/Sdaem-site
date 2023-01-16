@@ -1,0 +1,35 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.view {
+  @include d-flex-a-center;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border-radius: 18px;
+  padding: 10px 15px;
+  transition: 0.2s;
+  cursor: pointer;
+  &_focus {
+    background-color: $white;
+    box-shadow: 0px 5px 20px rgba(0, 96, 206, 0.1);
+    & .view__icon {
+      color: $blue;
+    }
+    & .view__text {
+      font-weight: 600;
+    }
+  }
+  &__icon {
+    color: $checkbox-grey;
+    margin-right: 10px;
+  }
+  &__text {
+    color: $black;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  &:not(.view_focus):hover {
+    background-color: $grey;
+  }
+}

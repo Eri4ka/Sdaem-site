@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
+import { memo } from 'react';
+
 import styles from './Pagination.module.scss';
 
 type PaginationProps = {
@@ -9,12 +11,12 @@ type PaginationProps = {
 
 const Pagination: React.FC<PaginationProps> = ({ page, totalPages, setPage }) => {
   /* @ts-ignore */
-  const heh = [...Array(totalPages).keys()];
+  const pageValues = [...Array(totalPages).keys()];
 
   return (
     <div className={styles.pagination}>
       <ul className={`list ${styles.pagination__pages}`}>
-        {heh.map((item) => {
+        {pageValues.map((item) => {
           const cur = item + 1;
           return (
             <li
@@ -32,4 +34,4 @@ const Pagination: React.FC<PaginationProps> = ({ page, totalPages, setPage }) =>
   );
 };
 
-export default Pagination;
+export default memo(Pagination);

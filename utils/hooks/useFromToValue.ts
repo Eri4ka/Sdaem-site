@@ -1,8 +1,23 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 
-export const useFromToValue = () => {
-  const [fromValue, setFromValue] = useState<string>();
-  const [toValue, setToValue] = useState<string>();
+type useFromToValueProps = {
+  initialFromValue?: string;
+  initialToValue?: string;
+  handleSetValue: (field: string, value: string) => void;
+  isReset?: boolean;
+};
+
+export const useFromToValue = ({
+  initialFromValue,
+  initialToValue,
+  handleSetValue,
+  isReset,
+}: useFromToValueProps) => {
+  const _stateFromValue = initialFromValue ?? '';
+  const _stateToValue = initialToValue ?? '';
+
+  const [fromValue, setFromValue] = useState<string>(_stateFromValue);
+  const [toValue, setToValue] = useState<string>(_stateToValue);
 
   const handleSetFrom = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -43,6 +58,25 @@ export const useFromToValue = () => {
     const tarValue = e.target.value;
     setToValue(tarValue);
   }, []);
+
+  useEffect(() => {
+    setToValue(_stateToValue);
+  }, [_stateToValue]);
+
+  useEffect(() => {
+    handleSetValue('priceFrom', fromValue);
+  }, [fromValue, handleSetValue]);
+
+  useEffect(() => {
+    handleSetValue('priceTo', toValue);
+  }, [toValue, handleSetValue]);
+
+  useEffect(() => {
+    if (isReset) {
+      setFromValue('');
+      setToValue('');
+    }
+  }, [isReset]);
 
   return { fromValue, toValue, handleSetFrom, handleSetTo, handleChangeFrom, handleChangeTo };
 };

@@ -8,18 +8,11 @@ import styles from './HeaderSelect.module.scss';
 type HeaderSelectProps = {
   children: React.ReactNode;
   items: SingleSectionType[];
-  parentPath: string;
   visible: boolean;
   setVisible: () => void;
 };
 
-const HeaderSelect: React.FC<HeaderSelectProps> = ({
-  children,
-  items,
-  parentPath,
-  visible,
-  setVisible,
-}) => {
+const HeaderSelect: React.FC<HeaderSelectProps> = ({ children, items, visible, setVisible }) => {
   return (
     <div className={styles['header-select']}>
       <div className={styles['header-select__title']} onClick={setVisible}>
@@ -29,10 +22,7 @@ const HeaderSelect: React.FC<HeaderSelectProps> = ({
         {visible &&
           items.map(({ id, content, alias }) => {
             return (
-              <Link
-                className={styles['header-select__link']}
-                href={`${parentPath}/${alias}`}
-                key={id}>
+              <Link className={styles['header-select__link']} href={`/${alias}`} key={id}>
                 <div className={styles['header-select__item']}>{content}</div>
               </Link>
             );

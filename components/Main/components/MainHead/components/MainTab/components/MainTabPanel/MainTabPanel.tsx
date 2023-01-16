@@ -1,8 +1,10 @@
-import { memo, useState, useCallback } from 'react';
+import { useRouter } from 'next/router';
+import { memo, useMemo } from 'react';
 
 import MapIc from '@public/icons/main/filter/map.svg';
+import { useFilter } from '@utils/hooks/useFilter';
 import { useToggle } from '@utils/hooks/useToggle';
-import { SelectType } from '@utils/types';
+import { SelectType, ApartmentOptions, SingleSectionType } from '@utils/types';
 import Button, { ButtonClass } from '@views/Buttons/Button';
 import FilterOptions from '@views/Filter/FilterOptions';
 import Select, { SelectClass } from '@views/Select';
@@ -15,70 +17,42 @@ import styles from './MainTabPanel.module.scss';
 type MainTabPanelProps = {
   id: string;
   activeTab: string;
-  city?: SelectType[];
+  apartments?: SingleSectionType[];
   rooms?: SelectType[];
   roomsType?: SelectType[];
-  districts?: SelectType[];
+  district?: SelectType[];
   metro?: SelectType[];
-  options: SelectType[];
-};
-
-type fielValuesType = {
-  city?: string;
-  rooms?: string;
-  roomsType?: string;
-  district?: string;
-  metro?: string;
-  options: number[];
+  options: ApartmentOptions[];
 };
 
 const MainTabPanel: React.FC<MainTabPanelProps> = ({
   id,
   activeTab,
-  city,
+  apartments,
   rooms,
   roomsType,
-  districts,
+  district,
   metro,
   options,
 }) => {
-  const [fieldValues, setFieldValues] = useState<fielValuesType>({
-    city: '',
-    rooms: '',
-    roomsType: '',
-    district: '',
-    metro: '',
-    options: [],
-  });
+  const { push } = useRouter();
+  const { notEmptyFieldValues, handleSetValue, handleSubmit } = useFilter();
   const { toggle, handleToggle } = useToggle({});
 
+  const { city, ...params } = notEmptyFieldValues;
+
+  const alias = useMemo(
+    () => apartments?.find((item) => item.title === city)?.alias,
+    [apartments, city],
+  );
+
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log(fieldValues);
+    handleSubmit(e);
+
+    push({ pathname: alias, query: { ...params } }, undefined, {
+      shallow: true,
+    });
   };
-
-  const handleSetValue = useCallback((field: string, value: string | number) => {
-    setFieldValues((values) => ({
-      ...values,
-      [field]: value,
-    }));
-  }, []);
-
-  const handleSetOptions = useCallback((e: React.ChangeEvent<HTMLInputElement>, id: number) => {
-    const checked = e.target.checked;
-
-    if (checked) {
-      setFieldValues((values) => ({
-        ...values,
-        options: [...values.options, id],
-      }));
-    } else {
-      setFieldValues((values) => ({
-        ...values,
-        options: values.options.filter((item) => item !== id),
-      }));
-    }
-  }, []);
 
   return id === activeTab ? (
     <form className={styles['tab-panel']} onSubmit={onSubmit}>
@@ -88,7 +62,7 @@ const MainTabPanel: React.FC<MainTabPanelProps> = ({
             <div className={styles['tab-panel__select']}>
               <Select
                 className={SelectClass.filter}
-                items={city}
+                items={apartments}
                 name='city'
                 handleSetValue={handleSetValue}
               />
@@ -119,13 +93,13 @@ const MainTabPanel: React.FC<MainTabPanelProps> = ({
             </div>
           </div>
           <div className={styles['tab-panel__button']}>
-            <Button type='submit' className={ButtonClass.show}>
+            <Button type='submit' className={ButtonClass.show} disabled={!city}>
               Показать
             </Button>
           </div>
         </div>
       </div>
-      <MainTabOptions isVisible={toggle} options={options} handleSetOptions={handleSetOptions}>
+      <MainTabOptions isVisible={toggle} options={options} handleSetValue={handleSetValue}>
         <MainTabField label='Спальные места' border={false}>
           <div className={styles['tab-panel__select']}>
             <Select
@@ -140,7 +114,7 @@ const MainTabPanel: React.FC<MainTabPanelProps> = ({
           <div className={styles['tab-panel__select']}>
             <Select
               className={SelectClass.filter}
-              items={districts}
+              items={district}
               name='district'
               handleSetValue={handleSetValue}
             />

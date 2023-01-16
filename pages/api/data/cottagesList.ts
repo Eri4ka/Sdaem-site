@@ -22,38 +22,47 @@ export const cottagesList = [
       {
         id: 1,
         title: 'Газовая плита',
+        option_name: 'gas',
       },
       {
         id: 2,
         title: 'Духовка',
+        option_name: 'oven',
       },
       {
         id: 4,
         title: 'Микроволновая печь',
+        option_name: 'microwave',
       },
       {
         id: 5,
         title: 'Посуда',
+        option_name: 'dishes',
       },
       {
         id: 7,
         title: 'ТВ',
+        option_name: 'tv',
       },
       {
         id: 8,
         title: 'WI-FI',
+        option_name: 'wifi',
       },
       {
         id: 9,
         title: 'Чайник',
+        option_name: 'teapot',
       },
       {
         id: 10,
         title: 'Балкон',
+        option_name: 'balcony',
       },
       {
         id: 13,
         title: 'Ванная',
+        option_name: 'bath',
       },
     ],
   },
@@ -80,46 +89,57 @@ export const cottagesList = [
       {
         id: 1,
         title: 'Газовая плита',
+        option_name: 'gas',
       },
       {
         id: 2,
         title: 'Духовка',
+        option_name: 'oven',
       },
       {
         id: 3,
         title: 'Кофеварка',
+        option_name: 'coffee',
       },
       {
         id: 4,
         title: 'Микроволновая печь',
+        option_name: 'microwave',
       },
       {
         id: 5,
         title: 'Посуда',
+        option_name: 'dishes',
       },
       {
         id: 6,
         title: 'Посудомоечная машина',
+        option_name: 'dishwasher',
       },
       {
         id: 7,
         title: 'ТВ',
+        option_name: 'tv',
       },
       {
         id: 8,
         title: 'WI-FI',
+        option_name: 'wifi',
       },
       {
         id: 9,
         title: 'Чайник',
+        option_name: 'teapot',
       },
       {
         id: 10,
         title: 'Балкон',
+        option_name: 'balcony',
       },
       {
         id: 13,
         title: 'Ванная',
+        option_name: 'bath',
       },
     ],
   },
@@ -146,30 +166,37 @@ export const cottagesList = [
       {
         id: 2,
         title: 'Духовка',
+        option_name: 'oven',
       },
       {
         id: 3,
         title: 'Кофеварка',
+        option_name: 'coffee',
       },
       {
         id: 4,
         title: 'Микроволновая печь',
+        option_name: 'microwave',
       },
       {
         id: 5,
         title: 'Посуда',
+        option_name: 'dishes',
       },
       {
         id: 7,
         title: 'ТВ',
+        option_name: 'tv',
       },
       {
         id: 8,
         title: 'WI-FI',
+        option_name: 'wifi',
       },
       {
         id: 9,
         title: 'Чайник',
+        option_name: 'teapot',
       },
     ],
   },
@@ -196,46 +223,57 @@ export const cottagesList = [
       {
         id: 1,
         title: 'Газовая плита',
+        option_name: 'gas',
       },
       {
         id: 2,
         title: 'Духовка',
+        option_name: 'oven',
       },
       {
         id: 3,
         title: 'Кофеварка',
+        option_name: 'coffee',
       },
       {
         id: 4,
         title: 'Микроволновая печь',
+        option_name: 'microwave',
       },
       {
         id: 5,
         title: 'Посуда',
+        option_name: 'dishes',
       },
       {
         id: 6,
         title: 'Посудомоечная машина',
+        option_name: 'dishwasher',
       },
       {
         id: 7,
         title: 'ТВ',
+        option_name: 'tv',
       },
       {
         id: 8,
         title: 'WI-FI',
+        option_name: 'wifi',
       },
       {
         id: 9,
         title: 'Чайник',
+        option_name: 'teapot',
       },
       {
         id: 10,
         title: 'Балкон',
+        option_name: 'balcony',
       },
       {
         id: 13,
         title: 'Ванная',
+        option_name: 'bath',
       },
     ],
   },
@@ -262,42 +300,52 @@ export const cottagesList = [
       {
         id: 1,
         title: 'Газовая плита',
+        option_name: 'gas',
       },
       {
         id: 2,
         title: 'Духовка',
+        option_name: 'oven',
       },
       {
         id: 3,
         title: 'Кофеварка',
+        option_name: 'coffee',
       },
       {
         id: 4,
         title: 'Микроволновая печь',
+        option_name: 'microwave',
       },
       {
         id: 5,
         title: 'Посуда',
+        option_name: 'dishes',
       },
       {
         id: 6,
         title: 'Посудомоечная машина',
+        option_name: 'dishwasher',
       },
       {
         id: 7,
         title: 'ТВ',
+        option_name: 'tv',
       },
       {
         id: 8,
         title: 'WI-FI',
+        option_name: 'wifi',
       },
       {
         id: 9,
         title: 'Чайник',
+        option_name: 'teapot',
       },
       {
         id: 13,
         title: 'Ванная',
+        option_name: 'bath',
       },
     ],
   },
@@ -324,22 +372,27 @@ export const cottagesList = [
       {
         id: 1,
         title: 'Газовая плита',
+        option_name: 'gas',
       },
       {
         id: 2,
         title: 'Духовка',
+        option_name: 'oven',
       },
       {
         id: 3,
         title: 'Кофеварка',
+        option_name: 'coffee',
       },
       {
         id: 4,
         title: 'Микроволновая печь',
+        option_name: 'microwave',
       },
       {
         id: 5,
         title: 'Посуда',
+        option_name: 'dishes',
       },
     ],
   },
