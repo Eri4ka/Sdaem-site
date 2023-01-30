@@ -1,0 +1,17 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.sorting {
+  &__views {
+    display: flex;
+    gap: 21px;
+  }
+}
+
+@media screen and (max-width: $tablet_minimum) {
+  .sorting {
+    &__views {
+      display: none;
+    }
+  }
+}

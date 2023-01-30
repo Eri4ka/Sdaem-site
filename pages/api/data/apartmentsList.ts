@@ -1,13 +1,12 @@
-import verticalImg from '@public/images/card/apartmentVertical.jpg';
-import room1 from '@public/images/card/room1.jpg';
-import room1Wide from '@public/images/card/room1Wide.jpg';
-import room2 from '@public/images/card/room2.jpg';
-import room2Wide from '@public/images/card/room2Wide.jpg';
-import room3 from '@public/images/card/room3.jpg';
-import room3Wide from '@public/images/card/room3Wide.jpg';
-import verticalTall from '@public/images/card/verticalTall.jpg';
-import cardimg from '@public/images/cardnews.png';
-import boyPic from '@public/images/profile/boy.png';
+import verticalImg from '@images/card/apartmentVertical.jpg';
+import room1 from '@images/card/room1.jpg';
+import room1Wide from '@images/card/room1Wide.jpg';
+import room2 from '@images/card/room2.jpg';
+import room2Wide from '@images/card/room2Wide.jpg';
+import room3 from '@images/card/room3.jpg';
+import room3Wide from '@images/card/room3Wide.jpg';
+import verticalTall from '@images/card/verticalTall.jpg';
+import boyPic from '@images/profile/boy.png';
 
 export const apartmentsList = [
   {

@@ -1,0 +1,23 @@
+@import '@styles/variables.scss';
+
+.category {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1280px;
+  max-height: 576px;
+  overflow: hidden;
+  margin: 0 auto 140px auto;
+}
+
+@media screen and (max-width: $desktop_minimum) {
+  .category {
+    flex-wrap: wrap;
+    max-height: none;
+  }
+}
+
+@media screen and (max-width: $desktop_view) {
+  .category {
+    margin: 0 20px 140px 20px;
+  }
+}

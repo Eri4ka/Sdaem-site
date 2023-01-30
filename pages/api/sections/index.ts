@@ -1,4 +1,4 @@
-import { SectionType } from '@utils/types';
+import { SectionType } from '@mytypes/sectionTypes';
 
 import { sectionsList } from '../data/sectionsList';
 

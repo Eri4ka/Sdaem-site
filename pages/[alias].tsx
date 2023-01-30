@@ -1,16 +1,15 @@
 import { GetServerSideProps, NextPage } from 'next';
 
-import Catalog from '@components/Catalog';
-import Layout from '@components/Layout';
+import { SingleSectionType } from '@mytypes/sectionTypes';
+import Catalog from '@pages/Catalog';
+import Layout from '@pages/Layout';
+import { addApartments } from '@redux/slices/apartmentsSlice';
+import { addCottages } from '@redux/slices/cottagesSlice';
+import { wrapper } from '@redux/store';
 import { API_URL } from '@utils/constants';
-import { addApartments } from '@utils/redux/slices/apartmentsSlice';
-import { addCottages } from '@utils/redux/slices/cottagesSlice';
-import { wrapper } from '@utils/redux/store';
-import { ApartmentsType, SingleSectionType } from '@utils/types';
 
 const CatalogPage: NextPage<{
   section: SingleSectionType;
-  catalog: ApartmentsType[];
 }> = ({ section }) => {
   return (
     <Layout>

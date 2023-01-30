@@ -1,0 +1,51 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.header-top {
+  &__user {
+    @include d-flex-j-between-a-center;
+    font-size: 14px;
+    font-weight: 500;
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      color: $text-grey;
+      transition: 0.2s;
+      &:hover {
+        color: $black;
+      }
+    }
+    &-icon {
+      width: 16px;
+      height: 14px;
+      margin-left: 11px;
+    }
+    &-account {
+      color: $blue;
+      margin-left: 40px;
+      &:hover {
+        color: $blue-hover;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tablet_large) {
+  .header-top {
+    &__user {
+      &-account {
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tablet_medium) {
+  .header-top {
+    &__user {
+      &-text {
+        display: none;
+      }
+    }
+  }
+}

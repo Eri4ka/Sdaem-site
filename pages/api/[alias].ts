@@ -1,4 +1,4 @@
-import { ApartmentsType } from '@utils/types';
+import { ApartmentsType } from '@mytypes/productTypes';
 
 import { apartmentsList } from './data/apartmentsList';
 import { sectionsList } from './data/sectionsList';

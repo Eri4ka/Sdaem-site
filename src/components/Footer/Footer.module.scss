@@ -1,0 +1,175 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.footer {
+  display: flex;
+  box-shadow: 0px -11px 40px rgba(39, 95, 158, 0.05);
+  padding: 39px 0 43px 0;
+  &__wrapper {
+    display: flex;
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    gap: 30px;
+  }
+  &__info {
+    max-width: 297px;
+    width: 100%;
+  }
+  &__company {
+    margin-bottom: 36px;
+  }
+  &__logo {
+    max-width: 134px;
+    width: 100%;
+    margin-bottom: 3px;
+  }
+  &__name {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    color: $text-grey;
+  }
+  &__requisites {
+    font-size: 11px;
+    line-height: 13px;
+    color: $text-grey;
+    margin: 0;
+  }
+  &__content {
+    @include d-flex-f-column;
+  }
+  &__menu {
+    display: flex;
+    min-height: 93px;
+  }
+  &__ads {
+    @include d-flex-f-column-j-between;
+    margin-right: 71px;
+  }
+  &__head {
+    font-weight: 700;
+    font-size: 14px;
+    color: $black;
+  }
+  &__apartments {
+    @include d-flex-f-column-j-between;
+    margin-right: 98px;
+  }
+  &__list {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 6px 53px;
+  }
+  &__text {
+    font-size: 14px;
+    color: $text-grey;
+    transition: 0.2s;
+    &:hover {
+      color: $text-grey-scnd;
+    }
+  }
+  &__sections {
+    @include d-flex-f-column-j-between;
+  }
+  &__badges {
+    @include d-flex-j-between-a-center;
+    flex-wrap: wrap;
+    margin-top: 45px;
+    gap: 10px;
+  }
+  &__social {
+    display: flex;
+  }
+  &__soc {
+    font-weight: 500;
+    font-size: 14px;
+    color: $black;
+    align-self: center;
+    margin-right: 26px;
+  }
+  &__icons {
+    @include d-flex-a-center;
+  }
+  &__svg {
+    @include d-flex-j-center-a-center;
+    height: 30px;
+    width: 30px;
+    margin-right: 15px;
+    transition: 0.2s;
+    &:hover {
+      color: $blue;
+    }
+  }
+  &__inst {
+    height: 23px;
+    width: 23px;
+  }
+  &__vk {
+    height: 14px;
+    width: 24px;
+  }
+  &__fb {
+    height: 20px;
+    width: 20px;
+  }
+  &__payments {
+    @include d-flex-a-center;
+    margin-right: -70px;
+  }
+  &__image {
+    margin-right: 15px;
+  }
+}
+
+@media screen and (max-width: $desktop_view) {
+  .footer {
+    &__wrapper {
+      margin: 0 20px;
+    }
+    &__menu {
+      gap: 50px;
+    }
+    &__payments {
+      margin-right: 0;
+    }
+    &__ads {
+      margin-right: 0;
+    }
+    &__apartments {
+      margin-right: 0;
+    }
+  }
+}
+
+@media screen and (max-width: $desktop_minimum) {
+  .footer {
+    &__apartments {
+      row-gap: 10px;
+    }
+    &__list {
+      @include d-flex-f-column;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet_medium) {
+  .footer {
+    &__wrapper {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    &__info {
+      order: 1;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile_large) {
+  .footer {
+    &__menu {
+      gap: 10px;
+    }
+  }
+}

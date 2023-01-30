@@ -1,0 +1,24 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.map {
+  position: relative;
+  background: linear-gradient(0deg, #7e6af3 0.06%, #6540cd 100.06%);
+  height: 310px;
+  z-index: 1;
+  &::after {
+    content: '';
+    position: absolute;
+    background: url('../../../../assets/images/main/map/bg.png');
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: overlay;
+    filter: blur(1px);
+    z-index: -1;
+  }
+  &__content {
+    padding-top: 75px;
+  }
+}

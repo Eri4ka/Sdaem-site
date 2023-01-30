@@ -1,4 +1,5 @@
-import cardimg from '@public/images/cardnews.png';
+import cardimg from '@images/cardnews.png';
+import cardimg15x from '@images/cardnews15x.jpg';
 
 export const newsList = [
   {
@@ -18,7 +19,10 @@ export const newsList = [
 
       'Отличная усадьба в 10 км от "Линии Сталина".',
     ],
-    image: cardimg,
+    images: {
+      short: cardimg,
+      wide: cardimg15x,
+    },
     published: '14 января 2008',
     published_date: '2008-01-14',
   },
@@ -39,7 +43,10 @@ export const newsList = [
 
       'Отличная усадьба в 10 км от "Линии Сталина".',
     ],
-    image: cardimg,
+    images: {
+      short: cardimg,
+      wide: cardimg15x,
+    },
     published: '14 января 2008',
     published_date: '2008-01-14',
   },
@@ -60,7 +67,10 @@ export const newsList = [
 
       'Отличная усадьба в 10 км от "Линии Сталина".',
     ],
-    image: cardimg,
+    images: {
+      short: cardimg,
+      wide: cardimg15x,
+    },
     published: '14 января 2008',
     published_date: '2008-01-14',
   },
@@ -81,7 +91,10 @@ export const newsList = [
 
       'Отличная усадьба в 10 км от "Линии Сталина".',
     ],
-    image: cardimg,
+    images: {
+      short: cardimg,
+      wide: cardimg15x,
+    },
     published: '14 января 2008',
     published_date: '2008-01-14',
   },
@@ -102,7 +115,10 @@ export const newsList = [
 
       'Отличная усадьба в 10 км от "Линии Сталина".',
     ],
-    image: cardimg,
+    images: {
+      short: cardimg,
+      wide: cardimg15x,
+    },
     published: '14 января 2008',
     published_date: '2008-01-14',
   },
@@ -123,7 +139,10 @@ export const newsList = [
 
       'Отличная усадьба в 10 км от "Линии Сталина".',
     ],
-    image: cardimg,
+    images: {
+      short: cardimg,
+      wide: cardimg15x,
+    },
     published: '14 января 2008',
     published_date: '2008-01-14',
   },
@@ -144,7 +163,10 @@ export const newsList = [
 
       'Отличная усадьба в 10 км от "Линии Сталина".',
     ],
-    image: cardimg,
+    images: {
+      short: cardimg,
+      wide: cardimg15x,
+    },
     published: '14 января 2008',
     published_date: '2008-01-14',
   },
@@ -165,7 +187,10 @@ export const newsList = [
 
       'Отличная усадьба в 10 км от "Линии Сталина".',
     ],
-    image: cardimg,
+    images: {
+      short: cardimg,
+      wide: cardimg15x,
+    },
     published: '14 января 2008',
     published_date: '2008-01-14',
   },
@@ -186,7 +211,10 @@ export const newsList = [
 
       'Отличная усадьба в 10 км от "Линии Сталина".',
     ],
-    image: cardimg,
+    images: {
+      short: cardimg,
+      wide: cardimg15x,
+    },
     published: '14 января 2008',
     published_date: '2008-01-14',
   },
@@ -207,7 +235,10 @@ export const newsList = [
 
       'Отличная усадьба в 10 км от "Линии Сталина".',
     ],
-    image: cardimg,
+    images: {
+      short: cardimg,
+      wide: cardimg15x,
+    },
     published: '14 января 2008',
     published_date: '2008-01-14',
   },
@@ -228,7 +259,10 @@ export const newsList = [
 
       'Отличная усадьба в 10 км от "Линии Сталина".',
     ],
-    image: cardimg,
+    images: {
+      short: cardimg,
+      wide: cardimg15x,
+    },
     published: '14 января 2008',
     published_date: '2008-01-14',
   },

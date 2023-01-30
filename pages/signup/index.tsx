@@ -1,10 +1,10 @@
-import SignUp from '@components/Auth/SignUp';
-import AuthLayout from '@components/Layout/AuthLayout';
+import SignUpForm from '@modules/SignUpForm';
+import AuthLayout from '@pages/Layout/AuthLayout';
 
 const SignUpPage = () => {
   return (
     <AuthLayout>
-      <SignUp />
+      <SignUpForm />
     </AuthLayout>
   );
 };

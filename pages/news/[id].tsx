@@ -1,9 +1,9 @@
 import { GetServerSideProps } from 'next';
 
-import Layout from '@components/Layout';
-import SingleNews from '@components/SingleNews';
+import { NewsType } from '@mytypes/newsTypes';
+import Layout from '@pages/Layout';
+import SingleNews from '@pages/SingleNews';
 import { API_URL } from '@utils/constants';
-import { NewsType } from '@utils/types';
 
 export const getServerSideProps: GetServerSideProps<{
   singleData: NewsType;

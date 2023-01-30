@@ -1,0 +1,80 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.header-account {
+  position: relative;
+  margin-left: 57px;
+  &__head {
+    @include d-flex-j-between-a-center;
+    column-gap: 10px;
+    cursor: pointer;
+  }
+  &__image {
+    position: relative;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  &__title {
+    color: $black;
+    font-weight: 500;
+  }
+  &__arrow {
+    position: relative;
+    height: 17px;
+    width: 18px;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: url('../../../../../../assets/icons/header/arrow.svg') no-repeat 50%;
+      height: 100%;
+      width: 100%;
+      transition: 0.2s;
+    }
+    &_show {
+      &::before {
+        transform: rotateX(180deg);
+      }
+    }
+  }
+  &__list {
+    position: absolute;
+    background-color: $white;
+    box-shadow: 0px 0px 40px rgba(135, 124, 202, 0.3);
+    border-radius: 10px;
+    min-width: 100%;
+    white-space: nowrap;
+    top: 40px;
+    z-index: 2;
+  }
+  &__item {
+    color: $black;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 15px;
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    &:nth-child(1) {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    &:nth-last-child(1) {
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+    &:hover {
+      background-color: $grey;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet_large) {
+  .header-account {
+    margin-left: 20px;
+  }
+}

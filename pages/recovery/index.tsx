@@ -1,10 +1,10 @@
-import Recovery from '@components/Auth/Recovery';
-import AuthLayout from '@components/Layout/AuthLayout';
+import RecoveryForm from '@modules/RecoveryForm';
+import AuthLayout from '@pages/Layout/AuthLayout';
 
 const RecoveryPage = () => {
   return (
     <AuthLayout>
-      <Recovery />
+      <RecoveryForm />
     </AuthLayout>
   );
 };

@@ -1,0 +1,49 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.singlenews {
+  &-content {
+    &__container {
+      position: relative;
+      max-width: 844px;
+      margin: 0 auto;
+      margin-bottom: 20px;
+    }
+    &__dots {
+      position: absolute;
+      top: 36px;
+      left: -113px;
+      height: 71px;
+      width: 71px;
+    }
+    &__card {
+      position: relative;
+      top: -45px;
+    }
+    &__image {
+      border-radius: 10px;
+      width: 100%;
+      max-height: 563px;
+      height: 100%;
+    }
+    &__text {
+      margin-top: 38px;
+    }
+    &__paragraph {
+      color: $black;
+      margin: 0 0 24px 0;
+      line-height: 150%;
+      &:nth-last-child(1) {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tablet_medium) {
+  .singlenews-content {
+    &__container {
+      margin: 0 20px;
+    }
+  }
+}

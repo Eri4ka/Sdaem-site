@@ -1,12 +1,13 @@
 import { GetServerSideProps } from 'next';
 
-import Layout from '@components/Layout';
-import Main from '@components/Main';
+import { NewsType } from '@mytypes/newsTypes';
+import { ApartmentsType, CottagesType } from '@mytypes/productTypes';
+import Layout from '@pages/Layout';
+import Main from '@pages/Main';
+import { addApartments } from '@redux/slices/apartmentsSlice';
+import { addCottages } from '@redux/slices/cottagesSlice';
+import { wrapper } from '@redux/store';
 import { API_URL } from '@utils/constants';
-import { addApartments } from '@utils/redux/slices/apartmentsSlice';
-import { addCottages } from '@utils/redux/slices/cottagesSlice';
-import { wrapper } from '@utils/redux/store';
-import { ApartmentsType, CottagesType, NewsType } from '@utils/types';
 
 type HomePageProps = {
   data: NewsType[];

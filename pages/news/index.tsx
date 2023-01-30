@@ -1,9 +1,9 @@
 import { GetServerSideProps } from 'next';
 
-import Layout from '@components/Layout';
-import News from '@components/News';
+import { NewsType } from '@mytypes/newsTypes';
+import Layout from '@pages/Layout';
+import News from '@pages/News';
 import { API_URL } from '@utils/constants';
-import { NewsType } from '@utils/types';
 
 type NewsPageProps = {
   data: NewsType[];

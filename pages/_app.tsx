@@ -3,10 +3,10 @@ import { Provider } from 'react-redux';
 
 import '@styles/globals.scss';
 
-import { useResize } from '@utils/hooks/useResize';
-import { fetchUser } from '@utils/redux/slices/authSlice';
-import { changeBreakPoint } from '@utils/redux/slices/systemInformationSlice';
-import { wrapper } from '@utils/redux/store';
+import { useResize } from '@hooks/useResize';
+import { fetchUser } from '@redux/slices/authSlice';
+import { changeBreakPoint } from '@redux/slices/systemInformationSlice';
+import { wrapper } from '@redux/store';
 
 import type { AppProps } from 'next/app';
 

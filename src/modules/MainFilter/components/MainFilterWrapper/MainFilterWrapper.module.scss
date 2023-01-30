@@ -1,0 +1,63 @@
+@import '@styles/mixins.scss';
+@import '@styles/variables.scss';
+
+.filter {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__main {
+    @include d-flex-a-center;
+    flex-wrap: wrap;
+  }
+  &__display {
+    @include d-flex-j-between-a-center;
+    max-width: 238px;
+    width: 100%;
+    margin-right: 34px;
+  }
+  &__map {
+    @include d-flex-a-center;
+    height: 100%;
+    &-text {
+      color: $black;
+      font-size: 14px;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+    &-icon {
+      height: 16px;
+      width: 13px;
+      margin-left: 5px;
+    }
+    &:hover .filter__map-text {
+      color: $blue-hover;
+    }
+  }
+  &__button {
+    width: 123px;
+    height: 37px;
+  }
+}
+
+@media screen and (max-width: $desktop_minimum) {
+  .filter {
+    &__display {
+      max-width: 218px;
+      margin-right: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet_large) {
+  .filter {
+    &__wrapper {
+      justify-content: center;
+    }
+    &__display {
+      height: 64px;
+      margin: 0 15px 0 20px;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 const nodemailer = require('nodemailer');
 
-import { ResponseData, ContactFormValues } from '@utils/types';
+import { MailStatusType, ContactFormValues } from '@mytypes/mailTypes';
 import getEmailTemplate from '@views/EmailTemplate';
 import { EMAIL_PASS, EMAIL_USER, EMAIL_RECIPIENT } from '@utils/constants';
 
@@ -11,7 +11,7 @@ interface NewNextApiRequest extends NextApiRequest {
 
 export default async function sendEmail(
   req: NewNextApiRequest,
-  res: NextApiResponse<ResponseData>,
+  res: NextApiResponse<MailStatusType>,
 ) {
   const { name, email, message } = req.body;
   const htmlTemplate = getEmailTemplate({ name, email, message });

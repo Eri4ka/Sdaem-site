@@ -1,0 +1,13 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.notfound {
+  @include d-flex-f-column-a-center-j-center;
+  min-height: 406px;
+  &__text {
+    color: $blue;
+    font-weight: 600;
+    font-size: 28px;
+    margin-top: 20px;
+  }
+}

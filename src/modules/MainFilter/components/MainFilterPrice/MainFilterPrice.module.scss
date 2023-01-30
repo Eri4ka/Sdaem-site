@@ -1,0 +1,15 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.filter-price {
+  @include d-flex-j-between-a-center;
+  width: 175px;
+  &__wrapper {
+    max-width: 80px;
+  }
+  &__separator {
+    color: $light-blue;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}

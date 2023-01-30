@@ -1,10 +1,10 @@
-import SignIn from '@components/Auth/SignIn';
-import AuthLayout from '@components/Layout/AuthLayout';
+import SignInForm from '@modules/SignInForm';
+import AuthLayout from '@pages/Layout/AuthLayout';
 
 const SignInPage = () => {
   return (
     <AuthLayout>
-      <SignIn />
+      <SignInForm />
     </AuthLayout>
   );
 };

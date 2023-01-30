@@ -1,4 +1,4 @@
-import { NewsType } from '@utils/types';
+import { NewsType } from '@mytypes/newsTypes';
 
 import { newsList } from '../data/newsList';
 

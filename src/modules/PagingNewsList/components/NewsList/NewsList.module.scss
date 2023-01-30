@@ -1,0 +1,27 @@
+@import '@styles/variables.scss';
+
+.news-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  margin-bottom: 77px;
+}
+
+@media screen and (max-width: $tablet_large) {
+  .news-list {
+    grid-gap: 20px;
+  }
+}
+
+@media screen and (max-width: $tablet_medium) {
+  .news-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: $mobile_large) {
+  .news-list {
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+  }
+}

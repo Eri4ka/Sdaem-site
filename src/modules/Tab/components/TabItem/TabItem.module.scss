@@ -1,0 +1,40 @@
+@import '@styles/variables.scss';
+
+.tab {
+  &__item {
+    color: $white;
+    background-color: rgba(45, 57, 136, 0.5);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 13px 20px;
+    cursor: pointer;
+
+    &:not(.main-tab__item_active):nth-child(1) {
+      border-radius: 10px 0 0 0;
+    }
+
+    &:not(.main-tab__item_active):nth-last-child(1) {
+      border-radius: 0 10px 0 0;
+    }
+
+    &_active {
+      color: $blue;
+      background-color: $white;
+      border-radius: 10px 10px 0 0;
+    }
+    &_active {
+      color: $blue;
+      background-color: $white;
+      border-radius: 10px 10px 0 0;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile_large) {
+  .tab {
+    &__item {
+      font-size: 12px;
+      padding: 10px 15px;
+    }
+  }
+}

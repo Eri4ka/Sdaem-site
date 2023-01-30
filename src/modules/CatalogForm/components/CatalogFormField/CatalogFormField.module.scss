@@ -1,0 +1,49 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.form-field {
+  @include d-flex-a-center;
+  position: relative;
+  gap: 20px;
+  padding: 22px 25px 23px 25px;
+  &:nth-child(1) {
+    padding-left: 0;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    border-right: 1px solid $blue;
+    opacity: 0.1;
+    right: 0;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    border-bottom: 3px solid $light-blue;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+  }
+  &_active {
+    &::before {
+      opacity: 1;
+    }
+  }
+  &__label {
+    color: $blue;
+    font-weight: 500;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: $desktop_minimum) {
+  .form-field {
+    padding: 22px 20px 23px 0;
+    &::after {
+      content: none;
+    }
+  }
+}

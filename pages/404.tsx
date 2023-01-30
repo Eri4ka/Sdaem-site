@@ -1,7 +1,7 @@
-import Layout from '@components/Layout';
-import NotFound from '@components/NotFound';
+import Layout from '@pages/Layout';
+import NotFound from '@pages/NotFound';
 
-const Error = () => {
+const ErrorPage = () => {
   return (
     <Layout>
       <NotFound />
@@ -9,4 +9,4 @@ const Error = () => {
   );
 };
 
-export default Error;
+export default ErrorPage;

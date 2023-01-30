@@ -1,0 +1,32 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.header-top {
+  &__list {
+    max-width: 724px;
+    width: 100%;
+    @include d-flex-j-between-a-center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  &__svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: $desktop_view) {
+  .header-top {
+    &__list {
+      max-width: 600px;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet_minimum) {
+  .header-top {
+    &__list {
+      justify-content: flex-start;
+    }
+  }
+}
