@@ -6,8 +6,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Setup checkout
         uses: actions/checkout@v3
-      - name: Testing unit
+      - name: Setup node
         uses: actions/setup-node@v3
         with:
           node-version: 18
