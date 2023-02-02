@@ -14,7 +14,7 @@ const Pagination: React.FC<PaginationProps> = ({ page, totalPages, setPage }) =>
   const pageValues = [...Array(totalPages).keys()];
 
   return (
-    <div className={styles.pagination}>
+    <div className={styles.pagination} data-testid={'pagination'}>
       <ul className={`list ${styles.pagination__pages}`}>
         {pageValues.map((item) => {
           const cur = item + 1;

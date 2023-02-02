@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback, createRef, useRef } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 
 type useToggleProps = {
   modal?: boolean;

@@ -5,7 +5,7 @@ import MailPic from '@icons/card/cardContacts/mail.svg';
 import ViberPic from '@icons/card/cardContacts/viber.svg';
 import WhatsPic from '@icons/card/cardContacts/whatsapp.svg';
 import userPic from '@images/profile/user.jpg';
-import { ContactsType } from '@utils/types';
+import { ContactsType } from '@mytypes/productTypes';
 import SocialIcon, { SocialIconClass } from '@views/SocialIcon';
 
 import styles from './CardModal.module.scss';

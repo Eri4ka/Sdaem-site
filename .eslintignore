@@ -1,2 +1,5 @@
-#Node.js import
+# Node.js import
 /pages/api/sender.ts
+
+# Jest config
+/jest.config.js

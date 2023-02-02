@@ -1,4 +1,4 @@
-export const API_URL = 'http://localhost:3000';
+export const API_URL = process.env.DEV_URL ? process.env.DEV_URL : 'http://localhost:3000';
 
 /* NODE_MAILER */
 export const EMAIL_USER = 'erihasanov@yandex.ru';

@@ -1,0 +1,11 @@
+name: UNIT tests
+
+on [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Testing unit
+        uses: actions/checkout@v2
+      - run: npm test
