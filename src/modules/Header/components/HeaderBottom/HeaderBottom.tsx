@@ -1,31 +1,24 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { memo, useEffect, useMemo } from 'react';
+import { memo, useEffect } from 'react';
 
 import MapIc from '@icons/map.svg';
 import logo from '@images/logo.png';
-// import { clearURLQueries } from '@utils/helpers/helpers';
 import { getSectionState } from '@redux/selectors/sectionSelectors';
 import { useAppDispatch, useAppSelector } from '@utils/redux/reduxHooks';
 import Button, { ButtonClass } from '@views/Button';
 
-// import { getSectionState } from '../../redux/selectors';
 import { fetchSections } from '../../redux/thunks';
-// import HeaderSelect from '../HeaderSelect';
 import HeaderSelect from '../HeaderSelect';
 import styles from './HeaderBottom.module.scss';
 
 const HeaderBottom: React.FC = () => {
   const dispatch = useAppDispatch();
   const { apartments } = useAppSelector(getSectionState);
-  const { asPath } = useRouter();
-  // const pathWithoutQueries = useMemo(() => clearURLQueries(asPath), [asPath]);
+
   useEffect(() => {
     dispatch(fetchSections());
   }, [dispatch]);
-  // console.log(pathWithoutQueries);
-  // const activeItemClass = ''
 
   return (
     <div className={styles['header-bottom']}>

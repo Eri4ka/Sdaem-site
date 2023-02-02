@@ -1,8 +1,8 @@
 import { memo } from 'react';
 
 import PhoneIc from '@icons/card/cardContacts/phone.svg';
+import { ContactsType } from '@mytypes/productTypes';
 import { useToggle } from '@utils/hooks/useToggle';
-import { ContactsType } from '@utils/types';
 import CardModal from '@views/CardModal';
 
 import styles from './CardContacts.module.scss';

@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect, memo } from 'react';
+import { memo } from 'react';
 
 import MetroIc from '@icons/main/items/metro.svg';
 import { useAppSelector } from '@utils/redux/reduxHooks';
@@ -7,7 +7,6 @@ import {
   getDistrictSelector,
   getMetroSelector,
 } from '@utils/redux/selectors/apartmentsSelector';
-import Select, { SelectClass } from '@views/Select';
 
 import { useApartmentsFilter } from '../../hooks/useApartmentsFilter';
 import ApartmentsSelect from '../ApartmentsSelect';

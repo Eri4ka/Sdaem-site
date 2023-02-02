@@ -1,6 +1,6 @@
 import ReactDOMServer from 'react-dom/server';
 
-import { ContactFormValues } from '@utils/types';
+import { ContactFormValues } from '@mytypes/mailTypes';
 
 const getEmailTemplate = (props: ContactFormValues) => {
   const template = <EmailTemplate {...props} />;
