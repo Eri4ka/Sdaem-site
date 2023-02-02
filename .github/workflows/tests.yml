@@ -1,6 +1,6 @@
 name: UNIT tests
 
-on [push]
+on: [push]
 
 jobs:
   test:
