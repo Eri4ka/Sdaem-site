@@ -4,27 +4,24 @@ import userEvent from '@testing-library/user-event';
 import { clearURLQueries } from '@helpers/clearURLQueries';
 
 import BreadCrumbs from '../BreadCrumbs';
-const crumbList = [
-  { path: '/', title: 'Главная' },
-  { path: '/minsk', title: 'Квартиры в Минске' },
-];
+import { CRUMB_LIST } from './constants';
 
 // const onSetPage = (value: number) => value + 1;
 
 jest.mock('@icons/main/filter/options.svg', () => () => 'OptionsIc');
 describe('BreadCrumbs', () => {
   it('Переданный через props список хлебных крошек отображается корректно', () => {
-    render(<BreadCrumbs crumbList={crumbList} pathname='/' />);
+    render(<BreadCrumbs crumbList={CRUMB_LIST} pathname='/' />);
 
-    const BreadCrumbsItem = screen.getByText(crumbList[1].title);
+    const BreadCrumbsItem = screen.getByText(CRUMB_LIST[1].title);
     expect(BreadCrumbsItem).toBeInTheDocument();
 
-    expect(BreadCrumbsItem.closest('a')).toHaveAttribute('href', crumbList[1].path);
+    expect(BreadCrumbsItem.closest('a')).toHaveAttribute('href', CRUMB_LIST[1].path);
   });
   it('Переданный через props список хлебных крошек отображается корректно', () => {
-    render(<BreadCrumbs crumbList={crumbList} pathname='/minsk' />);
+    render(<BreadCrumbs crumbList={CRUMB_LIST} pathname='/minsk' />);
 
-    const PaginationComponent = screen.getByText(crumbList[1].title);
+    const PaginationComponent = screen.getByText(CRUMB_LIST[1].title);
   });
 
   // it('При клике вызывается функция setPage', async () => {
