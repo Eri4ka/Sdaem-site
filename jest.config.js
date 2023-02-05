@@ -8,7 +8,7 @@ const customJestConfig = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   moduleDirectories: ['node_modules', '<rootDir>/'],
   moduleNameMapper: {
-    '^@components/(.*)$': '<rootDir>/components/$1',
+    '^@components/(.*)$': '<rootDir>/src/components/$1',
     '^@views/(.*)$': '<rootDir>/src/views/$1',
     '^@pages/(.*)$': '<rootDir>/pages/$1',
     '^@hooks/(.*)$': '<rootDir>/src/utils/hooks/$1',

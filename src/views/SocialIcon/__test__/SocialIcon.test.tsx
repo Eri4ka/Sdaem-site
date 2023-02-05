@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import Image from 'next/image';
 
-import lsee from '@icons/main/filter/options.svg';
+import OptionsIc from '@icons/main/filter/options.svg';
 
 import SocialIcon, { SocialIconClass } from '../SocialIcon';
 import { SOCIALICON_CHILDREN } from './constants';
@@ -10,7 +10,7 @@ describe('SocialIcon', () => {
   it('Проверка наличия/отсутствия элемента "a" при переданом prop "link"', () => {
     const { rerender } = render(
       <SocialIcon className={SocialIconClass.blue} href='/link'>
-        <Image src={lsee} alt='icon' />
+        <Image src={OptionsIc} alt='icon' />
       </SocialIcon>,
     );
 
@@ -19,7 +19,7 @@ describe('SocialIcon', () => {
 
     rerender(
       <SocialIcon className={SocialIconClass.blue} link={false}>
-        <Image src={lsee} alt='icon' />
+        <Image src={OptionsIc} alt='icon' />
       </SocialIcon>,
     );
 

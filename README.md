@@ -14,4 +14,5 @@
 
 ### Cделано в текущей ветке:
 
-- Добавлен Docker
+- Добавлены unit - тесты для: views, components, некоторых modules
+- Настроен Github workflows
