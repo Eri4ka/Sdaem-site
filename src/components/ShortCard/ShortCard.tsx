@@ -16,9 +16,16 @@ import styles from './ShortCard.module.scss';
 type ShortCardProps = {
   catalog?: boolean;
   item: ApartmentsType;
+  handleToggleFavorite: () => void;
+  isFavorite?: boolean;
 };
 
-const ShortCard: React.FC<ShortCardProps> = ({ catalog, item }) => {
+const ShortCard: React.FC<ShortCardProps> = ({
+  catalog,
+  item,
+  handleToggleFavorite,
+  isFavorite,
+}) => {
   const {
     adress,
     district,
@@ -79,7 +86,7 @@ const ShortCard: React.FC<ShortCardProps> = ({ catalog, item }) => {
       </div>
       <div className={styles['short-card__bottom']}>
         <div className={styles['short-card__bottom-wrapper']}>
-          {catalog && <Favorite />}
+          {catalog && <Favorite onClick={handleToggleFavorite} isFavorite={isFavorite} />}
           <CardContacts contacts={contacts} catalog={catalog} />
           <CardInfo />
         </div>

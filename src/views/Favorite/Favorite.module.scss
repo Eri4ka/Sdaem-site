@@ -15,12 +15,15 @@
   &_wide {
     padding: 9px 15px;
   }
+  &_added {
+    color: rgba($color: $red, $alpha: 1);
+  }
   &__text {
     color: $red;
     font-weight: 600;
     font-size: 14px;
   }
-  &:hover {
+  &:not(.favorite_added):hover {
     color: rgba($color: $red, $alpha: 0.4);
   }
 }

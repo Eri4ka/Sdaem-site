@@ -8,6 +8,8 @@ type CatalogProductsCardProps = {
   short?: boolean;
   catalog?: boolean;
   item: ApartmentsType;
+  handleToggleFavorite: () => void;
+  isFavorite: boolean;
 };
 
 const CatalogProductsCard: React.FC<CatalogProductsCardProps> = ({ short = true, ...props }) => {

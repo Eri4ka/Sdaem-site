@@ -15,9 +15,11 @@ import styles from './WideCard.module.scss';
 
 type WideCardProps = {
   item: ApartmentsType;
+  handleToggleFavorite: () => void;
+  isFavorite?: boolean;
 };
 
-const WideCard: React.FC<WideCardProps> = ({ item }) => {
+const WideCard: React.FC<WideCardProps> = ({ item, handleToggleFavorite, isFavorite }) => {
   const {
     adress,
     district,
@@ -98,7 +100,7 @@ const WideCard: React.FC<WideCardProps> = ({ item }) => {
         <div className={styles['wide-card__bottom']}>
           <div className={styles['wide-card__bottom-left']}>
             <CardContacts contacts={contacts} />
-            <Favorite wide />
+            <Favorite wide onClick={handleToggleFavorite} isFavorite={isFavorite} />
           </div>
           <CardInfo />
         </div>
