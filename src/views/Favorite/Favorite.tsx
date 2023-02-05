@@ -6,7 +6,7 @@ import styles from './Favorite.module.scss';
 
 type FavoriteProps = {
   wide?: boolean;
-  onClick: () => void;
+  onClick?: () => void;
   isFavorite?: boolean;
 };
 

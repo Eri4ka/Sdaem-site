@@ -16,7 +16,7 @@ import styles from './ShortCard.module.scss';
 type ShortCardProps = {
   catalog?: boolean;
   item: ApartmentsType;
-  handleToggleFavorite: () => void;
+  handleToggleFavorite?: () => void;
   isFavorite?: boolean;
 };
 
