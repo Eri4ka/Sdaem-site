@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useCallback } from 'react';
 
 import HeartIc from '@icons/header/heart.svg';
@@ -10,10 +11,16 @@ import HeaderTopAccount from '../HeaderTopAccount';
 import styles from './HeaderTopUser.module.scss';
 
 const HeaderTopUser = () => {
+  const { push } = useRouter();
   const { user } = useAppSelector(getAuthState);
   const dispatch = useAppDispatch();
 
-  const onExit = useCallback(() => dispatch(fetchSignOut()), [dispatch]);
+  const onExit = useCallback(() => {
+    dispatch(fetchSignOut()).then(() => {
+      localStorage.clear();
+      push('/signin');
+    });
+  }, [dispatch, push]);
 
   return (
     <div className={styles['header-top__user']}>
