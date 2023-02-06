@@ -69,14 +69,24 @@ const Select: React.FC<SelectProps> = ({
 
   return (
     <div ref={triggerRef} className={styles.select}>
-      <button ref={btnRef} className={clazz} onClick={handleButtonClick} type='button'>
+      <button
+        ref={btnRef}
+        className={clazz}
+        onClick={handleButtonClick}
+        type='button'
+        aria-label='Selected value'>
         {renderValue}
       </button>
       {toggle && (
-        <ul className={`list ${styles.select__list}`}>
+        <ul className={`list ${styles.select__list}`} role='menu'>
           {items?.map(({ id, title }) => {
             return (
-              <li key={id} className={styles.select__item} onClick={() => handleValueClick(title)}>
+              <li
+                key={id}
+                className={styles.select__item}
+                onClick={() => handleValueClick(title)}
+                role='menuitem'
+                tabIndex={0}>
                 {title}
               </li>
             );

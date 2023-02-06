@@ -14,6 +14,7 @@ const Toggle: React.FC<ToggleProps> = ({ text, ...props }) => {
     <div className={styles.toggle}>
       <input
         id='toggle'
+        role='switch'
         className={styles.toggle__checkbox}
         type='checkbox'
         {...field}

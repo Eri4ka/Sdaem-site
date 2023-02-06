@@ -82,6 +82,7 @@ const SignUpForm: React.FC = () => {
                       name='login'
                       inputType={InputType.auth}
                       placeholder='Логин'
+                      aria-label='Login'
                     />
                   </div>
                   <div className={styles.signup__field}>
@@ -90,6 +91,7 @@ const SignUpForm: React.FC = () => {
                       name='email'
                       inputType={InputType.auth}
                       placeholder='Электронная почта'
+                      aria-label='E-mail'
                     />
                   </div>
                   <div className={styles.signup__field}>
@@ -99,6 +101,7 @@ const SignUpForm: React.FC = () => {
                       inputType={InputType.auth}
                       type='password'
                       placeholder='Пароль'
+                      aria-label='Password'
                     />
                   </div>
                   <div className={styles.signup__field}>
@@ -108,6 +111,7 @@ const SignUpForm: React.FC = () => {
                       inputType={InputType.auth}
                       type='password'
                       placeholder='Повторите пароль'
+                      aria-label='Verified Password'
                     />
                   </div>
                   <ReCAPTCHA
@@ -126,6 +130,7 @@ const SignUpForm: React.FC = () => {
                     <Button
                       type='submit'
                       className={ButtonClass.back}
+                      aria-label='Register'
                       disabled={registerStatus.status === 'loading'}>
                       Зарегистрироваться
                     </Button>

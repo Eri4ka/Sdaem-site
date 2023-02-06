@@ -35,9 +35,11 @@ const CheckBox: React.FC<CheckBoxProps> = ({
         type='checkbox'
         onChange={handleToggleOption}
         checked={checked}
+        aria-checked={checked}
+        aria-describedby='hint'
         {...props}
       />
-      <label htmlFor={`${'checkbox'}${field}`} className={styles.checkbox__label}>
+      <label id='hint' htmlFor={`${'checkbox'}${field}`} className={styles.checkbox__label}>
         {label}
       </label>
     </div>

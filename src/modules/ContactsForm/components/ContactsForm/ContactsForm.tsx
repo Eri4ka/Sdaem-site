@@ -53,6 +53,7 @@ const ContactsForm: React.FC = () => {
                 inputType={InputType.with_icon}
                 name='name'
                 placeholder='Введите ваше имя'
+                aria-label='Name'
               />
             </div>
             <div className={styles['contacts-form__wrapper']}>
@@ -62,6 +63,7 @@ const ContactsForm: React.FC = () => {
                 inputType={InputType.with_icon}
                 name='email'
                 placeholder='Введите'
+                aria-label='Email'
               />
             </div>
           </div>
@@ -72,9 +74,14 @@ const ContactsForm: React.FC = () => {
               inputType={InputType.textArea}
               name='message'
               placeholder='Сообщение'
+              aria-label='Message'
             />
             <div className={styles['contacts-form__button']}>
-              <Button type='submit' className={ButtonClass.blue} disabled={requestLoading}>
+              <Button
+                type='submit'
+                className={ButtonClass.blue}
+                disabled={requestLoading}
+                aria-label='Send message'>
                 Отправить
               </Button>
             </div>

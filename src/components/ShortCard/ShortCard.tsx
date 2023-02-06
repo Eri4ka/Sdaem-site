@@ -64,7 +64,7 @@ const ShortCard: React.FC<ShortCardProps> = ({
   }, [images, tag]);
 
   return (
-    <div className={styles['short-card']} datatype='card'>
+    <div className={styles['short-card']} datatype='card' tabIndex={0}>
       {renderImage}
       <div className={styles['short-card__content']}>
         <div className={styles['short-card__content-top']}>

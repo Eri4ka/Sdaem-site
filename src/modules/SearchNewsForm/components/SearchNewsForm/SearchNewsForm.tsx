@@ -20,6 +20,7 @@ const SearchNewsForm: React.FC<SearchNewsFormProps> = ({ data, setSearchData, ..
         className={styles.search__input}
         type='text'
         onChange={handleSetSearchValue}
+        aria-label='Search field'
         {...props}
       />
       <SearchButton />

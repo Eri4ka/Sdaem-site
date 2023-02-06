@@ -77,6 +77,7 @@ const RecoveryForm: React.FC = () => {
                   name='email'
                   inputType={InputType.auth}
                   placeholder='Электронная почта'
+                  aria-label='Email'
                 />
               </div>
               {recoveryStatus.status === 'error' || !isValid ? (
@@ -85,7 +86,7 @@ const RecoveryForm: React.FC = () => {
                 </div>
               ) : null}
               <div className={styles.recovery__button}>
-                <Button type='submit' className={ButtonClass.back}>
+                <Button type='submit' className={ButtonClass.back} aria-label='Recover password'>
                   Восстановить
                 </Button>
               </div>

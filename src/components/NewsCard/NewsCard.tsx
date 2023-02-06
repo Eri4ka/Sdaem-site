@@ -24,7 +24,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ data }) => {
   const descriptionSliced = useMemo(() => getDescriptionSlice(description, 217), [description]);
 
   return (
-    <li className={styles['news-card']}>
+    <li className={styles['news-card']} tabIndex={0}>
       <Image className={styles['news-card__image']} src={short} alt={title} priority={true} />
       <div className={styles['news-card__content']}>
         <div className={styles['news-card__head']}>{title}</div>

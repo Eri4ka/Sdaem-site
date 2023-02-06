@@ -78,7 +78,7 @@ const WideCard: React.FC<WideCardProps> = ({ item, handleToggleFavorite, isFavor
   }, [images, tag]);
 
   return (
-    <div className={styles['wide-card']}>
+    <div className={styles['wide-card']} tabIndex={0}>
       {renderImage}
       <div className={styles['wide-card__content']}>
         <div className={styles['wide-card__content-top']}>

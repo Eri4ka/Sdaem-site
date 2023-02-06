@@ -32,7 +32,11 @@ const FilterBadge: React.FC<FilterBadgeProps> = ({ activeBadge, onSetFilterValue
 
   if (!activeBadge) {
     return (
-      <li className={styles['filter-badge']} onClick={handeSetFilterValue}>
+      <li
+        className={styles['filter-badge']}
+        onClick={handeSetFilterValue}
+        role='button'
+        tabIndex={0}>
         <p className={styles['filter-badge__text']}>{title}</p>
       </li>
     );

@@ -63,6 +63,7 @@ const SignInForm: React.FC = () => {
                   name='login'
                   inputType={InputType.auth}
                   placeholder='Логин'
+                  aria-label='Login'
                 />
               </div>
               <div className={styles.signin__field}>
@@ -72,10 +73,16 @@ const SignInForm: React.FC = () => {
                   inputType={InputType.auth}
                   type='password'
                   placeholder='Пароль'
+                  aria-label='Password'
                 />
               </div>
               <div className={styles.signin__center}>
-                <Toggle name='remember' role='switch' text='Запомнить меня' />
+                <Toggle
+                  name='remember'
+                  role='switch'
+                  text='Запомнить меня'
+                  aria-label='Remember me'
+                />
                 <Link href='/recovery'>
                   <span className={styles.signin__forget}>Забыли пароль?</span>
                 </Link>
@@ -89,6 +96,7 @@ const SignInForm: React.FC = () => {
                 <Button
                   type='submit'
                   className={ButtonClass.back}
+                  aria-label='Enter'
                   disabled={loginStatus.status === 'loading'}>
                   Войти
                 </Button>
