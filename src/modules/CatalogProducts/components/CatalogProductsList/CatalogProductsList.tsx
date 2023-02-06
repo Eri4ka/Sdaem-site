@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { memo, useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
@@ -21,6 +22,7 @@ const CatalogProductsList: React.FC<CatalogItemsListProps> = ({
   firstContentIndex,
   lastContentIndex,
 }) => {
+  const { asPath } = useRouter();
   const view = useAppSelector(getApartmentsView);
   const { onChangeModalPosition } = useModalPosition();
   const { data, handleToggleData } = useLocalStorage('favoritesList');
@@ -40,6 +42,8 @@ const CatalogProductsList: React.FC<CatalogItemsListProps> = ({
         const stringifiedId = String(item.id);
         const isFavorite = data?.includes(stringifiedId);
 
+        const cardRoute = `${asPath}/${item.id}`;
+
         return (
           <CSSTransition
             key={item.id}
@@ -55,6 +59,7 @@ const CatalogProductsList: React.FC<CatalogItemsListProps> = ({
               short={isTales}
               isFavorite={isFavorite}
               handleToggleFavorite={() => handleToggleData(stringifiedId)}
+              route={cardRoute}
             />
           </CSSTransition>
         );

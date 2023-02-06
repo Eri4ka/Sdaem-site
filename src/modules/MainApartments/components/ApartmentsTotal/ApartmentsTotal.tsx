@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { memo } from 'react';
 
 import Button, { ButtonClass } from '@views/Button';
@@ -19,7 +20,9 @@ const ApartmentsTotal: React.FC<ApartmentsTotalProps> = ({ total }) => {
         <p className={styles['apartments-total__text']}>Предложений по Минску</p>
       </div>
       <div className={styles['apartments-total__button']}>
-        <Button className={ButtonClass.blue_gradient}>Посмотреть все</Button>
+        <Button className={ButtonClass.blue_gradient}>
+          <Link href='/minsk'>Посмотреть все</Link>
+        </Button>
       </div>
     </aside>
   );

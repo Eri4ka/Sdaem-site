@@ -18,6 +18,7 @@ type ShortCardProps = {
   item: ApartmentsType;
   handleToggleFavorite?: () => void;
   isFavorite?: boolean;
+  route: string;
 };
 
 const ShortCard: React.FC<ShortCardProps> = ({
@@ -25,6 +26,7 @@ const ShortCard: React.FC<ShortCardProps> = ({
   item,
   handleToggleFavorite,
   isFavorite,
+  route,
 }) => {
   const {
     adress,
@@ -38,7 +40,6 @@ const ShortCard: React.FC<ShortCardProps> = ({
     tag,
     contacts,
   } = item;
-
   const descriptionSliced = useMemo(() => getDescriptionSlice(description, 188), [description]);
 
   const renderImage = useMemo(() => {
@@ -88,7 +89,7 @@ const ShortCard: React.FC<ShortCardProps> = ({
         <div className={styles['short-card__bottom-wrapper']}>
           {catalog && <Favorite onClick={handleToggleFavorite} isFavorite={isFavorite} />}
           <CardContacts contacts={contacts} catalog={catalog} />
-          <CardInfo />
+          <CardInfo href={route} />
         </div>
       </div>
     </div>

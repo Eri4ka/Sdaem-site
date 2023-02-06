@@ -55,7 +55,7 @@ export const sectionsList = {
       id: 2,
       section_name: 'cottages',
       title: 'Коттеджи',
-      alias: 'gomel',
+      alias: 'cottage',
       content: 'Коттеджи',
     },
     {

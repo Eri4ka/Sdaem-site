@@ -1,8 +1,8 @@
 import { Formik, Form } from 'formik';
+import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import * as Yup from 'yup';
 
-import SubmitAuth from '@components/SubmitAuth';
 import { useFirebaseError } from '@hooks/useFirebaseError';
 import { useToggle } from '@hooks/useToggle';
 import MailIc from '@icons/form/mail.svg';
@@ -13,6 +13,8 @@ import TextField, { InputType } from '@views/TextField';
 import Caution from '@views/Сaution';
 
 import styles from './RecoveryForm.module.scss';
+
+const SubmitAuth = dynamic(() => import('@components/SubmitAuth'));
 
 const submitAuthInfo = {
   head: 'Сбросьте пароль',

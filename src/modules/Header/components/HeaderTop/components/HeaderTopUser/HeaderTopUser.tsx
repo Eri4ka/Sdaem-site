@@ -5,7 +5,7 @@ import { useCallback } from 'react';
 import HeartIc from '@icons/header/heart.svg';
 import { useAppDispatch, useAppSelector } from '@redux/reduxHooks';
 import { getAuthState } from '@redux/selectors/authSelectors';
-import { fetchSignOut } from '@redux/slices/authSlice';
+import { fetchSignOut } from '@redux/thunks/authThunks';
 
 import HeaderTopAccount from '../HeaderTopAccount';
 import styles from './HeaderTopUser.module.scss';

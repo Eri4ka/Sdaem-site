@@ -1,10 +1,15 @@
+import dynamic from 'next/dynamic';
+
 import CatalogProducts from '@modules/CatalogProducts';
 import CatalogSorting from '@modules/CatalogSorting';
 import { SingleSectionType } from '@mytypes/sectionTypes';
 
 import CatalogFilter from '../CatalogFilter';
 import CatalogHead from '../CatalogHead';
-import CatalogMap from '../CatalogMap';
+
+const CatalogMap = dynamic(() => import('../CatalogMap'), {
+  ssr: false,
+});
 
 type CatalogProps = {
   section: SingleSectionType;

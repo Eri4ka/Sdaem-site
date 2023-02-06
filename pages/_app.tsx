@@ -4,9 +4,9 @@ import { Provider } from 'react-redux';
 import '@styles/globals.scss';
 
 import { useResize } from '@hooks/useResize';
-import { fetchUser } from '@redux/slices/authSlice';
 import { changeBreakPoint } from '@redux/slices/systemInformationSlice';
 import { wrapper } from '@redux/store';
+import { fetchUser } from '@redux/thunks/authThunks';
 
 import type { AppProps } from 'next/app';
 

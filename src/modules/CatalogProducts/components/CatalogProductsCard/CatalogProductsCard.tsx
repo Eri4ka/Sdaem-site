@@ -1,8 +1,10 @@
+import dynamic from 'next/dynamic';
 import { memo } from 'react';
 
 import ShortCard from '@components/ShortCard';
-import WideCard from '@components/WideCard';
 import { ApartmentsType } from '@mytypes/productTypes';
+
+const WideCard = dynamic(() => import('@components/WideCard'));
 
 type CatalogProductsCardProps = {
   short?: boolean;
@@ -10,6 +12,7 @@ type CatalogProductsCardProps = {
   item: ApartmentsType;
   handleToggleFavorite: () => void;
   isFavorite: boolean;
+  route: string;
 };
 
 const CatalogProductsCard: React.FC<CatalogProductsCardProps> = ({ short = true, ...props }) => {

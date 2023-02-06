@@ -17,9 +17,10 @@ type WideCardProps = {
   item: ApartmentsType;
   handleToggleFavorite: () => void;
   isFavorite?: boolean;
+  route: string;
 };
 
-const WideCard: React.FC<WideCardProps> = ({ item, handleToggleFavorite, isFavorite }) => {
+const WideCard: React.FC<WideCardProps> = ({ item, handleToggleFavorite, isFavorite, route }) => {
   const {
     adress,
     district,
@@ -102,7 +103,7 @@ const WideCard: React.FC<WideCardProps> = ({ item, handleToggleFavorite, isFavor
             <CardContacts contacts={contacts} />
             <Favorite wide onClick={handleToggleFavorite} isFavorite={isFavorite} />
           </div>
-          <CardInfo />
+          <CardInfo href={route} />
         </div>
       </div>
     </div>

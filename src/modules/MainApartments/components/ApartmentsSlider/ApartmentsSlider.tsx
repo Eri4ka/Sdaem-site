@@ -58,7 +58,9 @@ const ApartmentsSlider: React.FC<ApartmentsSliderProps> = ({ items }) => {
     <div className={styles.slider}>
       <Slider className={`${styles.slider__list} list`} lazyLoad='ondemand' {...settings}>
         {items.map((item) => {
-          return <ShortCard key={item.id} item={item} />;
+          const cardRoute = `/minsk/${item.id}`;
+
+          return <ShortCard key={item.id} item={item} route={cardRoute} />;
         })}
       </Slider>
     </div>

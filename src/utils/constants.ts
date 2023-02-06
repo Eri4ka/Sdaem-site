@@ -1,12 +1,8 @@
-export const API_URL = process.env.NEXT_PUBLIC_API_URL
-  ? process.env.NEXT_PUBLIC_API_URL
-  : 'http://localhost:3000';
+export const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:3000';
 
 /* NODE_MAILER */
 export const EMAIL_USER = 'erihasanov@yandex.ru';
-export const EMAIL_PASS = process.env.NEXT_PUBLIC_EMAIL_PASS
-  ? process.env.NEXT_PUBLIC_EMAIL_PASS
-  : 'spnxshxogswaeeun';
+export const EMAIL_PASS = process.env.NEXT_PUBLIC_EMAIL_PASS ?? 'spnxshxogswaeeun';
 export const EMAIL_RECIPIENT = 'khasanoveri@mail.ru';
 
 /* GOOGLE RECAPTCHA*/

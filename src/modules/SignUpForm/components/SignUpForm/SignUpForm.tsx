@@ -1,10 +1,10 @@
 import { Formik, Form } from 'formik';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { useRef } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import * as Yup from 'yup';
 
-import SubmitAuth from '@components/SubmitAuth';
 import { useFirebaseError } from '@hooks/useFirebaseError';
 import MailIc from '@icons/form/mail.svg';
 import PassIc from '@icons/form/password.svg';
@@ -19,6 +19,8 @@ import Caution from '@views/Сaution';
 
 import { fetchCreateUser } from '../../redux/thunks';
 import styles from './SignUpForm.module.scss';
+
+const SubmitAuth = dynamic(() => import('@components/SubmitAuth'));
 
 const submitAuthInfo = {
   head: 'Подтвердите регистрацию',

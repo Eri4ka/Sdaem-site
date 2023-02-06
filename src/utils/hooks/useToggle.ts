@@ -6,8 +6,8 @@ type useToggleProps = {
 
 export const useToggle = ({ modal = false }: useToggleProps) => {
   const [toggle, setToggle] = useState<boolean>(false);
-  const triggerRef = useRef<any>(null);
-  const innerRef = useRef<any>(null);
+  const triggerRef = useRef<HTMLDivElement>(null);
+  const innerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (modal) {
@@ -22,8 +22,8 @@ export const useToggle = ({ modal = false }: useToggleProps) => {
       const listener = (e: MouseEvent) => {
         if (
           triggerRef.current &&
-          !triggerRef?.current?.contains(e.target) &&
-          !innerRef?.current?.contains(e.target)
+          !triggerRef?.current?.contains(e.target as HTMLDivElement) &&
+          !innerRef?.current?.contains(e.target as HTMLDivElement)
         ) {
           setToggle(false);
         }
