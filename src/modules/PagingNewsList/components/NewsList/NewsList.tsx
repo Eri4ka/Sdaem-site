@@ -1,10 +1,12 @@
+import dynamic from 'next/dynamic';
 import { memo } from 'react';
 
 import NewsCard from '@components/NewsCard';
-import NotFoundItems from '@components/NotFoundItems';
 import { NewsType } from '@mytypes/newsTypes';
 
 import styles from './NewsList.module.scss';
+
+const NotFoundItems = dynamic(() => import('@components/NotFoundItems'));
 
 type NewsListProps = {
   news: NewsType[];

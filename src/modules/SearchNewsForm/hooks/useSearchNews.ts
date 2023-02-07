@@ -11,7 +11,7 @@ export const useSearchNews = ({ data, setSearchData }: useSearchNewsProps) => {
   const [searchValue, setSearchValue] = useState('');
 
   const findData = useMemo(() => {
-    return data.filter((item) => item.title.toLowerCase().includes(searchValue));
+    return data.filter((item) => item.title.toLowerCase().includes(searchValue.toLowerCase()));
   }, [data, searchValue]);
 
   const handleSearch = useCallback(

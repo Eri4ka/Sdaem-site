@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { memo } from 'react';
 
+import { declinationCityName } from '@helpers/declinationCityName';
 import { useToggle } from '@hooks/useToggle';
 import { SingleSectionType } from '@mytypes/sectionTypes';
 
@@ -36,10 +37,13 @@ const HeaderSelect: React.FC<HeaderSelectProps> = ({ title, children, items }) =
       </div>
       {toggle && (
         <div className={styles['header-select__list']}>
-          {items.map(({ id, content, alias }) => {
+          {items.map(({ id, alias, title: city }) => {
+            const cityName = declinationCityName(city);
+            const transformedTitle = `${title} в ${cityName}`;
+
             return (
               <Link className={styles['header-select__link']} href={`/${alias}`} key={id}>
-                <div className={styles['header-select__item']}>{content}</div>
+                <div className={styles['header-select__item']}>{transformedTitle}</div>
               </Link>
             );
           })}

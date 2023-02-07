@@ -27,7 +27,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ data }) => {
     <li className={styles['news-card']} tabIndex={0}>
       <Image className={styles['news-card__image']} src={short} alt={title} priority={true} />
       <div className={styles['news-card__content']}>
-        <div className={styles['news-card__head']}>{title}</div>
+        <h3 className={styles['news-card__head']}>{title}</h3>
         <div className={styles['news-card__text']}>{descriptionSliced}</div>
         <div className={styles['news-card__divider']}></div>
         <div className={styles['news-card__bottom']}>

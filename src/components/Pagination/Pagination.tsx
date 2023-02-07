@@ -6,10 +6,10 @@ import styles from './Pagination.module.scss';
 type PaginationProps = {
   page: number;
   totalPages: number;
-  setPage: (value: number) => void;
+  handleSetPage: (value: number) => void;
 };
 
-const Pagination: React.FC<PaginationProps> = ({ page, totalPages, setPage }) => {
+const Pagination: React.FC<PaginationProps> = ({ page, totalPages, handleSetPage }) => {
   /* @ts-ignore */
   const pageValues = [...Array(totalPages).keys()];
 
@@ -24,7 +24,7 @@ const Pagination: React.FC<PaginationProps> = ({ page, totalPages, setPage }) =>
                 page === currentPage ? styles.pagination__page_active : ''
               }`}
               key={item}
-              onClick={() => setPage(currentPage)}>
+              onClick={() => handleSetPage(currentPage)}>
               {currentPage}
             </li>
           );

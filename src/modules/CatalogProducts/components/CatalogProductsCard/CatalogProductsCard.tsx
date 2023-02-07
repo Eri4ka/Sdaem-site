@@ -3,8 +3,11 @@ import { memo } from 'react';
 
 import ShortCard from '@components/ShortCard';
 import { ApartmentsType } from '@mytypes/productTypes';
+import Loader from '@views/Loader';
 
-const WideCard = dynamic(() => import('@components/WideCard'));
+const WideCard = dynamic(() => import('@components/WideCard'), {
+  loading: () => <Loader />,
+});
 
 type CatalogProductsCardProps = {
   short?: boolean;

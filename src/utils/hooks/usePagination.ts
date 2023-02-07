@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+
+import { scrollToTop } from '@helpers/scrollToTop';
 
 type usePaginationProps = {
   onPage: number;
@@ -12,5 +14,14 @@ export const usePagination = ({ onPage, total }: usePaginationProps) => {
   const lastContentIndex = page * onPage;
   const firstContentIndex = lastContentIndex - onPage;
 
-  return { page, setPage, totalPages, lastContentIndex, firstContentIndex };
+  const handleSetPage = useCallback((page: number) => {
+    scrollToTop(0, 0);
+    setPage(page);
+  }, []);
+
+  useEffect(() => {
+    setPage(1);
+  }, [total]);
+
+  return { page, handleSetPage, totalPages, lastContentIndex, firstContentIndex };
 };

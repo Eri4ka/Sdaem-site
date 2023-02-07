@@ -11,7 +11,7 @@ import styles from './CatalogProducts.module.scss';
 
 const CatalogProducts: React.FC = () => {
   const items = useAppSelector(getSorted);
-  const { page, setPage, totalPages, firstContentIndex, lastContentIndex } = usePagination({
+  const { page, handleSetPage, totalPages, firstContentIndex, lastContentIndex } = usePagination({
     onPage: PRODUCTS_ON_PAGE,
     total: items.length,
   });
@@ -23,9 +23,10 @@ const CatalogProducts: React.FC = () => {
         items={items}
         firstContentIndex={firstContentIndex}
         lastContentIndex={lastContentIndex}
+        page={page}
       />
       <div className={styles.products__bottom}>
-        <Pagination page={page} totalPages={totalPages} setPage={setPage} />
+        <Pagination page={page} totalPages={totalPages} handleSetPage={handleSetPage} />
         <CatalogProductsSocial />
       </div>
     </article>

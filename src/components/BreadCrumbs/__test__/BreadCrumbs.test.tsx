@@ -21,4 +21,3 @@ describe('BreadCrumbs', () => {
     expect(listElements[1]).toHaveClass('breadcrumbs__item_active');
   });
 });
-//npm test BreadCrumbs

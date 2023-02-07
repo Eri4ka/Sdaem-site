@@ -8,42 +8,49 @@ const onSetPage = (value: number) => value + 1;
 jest.mock('@icons/main/filter/options.svg', () => () => 'OptionsIc');
 describe('Pagination', () => {
   it('props "page" пробрасывается корректно', () => {
-    const setPage = jest.fn().mockImplementation(onSetPage);
+    const handleSetPage = jest.fn().mockImplementation(onSetPage);
 
-    render(<Pagination totalPages={5} page={1} setPage={setPage} />);
+    render(<Pagination totalPages={5} page={1} handleSetPage={handleSetPage} />);
 
     const PaginationComponent = screen.getByText(1);
 
     expect(PaginationComponent).toHaveClass('pagination__page_active');
   });
   it('При клике вызывается функция setPage', async () => {
-    const setPage = jest.fn().mockImplementation(onSetPage);
+    const handleSetPage = jest.fn().mockImplementation(onSetPage);
 
-    render(<Pagination totalPages={5} page={1} setPage={setPage} />);
+    render(<Pagination totalPages={5} page={1} handleSetPage={handleSetPage} />);
 
     const PaginationComponent = screen.getByText(1);
 
     await userEvent.click(PaginationComponent);
-    expect(setPage).toBeCalled();
+    expect(handleSetPage).toBeCalled();
   });
 
   it('Значение props "page" зависит от setPage и отрабатывает корректно', async () => {
-    const setPage = jest.fn().mockImplementation(onSetPage);
-    const newPageValue = setPage(1);
+    const handleSetPage = jest.fn().mockImplementation(onSetPage);
+    const newPageValue = handleSetPage(1);
 
-    render(<Pagination totalPages={5} page={newPageValue} setPage={setPage} />);
+    render(<Pagination totalPages={5} page={newPageValue} handleSetPage={handleSetPage} />);
 
     const PaginationComponent = screen.getByText(newPageValue);
     expect(PaginationComponent).toHaveClass('pagination__page_active');
   });
   it('При клике на страницу вызывается setPage с добавленной страницей', async () => {
-    const setPage = jest.fn().mockImplementation(onSetPage);
+    const handleSetPage = jest.fn().mockImplementation(onSetPage);
 
-    render(<Pagination data-testid={'pagination'} totalPages={5} page={1} setPage={setPage} />);
+    render(
+      <Pagination
+        data-testid={'pagination'}
+        totalPages={5}
+        page={1}
+        handleSetPage={handleSetPage}
+      />,
+    );
 
     const PaginationComponent = screen.getByText(1);
 
     await userEvent.click(PaginationComponent);
-    expect(setPage).toBeCalledWith(1);
+    expect(handleSetPage).toBeCalledWith(1);
   });
 });

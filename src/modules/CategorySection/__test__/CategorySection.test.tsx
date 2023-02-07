@@ -9,9 +9,7 @@ describe('CategorySection', () => {
   it('Props "head" и "category" просбрасываются и отображаются корректно', () => {
     render(<CategorySection head='Квартиры' category={categoryList} />);
 
-    const transformedTitle = categoryList[0].content.replace(/\на сутки/g, '').replace(' ', '');
-
-    const categoryElement = screen.getByRole('link', { name: transformedTitle });
+    const categoryElement = screen.getByRole('link', { name: categoryList[0].content });
     const headElement = screen.getByText('Квартиры');
 
     expect(categoryElement).toBeInTheDocument();

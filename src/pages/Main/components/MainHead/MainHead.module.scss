@@ -8,8 +8,7 @@
   max-width: 1280px;
   margin: 0 auto;
   background: linear-gradient(360deg, #7e6af3 15.95%, #6540cd 63.1%);
-  filter: drop-shadow(0px 20px 40px rgba(135, 124, 202, 0.15));
-  -webkit-filter: drop-shadow(0px 20px 40px rgba(135, 124, 202, 0.15));
+  box-shadow: 0px 20px 40px rgba(135, 124, 202, 0.15);
   border-radius: 0 0 40px 40px;
   margin-bottom: 84px;
   z-index: 1;

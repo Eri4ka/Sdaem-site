@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { useState, useEffect, useCallback } from 'react';
 
 import { FilterBadgeType, FormFieldsType } from '@mytypes/assistantTypes';
@@ -12,6 +13,10 @@ type useActiveFilterProps = {
 export const useActiveFilter = ({ filters, setActiveTitle }: useActiveFilterProps) => {
   const [activeBadge, setActiveBadge] = useState('');
   const dispatch = useAppDispatch();
+  const {
+    push,
+    query: { alias },
+  } = useRouter();
 
   useEffect(() => {
     if (!Object.values(filters).includes(activeBadge)) {
@@ -25,8 +30,9 @@ export const useActiveFilter = ({ filters, setActiveTitle }: useActiveFilterProp
       setActiveBadge(value);
       setActiveTitle(heading);
       dispatch(addFilters(query));
+      push({ query: { alias, ...query } }, undefined, { shallow: true });
     },
-    [dispatch, setActiveBadge, setActiveTitle],
+    [dispatch, setActiveBadge, setActiveTitle, alias, push],
   );
 
   return { activeBadge, onSetFilterValue };

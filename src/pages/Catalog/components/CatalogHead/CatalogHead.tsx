@@ -26,9 +26,7 @@ const CatalogHead: React.FC<CatalogHeadProps> = ({ section }) => {
     () => getStaticTitle(section_name, section_title, cityName),
     [cityName, section_name, section_title],
   );
-
   const title = activeTitle ? `${activeTitle} ${cityName}` : staticTitle;
-
   const breadCrumbsTitle = useMemo(
     () => getBreadCrumbsTitle(section_name, section_title, cityName),
     [section_name, section_title, cityName],

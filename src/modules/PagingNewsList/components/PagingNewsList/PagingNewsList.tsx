@@ -10,7 +10,7 @@ type PagingNewsListProps = {
 };
 
 const PagingNewsList: React.FC<PagingNewsListProps> = ({ news }) => {
-  const { page, setPage, totalPages, firstContentIndex, lastContentIndex } = usePagination({
+  const { page, handleSetPage, totalPages, firstContentIndex, lastContentIndex } = usePagination({
     onPage: NEWS_ON_PAGE,
     total: news.length,
   });
@@ -22,7 +22,7 @@ const PagingNewsList: React.FC<PagingNewsListProps> = ({ news }) => {
         firstContentIndex={firstContentIndex}
         lastContentIndex={lastContentIndex}
       />
-      <Pagination page={page} totalPages={totalPages} setPage={setPage} />
+      <Pagination page={page} totalPages={totalPages} handleSetPage={handleSetPage} />
     </>
   );
 };

@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { memo, useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
@@ -11,16 +12,20 @@ import { useModalPosition } from '../../hooks/useModalPosition';
 import CatalogProductsCard from '../CatalogProductsCard';
 import styles from './CatalogProductsList.module.scss';
 
+const NotFoundItems = dynamic(() => import('@components/NotFoundItems'));
+
 type CatalogItemsListProps = {
   items: ApartmentsType[];
   firstContentIndex: number;
   lastContentIndex: number;
+  page: number;
 };
 
 const CatalogProductsList: React.FC<CatalogItemsListProps> = ({
   items,
   firstContentIndex,
   lastContentIndex,
+  page,
 }) => {
   const { asPath } = useRouter();
   const view = useAppSelector(getApartmentsView);
@@ -33,7 +38,11 @@ const CatalogProductsList: React.FC<CatalogItemsListProps> = ({
     if (isTales) {
       onChangeModalPosition();
     }
-  }, [items, isTales, onChangeModalPosition]);
+  }, [page, items, isTales, onChangeModalPosition]);
+
+  if (items.length === 0) {
+    return <NotFoundItems />;
+  }
 
   return (
     <TransitionGroup

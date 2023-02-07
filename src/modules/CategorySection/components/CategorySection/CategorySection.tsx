@@ -25,9 +25,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({ head, category, isSli
 
   const renderedSectionItems = useMemo(() => {
     return sliced.map(({ id, content, total, alias }) => {
-      const title = content.replace(/\на сутки/g, '');
-
-      return <CategorySectionItem key={id} href={`/${alias}`} title={title} total={total} />;
+      return <CategorySectionItem key={id} href={`/${alias}`} title={content} total={total} />;
     });
   }, [sliced]);
 

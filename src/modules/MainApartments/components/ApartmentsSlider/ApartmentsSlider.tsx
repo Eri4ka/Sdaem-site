@@ -1,15 +1,17 @@
+import dynamic from 'next/dynamic';
 import { memo } from 'react';
 import Slider, { CustomArrowProps } from 'react-slick';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import NotFoundItems from '@components/NotFoundItems';
 import ShortCard from '@components/ShortCard';
 import { ApartmentsType } from '@mytypes/productTypes';
 import NextButton, { NextButtonClass } from '@views/NextButton';
 
 import { changeContactsModalPosition } from '../../helpers/changeContactsModalPosition';
 import styles from './ApartmentsSlider.module.scss';
+
+const NotFoundItems = dynamic(() => import('@components/NotFoundItems'));
 
 type ApartmentsSliderProps = {
   items: ApartmentsType[];
