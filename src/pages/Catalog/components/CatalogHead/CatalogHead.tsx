@@ -35,7 +35,6 @@ const CatalogHead: React.FC<CatalogHeadProps> = ({ section }) => {
   );
 
   const { asPath, getCrumbs } = useCrumbs({ title: breadCrumbsTitle });
-  console.log(title);
   return (
     <>
       <Head>
