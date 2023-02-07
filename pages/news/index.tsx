@@ -1,4 +1,5 @@
 import { GetServerSideProps } from 'next';
+import Head from 'next/head';
 
 import { NewsType } from '@mytypes/newsTypes';
 import Layout from '@pages/Layout';
@@ -19,6 +20,21 @@ export const getServerSideProps: GetServerSideProps<{ data: NewsType[] }> = asyn
 const NewsPage: React.FC<NewsPageProps> = ({ data }) => {
   return (
     <Layout>
+      <Head>
+        <title>
+          Sdaem.by - доска для объявлений | Новости об аренде квартир, коттеджей, усадеб, бань и
+          саун
+        </title>
+        <meta
+          property='og:title'
+          content='Sdaem.by - доска для объявлений | Новости об аренде квартир, коттеджей, усадеб, бань и саун'
+          key='title'
+        />
+        <meta
+          name='description'
+          content='Sdaem.by - база объявлений посуточной недвижимости. Здесь представлены новости и статьи из сферы аренды недвижимости'
+        />
+      </Head>
       <News data={data} />
     </Layout>
   );

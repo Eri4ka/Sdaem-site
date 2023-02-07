@@ -1,4 +1,5 @@
 import { GetServerSideProps } from 'next';
+import Head from 'next/head';
 
 import { NewsType } from '@mytypes/newsTypes';
 import Layout from '@pages/Layout';
@@ -35,6 +36,11 @@ const SingleNewsPage = ({
 }) => {
   return (
     <Layout>
+      <Head>
+        <title>{singleData.title}</title>
+        <meta property='og:title' content={singleData.title} key='title' />
+        <meta name='description' content={singleData.description} />
+      </Head>
       <SingleNews data={singleData} similars={singleSimilars} />
     </Layout>
   );

@@ -48,7 +48,6 @@ const authSlice = createSlice({
         state.loginStatus = { ...state.loginStatus, status: 'idle' };
       })
       .addCase(fetchLoginUser.rejected, (state, action) => {
-        console.log(action);
         if (action.payload) {
           state.loginStatus = { message: action.payload as string, status: 'error' };
         } else {

@@ -1,4 +1,5 @@
 import { GetServerSideProps } from 'next';
+import Head from 'next/head';
 
 import { NewsType } from '@mytypes/newsTypes';
 import { ApartmentsType, CottagesType } from '@mytypes/productTypes';
@@ -16,6 +17,23 @@ type HomePageProps = {
 const HomePage: React.FC<HomePageProps> = ({ data }) => {
   return (
     <Layout>
+      <Head>
+        <title>
+          Sdaem.by - доска для объявлений | Посуточная аренда квартир, коттеджей, бань и саун
+        </title>
+        <meta
+          property='og:title'
+          content='Sdaem.by - доска для объявлений | Посуточная аренда квартир, коттеджей, бань и саун'
+          key='title'
+        />
+        <meta
+          name='description'
+          content='Sdaem.by - база объявлений посуточной недвижимости. Здесь вы сможете снять посуточно любые понравишеся квартиры, апартаменты, коттеджи, усадьбы, бани и сауны. А так же, разместить собственные объявления.'
+        />
+        <meta
+          name='keywords'
+          content='недвижимость, аренда, продажа, купить, снять, квартиры, дома, бани, сауны, усадьбы, автомобили'></meta>
+      </Head>
       <Main data={data} />
     </Layout>
   );

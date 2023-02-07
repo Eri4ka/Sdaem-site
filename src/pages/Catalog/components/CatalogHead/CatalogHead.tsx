@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { memo, useMemo, useState } from 'react';
 
 import BreadCrumbs from '@components/BreadCrumbs';
@@ -34,15 +35,25 @@ const CatalogHead: React.FC<CatalogHeadProps> = ({ section }) => {
   );
 
   const { asPath, getCrumbs } = useCrumbs({ title: breadCrumbsTitle });
-
+  console.log(title);
   return (
-    <article className={styles.head}>
-      <div className={styles.head__content}>
-        <BreadCrumbs crumbList={getCrumbs} pathname={asPath} />
-        <h1 className={styles.head__title}>{title}</h1>
-        <RecommendedFilters setActiveTitle={setActiveTitle} />
-      </div>
-    </article>
+    <>
+      <Head>
+        <title>{title}</title>
+        <meta property='og:title' content={title} key='title' />
+        <meta
+          name='description'
+          content={`Sdaem.by - база объявлений посуточной недвижимости. ${title}`}
+        />
+      </Head>
+      <article className={styles.head}>
+        <div className={styles.head__content}>
+          <BreadCrumbs crumbList={getCrumbs} pathname={asPath} />
+          <h1 className={styles.head__title}>{title}</h1>
+          <RecommendedFilters setActiveTitle={setActiveTitle} />
+        </div>
+      </article>
+    </>
   );
 };
 
