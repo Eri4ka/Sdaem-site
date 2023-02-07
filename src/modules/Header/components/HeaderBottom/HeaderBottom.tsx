@@ -24,7 +24,7 @@ const HeaderBottom: React.FC = () => {
     <div className={styles['header-bottom']}>
       <div className={styles['header-bottom__wrapper']}>
         <div className={styles['header-bottom__logo']}>
-          <Image src={logo} priority alt='logo' />
+          <Image src={logo} priority alt='logo' placeholder='blur' />
         </div>
         <nav className={`list ${styles['header-bottom__nav']}`}>
           <ul className={`list ${styles['header-bottom__list']}`}>

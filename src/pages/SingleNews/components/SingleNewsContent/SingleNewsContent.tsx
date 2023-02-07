@@ -14,12 +14,19 @@ const SingleNewsContent: React.FC<SingleNewsContentProps> = ({ image, full_descr
   return (
     <article className={styles['singlenews-content']}>
       <div className={styles['singlenews-content__container']}>
-        <Image className={styles['singlenews-content__dots']} src={dots} alt='dots' priority />
+        <Image
+          className={styles['singlenews-content__dots']}
+          src={dots}
+          alt='dots'
+          priority
+          placeholder='blur'
+        />
         <div className={styles['singlenews-content__card']}>
           <Image
             className={styles['singlenews-content__image']}
             src={image}
             alt='news-image'
+            placeholder='blur'
             priority
           />
           <div className={styles['singlenews-content__text']}>

@@ -28,6 +28,7 @@ const HeaderTopAccount: React.FC<HeaderTopAccountProps> = ({ login, photo, onExi
             src={photo ? photo : userPic}
             alt='user'
             fill
+            placeholder='blur'
             style={{ objectFit: 'cover' }}
             sizes='(max-width: 30px),
               (max-width: 30px)'

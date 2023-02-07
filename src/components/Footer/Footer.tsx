@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
         <div className={styles.footer__info}>
           <div className={styles.footer__company}>
             <div className={styles.footer__logo}>
-              <Image src={logo} alt='logo' priority />
+              <Image src={logo} alt='logo' priority placeholder='blur' />
             </div>
             <span className={styles.footer__name}>сдаём бай</span>
           </div>

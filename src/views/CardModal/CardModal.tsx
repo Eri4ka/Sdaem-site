@@ -31,6 +31,7 @@ const CardModal = forwardRef<HTMLDivElement, CardModalProps>(({ toggle, contacts
           style={{ objectFit: 'cover' }}
           sizes='(max-width: 59px),
               (max-width: 59px)'
+          placeholder='blur'
         />
       </div>
       <label htmlFor='user' className={styles['contacts-modal__text']}>

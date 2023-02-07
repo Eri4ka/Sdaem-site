@@ -36,8 +36,20 @@ const NotFound: React.FC = () => {
         </div>
       </div>
       <div className={styles.notfound__elems}>
-        <Image className={styles.notfound__dots} src={dots} alt='dots' priority />
-        <Image className={styles.notfound__whitedots} src={whiteDots} alt='dots' priority />
+        <Image
+          className={styles.notfound__dots}
+          src={dots}
+          alt='dots'
+          priority
+          placeholder='blur'
+        />
+        <Image
+          className={styles.notfound__whitedots}
+          src={whiteDots}
+          alt='dots'
+          priority
+          placeholder='blur'
+        />
       </div>
     </section>
   );
