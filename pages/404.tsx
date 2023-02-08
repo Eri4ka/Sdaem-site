@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
-import Layout from '@pages/Layout';
-import NotFound from '@pages/NotFound';
+import Layout from '@screens/Layout';
+import NotFound from '@screens/NotFound';
 
 const ErrorPage = () => {
   return (

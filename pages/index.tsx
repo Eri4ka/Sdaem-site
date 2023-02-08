@@ -3,11 +3,11 @@ import Head from 'next/head';
 
 import { NewsType } from '@mytypes/newsTypes';
 import { ApartmentsType, CottagesType } from '@mytypes/productTypes';
-import Layout from '@pages/Layout';
-import Main from '@pages/Main';
 import { addApartments } from '@redux/slices/apartmentsSlice';
 import { addCottages } from '@redux/slices/cottagesSlice';
 import { wrapper } from '@redux/store';
+import Layout from '@screens/Layout';
+import Main from '@screens/Main';
 import { API_URL } from '@utils/constants';
 
 type HomePageProps = {

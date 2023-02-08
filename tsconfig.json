@@ -18,7 +18,7 @@
     "paths": {
       "@components/*": ["components/*"],
       "@modules/*": ["modules/*"],
-      "@pages/*": ["pages/*"],
+      "@screens/*": ["screens/*"],
       "@assets/*": ["assets/*"],
       "@styles/*": ["assets/styles/*"],
       "@icons/*": ["assets/icons/*"],

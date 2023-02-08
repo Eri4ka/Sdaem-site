@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 import SignUpForm from '@modules/SignUpForm';
-import AuthLayout from '@pages/Layout/AuthLayout';
+import AuthLayout from '@screens/Layout/AuthLayout';
 
 const SignUpPage = () => {
   return (

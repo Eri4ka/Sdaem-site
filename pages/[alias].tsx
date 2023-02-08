@@ -1,11 +1,11 @@
 import { GetServerSideProps, NextPage } from 'next';
 
 import { SingleSectionType } from '@mytypes/sectionTypes';
-import Catalog from '@pages/Catalog';
-import Layout from '@pages/Layout';
 import { addApartments } from '@redux/slices/apartmentsSlice';
 import { addCottages } from '@redux/slices/cottagesSlice';
 import { wrapper } from '@redux/store';
+import Catalog from '@screens/Catalog';
+import Layout from '@screens/Layout';
 import { API_URL } from '@utils/constants';
 
 const CatalogPage: NextPage<{

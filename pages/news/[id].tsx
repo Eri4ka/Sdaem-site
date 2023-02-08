@@ -2,8 +2,8 @@ import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 
 import { NewsType } from '@mytypes/newsTypes';
-import Layout from '@pages/Layout';
-import SingleNews from '@pages/SingleNews';
+import Layout from '@screens/Layout';
+import SingleNews from '@screens/SingleNews';
 import { API_URL } from '@utils/constants';
 
 export const getServerSideProps: GetServerSideProps<{

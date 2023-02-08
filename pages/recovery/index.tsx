@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 import RecoveryForm from '@modules/RecoveryForm';
-import AuthLayout from '@pages/Layout/AuthLayout';
+import AuthLayout from '@screens/Layout/AuthLayout';
 
 const RecoveryPage = () => {
   return (

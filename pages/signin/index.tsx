@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 import SignInForm from '@modules/SignInForm';
-import AuthLayout from '@pages/Layout/AuthLayout';
+import AuthLayout from '@screens/Layout/AuthLayout';
 
 const SignInPage = () => {
   return (

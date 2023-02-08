@@ -23,6 +23,13 @@
   &:disabled + .checkbox__label::after {
     opacity: 0.7;
   }
+  &:hover:not(:checked) + .checkbox__label::before {
+    background: url(../../assets/icons/form/check.svg) no-repeat 40%;
+    background-color: rgba(102, 78, 249, 0.1);
+    border: 1px solid rgba(102, 78, 249, 0.1);
+    height: 19px;
+    width: 19px;
+  }
   &__label {
     position: relative;
     vertical-align: middle;
@@ -40,6 +47,7 @@
       background-color: $grey;
       border: 1px solid #f0f0f0;
       border-radius: 5px;
+      transition: background-color border 0.2s;
     }
   }
 }

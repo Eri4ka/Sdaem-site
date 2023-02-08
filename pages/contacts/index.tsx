@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
-import Contacts from '@pages/Contacts';
-import Layout from '@pages/Layout';
+import Contacts from '@screens/Contacts';
+import Layout from '@screens/Layout';
 
 const ContactsPage = () => {
   return (
