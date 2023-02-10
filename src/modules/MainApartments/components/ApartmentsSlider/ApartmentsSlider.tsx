@@ -6,12 +6,15 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import ShortCard from '@components/ShortCard';
 import { ApartmentsType } from '@mytypes/productTypes';
+import Loader from '@views/Loader';
 import NextButton, { NextButtonClass } from '@views/NextButton';
 
 import { changeContactsModalPosition } from '../../helpers/changeContactsModalPosition';
 import styles from './ApartmentsSlider.module.scss';
 
-const NotFoundItems = dynamic(() => import('@components/NotFoundItems'));
+const NotFoundItems = dynamic(() => import('@components/NotFoundItems'), {
+  loading: () => <Loader />,
+});
 
 type ApartmentsSliderProps = {
   items: ApartmentsType[];
