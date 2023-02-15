@@ -1,0 +1,29 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.favorite {
+  @include d-flex-j-center-a-center;
+  background-color: rgba($color: $red, $alpha: 0.1);
+  border-radius: 22px;
+  max-width: 134px;
+  min-width: 33px;
+  transition: 0.2s;
+  color: transparent;
+  gap: 10px;
+  padding: 9px;
+  cursor: pointer;
+  &_wide {
+    padding: 9px 15px;
+  }
+  &_added {
+    color: rgba($color: $red, $alpha: 1);
+  }
+  &__text {
+    color: $red;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  &:not(.favorite_added):hover {
+    color: rgba($color: $red, $alpha: 0.4);
+  }
+}

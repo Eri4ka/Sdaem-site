@@ -1,0 +1,16 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.social {
+  @include d-flex-a-center;
+  &__text {
+    color: $text-grey-scnd;
+    font-weight: 500;
+    font-size: 14px;
+    margin-right: 20px;
+  }
+  &__icons {
+    display: flex;
+    column-gap: 15px;
+  }
+}

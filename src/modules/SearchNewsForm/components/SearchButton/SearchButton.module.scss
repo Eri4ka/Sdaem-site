@@ -1,0 +1,19 @@
+@import '@styles/variables.scss';
+
+.search {
+  &__button {
+    position: absolute;
+    height: 37px;
+    width: 53px;
+    top: 0;
+    right: 0;
+    &_icon {
+      height: 17px;
+      width: 17px;
+    }
+  }
+  &__svg {
+    height: 100%;
+    width: 100%;
+  }
+}

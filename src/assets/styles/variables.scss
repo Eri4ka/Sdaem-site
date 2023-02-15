@@ -1,0 +1,44 @@
+/* COLORS */
+$grey: #f8f8f8;
+$grey-hover: #f1f1f1;
+$grey-light: #f7f7f7;
+$grey-dark: #7a7f86;
+$black: #1e2123;
+$black-light: #242424;
+$black-strong: #333333;
+$white: #ffffff;
+$white-background: #fffefe;
+$blue: #664ef9;
+$blue-hover: #5c35f9;
+$light-blue: #4e64f9;
+$yellow: #ffd54f;
+$yellow-strong: #fec100;
+$text-grey-scnd: #686868;
+$text-grey: #8291a3;
+$icon-grey: #fdfafa;
+$checkbox-grey: #bdbdbd;
+$dot_grey: #c5c5c5;
+$red: #eb5757;
+$violet: #7b519d;
+$violet-hover: #75469b;
+$green: #0dbb41;
+$green-hover: #0ba73a;
+$brown-light: #e4e2e2;
+
+/* GRADIENTS */
+$blue_grad: linear-gradient(90deg, #9d94ff 0%, #6b50e9 94.5%);
+$blue_grad_hover: linear-gradient(90deg, #867cfc 0%, #6929f3 94.5%);
+$blue_grad_light: linear-gradient(90deg, #94afff 0%, #4e64f9 94.5%);
+$blue_grad_dark: linear-gradient(270deg, #7e6af3 0%, #6540cd 100%);
+$blue_grad_dark_hover: linear-gradient(270deg, #7560ee 0%, #572ec7 100%);
+$yellow_grad: linear-gradient(106.06deg, $yellow 1.12%, $yellow-strong 97.96%);
+$yellow_grad_card: linear-gradient(105.54deg, $yellow 33.53%, $yellow-strong 94.13%);
+
+/* VIEW-PORTS */
+$desktop_view: 1320px;
+$desktop_minimum: 1092px;
+$tablet_large: 992px;
+$tablet_medium: 876px;
+$tablet_minimum: 768px;
+$mobile_large: 576px;
+$mobile_medium: 420px;

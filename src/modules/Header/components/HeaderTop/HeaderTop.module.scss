@@ -1,0 +1,24 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.header-top {
+  background-color: $grey;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  &__nav {
+    @include d-flex-j-between-a-center;
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+    column-gap: 10px;
+  }
+}
+
+@media screen and (max-width: $desktop_view) {
+  .header-top {
+    &__nav {
+      margin: 0 20px;
+    }
+  }
+}

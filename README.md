@@ -1,34 +1,98 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">Паспорт проекта</h1>
 
-## Getting Started
+## Демо
 
-First, run the development server:
+https://sdaem-site.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
+---
+
+## Описание
+
+Многостраничный сайт по предоставлению объявлений о сдаче в аренду недвижимости
+
+---
+
+## Используемые технологии и инструменты:
+
+- TypeScript
+- HTML, Scss, css modules
+- React
+- Redux toolkit, next-redux-wrapper
+- Next.js
+- Formik, Yup, React Transiton Group, React slick, Nodemailer, Google recaptcha
+- Firebase
+- Jest
+- Docker
+
+---
+
+## Запуск и сборка проекта
+
+На проекте используется Docker. Если на рабочей машине установлен Make, то для удобства можно выполять команды с помощью make.
+
+Запуллить docker образ из dockerhub
+
+```
+docker pull eri4ka/sdaem-site
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Локальное создание docker образа
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```
+make build
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Запуск docker контейнера
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```
+make run
+```
 
-## Learn More
+Остановка docker контейнера
 
-To learn more about Next.js, take a look at the following resources:
+```
+make stop
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Все docker команды представлены в файле Makefile репозитория.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Реализация
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Проект реализован на модульной архитектуре, где каждый модуль отвечает за определенный функционал и обладает собственной бизнес-логикой. Модули имеют свои изолированные компоненты, хуки, слайсы, санки, хэлперы и константы.
+- Переиспользуемые слои выделены в комопненты, которые в свою очередь состоят из UI-компонентов.
+- Модули, компоненты, UI-компоненты покрыты Unit-тестами.
+- Применяется адаптивная и кроссбраузерная верстка.
+- Реализована мультифильтрация с сортировкой.Дополнительно можно фильтровать с помощью URL-параметров
+- На проекте используется авторизация и регистрация. Имеется возможность подтверждения регистрации и сброса пароля на электронную почту.
+- Имеется форма обратной связи. Содержимое формы по-умолчанию придет на почту создателя проекта(Почтовик получателя меняется в настройках)
+- Реализована форма поиска, слайдер, пагинация, плавная прокрутка при пагинации.
+- Функционал добавления в избранное реализован при помощи localstorage.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+---
+
+## UNIT-тестирование
+
+Код проекта, а именно: модули, компоненты, UI-компоненты покрыты Unit-тестами. Тесты распологаются в папке своего модуля, компонента, UI-компонента. Итого в сумме написан 71 тест.
+
+Запуск всех тестов
+
+```
+npm test
+```
+
+Запуск определенного теста
+
+```
+npm test <test name>
+```
+
+Реализован сценарий github-workflow, где тесты запускаются при каждом пуше в любую ветку проекта.
+
+---
+
+## Доп. вложения
+
+Вид письма отправляемого с формы обратной связи
+![alt](./public/mailmessage.jpg)

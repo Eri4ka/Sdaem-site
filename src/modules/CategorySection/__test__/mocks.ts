@@ -1,0 +1,46 @@
+export const categoryList = [
+  {
+    id: 1,
+    section_name: 'apartments',
+    title: 'Минск',
+    alias: 'minsk',
+    content: 'Квартиры на сутки в Минске',
+    total: 3,
+  },
+  {
+    id: 2,
+    section_name: 'apartments',
+    title: 'Гомель',
+    alias: 'gomel',
+    content: 'Квартиры на сутки в Гомеле',
+    total: 0,
+  },
+  {
+    id: 3,
+    section_name: 'apartments',
+    title: 'Брест',
+    alias: 'brest',
+    content: 'Квартиры на сутки в Бресте',
+  },
+  {
+    id: 4,
+    section_name: 'apartments',
+    title: 'Витебск',
+    alias: 'vitebsk',
+    content: 'Квартиры на сутки в Витебске',
+  },
+  {
+    id: 5,
+    section_name: 'apartments',
+    title: 'Гродно',
+    alias: 'grodno',
+    content: 'Квартиры на сутки в Гродно',
+  },
+  {
+    id: 6,
+    section_name: 'apartments',
+    title: 'Могилев',
+    alias: 'mogilev',
+    content: 'Квартиры на сутки в Могилеве',
+  },
+];

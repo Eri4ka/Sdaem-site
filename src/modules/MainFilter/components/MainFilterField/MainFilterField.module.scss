@@ -1,0 +1,44 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.filter {
+  &__field {
+    position: relative;
+    padding: 0 20px;
+    height: 100%;
+    &_border {
+      &::after {
+        content: '';
+        position: absolute;
+        border-right: 1px solid $blue;
+        height: 100%;
+        opacity: 0.1;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+  &__label {
+    color: $checkbox-grey;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: $tablet_large) {
+  .filter {
+    &__field {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet_minimum) {
+  .filter {
+    &__field {
+      height: 64px;
+      padding: 0 15px;
+    }
+  }
+}

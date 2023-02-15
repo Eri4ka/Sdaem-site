@@ -1,0 +1,66 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.icon {
+  @include d-flex-j-center-a-center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  transition: 0.2s;
+  &__wrapper {
+    @include d-flex-j-center-a-center;
+    height: 18px;
+    width: 18px;
+    &_contactsMini {
+      @include d-flex-j-center-a-center;
+      height: 15px;
+      width: 15px;
+    }
+    &_large {
+      @include d-flex-j-center-a-center;
+      height: 20px;
+      width: 20px;
+    }
+  }
+  &_default {
+    color: $black;
+    background-color: $icon-grey;
+    &:hover {
+      color: $blue;
+      background-color: rgba(102, 78, 249, 0.1);
+    }
+  }
+  &_contactsMini {
+    color: $white;
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 30px;
+    height: 30px;
+  }
+  &_large {
+    color: $white;
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 45px;
+    height: 45px;
+    &:hover {
+      background-color: rgba(102, 78, 249, 0.1);
+    }
+  }
+  &_violet {
+    background-color: $violet;
+    &:hover {
+      background-color: $violet-hover;
+    }
+  }
+  &_green {
+    background-color: $green;
+    &:hover {
+      background-color: $green-hover;
+    }
+  }
+  &_blue {
+    background-color: $blue;
+    &:hover {
+      background-color: $blue-hover;
+    }
+  }
+}

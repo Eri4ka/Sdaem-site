@@ -1,0 +1,47 @@
+@import '@styles/variables.scss';
+
+.slider {
+  position: relative;
+  margin-bottom: 110px;
+  &__list {
+    margin: 0 -14px;
+  }
+  &__button {
+    position: absolute;
+    bottom: -75px;
+    height: 39px;
+    width: 39px;
+    &_next {
+      right: 46.5%;
+    }
+    &_prev {
+      left: 46.5%;
+    }
+  }
+}
+
+@media screen and (max-width: $desktop_minimum) {
+  .slider {
+    &__button {
+      &_next {
+        right: 44%;
+      }
+      &_prev {
+        left: 44%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tablet_minimum) {
+  .slider {
+    &__button {
+      &_next {
+        right: 38%;
+      }
+      &_prev {
+        left: 38%;
+      }
+    }
+  }
+}

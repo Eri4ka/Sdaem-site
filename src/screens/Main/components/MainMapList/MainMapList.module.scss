@@ -1,0 +1,15 @@
+@import '@styles/variables.scss';
+
+.list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: -122px;
+}
+
+@media screen and (max-width: $tablet_minimum) {
+  .list {
+    margin-top: -175px;
+  }
+}

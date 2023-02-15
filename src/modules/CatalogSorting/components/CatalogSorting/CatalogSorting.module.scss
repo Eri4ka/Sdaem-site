@@ -1,0 +1,22 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.sorting {
+  @include d-flex-wrap;
+  justify-content: space-between;
+  row-gap: 20px;
+  max-width: 1280px;
+  margin: 0 auto 83.5px auto;
+  padding-left: 20px;
+  &__aside {
+    @include d-flex-wrap;
+    column-gap: 65px;
+    row-gap: 20px;
+  }
+}
+
+@media screen and (max-width: $desktop_view) {
+  .sorting {
+    padding-right: 20px;
+  }
+}

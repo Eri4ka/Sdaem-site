@@ -1,0 +1,32 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.form-main {
+  @include d-flex-j-between-a-center;
+  column-gap: 20px;
+  &__fields {
+    display: flex;
+  }
+  &__display {
+    display: flex;
+    gap: 30px;
+    padding: 22px 0 23px 0;
+  }
+  &__submit {
+    height: 37px;
+    width: 192px;
+  }
+  &__reset {
+    height: 37px;
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: $desktop_minimum) {
+  .form-main {
+    flex-wrap: wrap;
+    &__fields {
+      flex-wrap: wrap;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.open-map {
+  @include d-flex-f-column-a-center;
+  text-align: center;
+  &__heading {
+    color: $white;
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+  &__description {
+    color: $white;
+    font-size: 16px;
+    font-weight: 500;
+    white-space: pre-line;
+    margin-bottom: 21px;
+  }
+  &__button {
+    height: 37px;
+    width: 167px;
+  }
+}

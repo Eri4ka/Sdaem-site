@@ -1,0 +1,37 @@
+@import '@styles/variables.scss';
+
+.section {
+  margin-bottom: 40px;
+  &:nth-last-child(1) {
+    margin-bottom: 0;
+  }
+  &__head {
+    color: $black;
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  &__toggle {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    &-text {
+      font-weight: 500;
+      font-size: 14px;
+      color: #feb700;
+    }
+    &-icon {
+      margin-left: 3px;
+      &_rotate {
+        transform: rotate(180deg);
+      }
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      border-bottom: 1px solid #f5bc03;
+      width: 100%;
+    }
+  }
+}

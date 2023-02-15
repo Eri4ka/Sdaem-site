@@ -14,15 +14,23 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": ".",
+    "baseUrl": "src",
     "paths": {
       "@components/*": ["components/*"],
-      "@pages/*": ["pages/*"],
-      "@styles/*": ["styles/*"],
-      "@interfaces/*": ["interfaces/*"],
-      "@views/*": ["views/*"]
+      "@modules/*": ["modules/*"],
+      "@screens/*": ["screens/*"],
+      "@assets/*": ["assets/*"],
+      "@styles/*": ["assets/styles/*"],
+      "@icons/*": ["assets/icons/*"],
+      "@images/*": ["assets/images/*"],
+      "@views/*": ["views/*"],
+      "@utils/*": ["utils/*"],
+      "@hooks/*": ["utils/hooks/*"],
+      "@redux/*": ["utils/redux/*"],
+      "@mytypes/*": ["utils/types/*"],
+      "@helpers/*": ["utils/helpers/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/views/Button/__test__/Button.test.tsx"],
   "exclude": ["node_modules"]
 }

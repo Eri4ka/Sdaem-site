@@ -1,0 +1,35 @@
+@import '@styles/variables.scss';
+
+.category {
+  &__sections {
+    max-width: 297px;
+    width: 21vw;
+  }
+}
+
+@media screen and (max-width: $desktop_minimum) {
+  .category {
+    &__sections {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: none;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet_medium) {
+  .category {
+    &__sections {
+      column-gap: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile_large) {
+  .category {
+    &__sections {
+      display: block;
+    }
+  }
+}

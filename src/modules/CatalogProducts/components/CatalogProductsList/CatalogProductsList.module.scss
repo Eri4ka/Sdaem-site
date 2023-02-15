@@ -1,0 +1,50 @@
+@import '@styles/variables.scss';
+
+.list {
+  display: grid;
+  justify-content: center;
+  margin-bottom: 80px;
+  gap: 30px;
+  &_short {
+    grid-template-columns: repeat(3, minmax(200px, 407px));
+  }
+  &_wide {
+    grid-template-columns: 1fr;
+  }
+  &-enter {
+    opacity: 0;
+  }
+  &-enterActive {
+    opacity: 1;
+    transition: opacity 300ms;
+  }
+  &-exit {
+    opacity: 1;
+  }
+  &-exitActive {
+    opacity: 0;
+    transition: opacity 300ms;
+  }
+}
+
+@media screen and (max-width: $desktop_minimum) {
+  .list {
+    &_short {
+      grid-template-columns: repeat(2, minmax(200px, 407px));
+    }
+  }
+}
+
+@media screen and (max-width: $tablet_medium) {
+  .list {
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: $tablet_minimum) {
+  .list {
+    &_short {
+      grid-template-columns: repeat(1, minmax(200px, 407px));
+    }
+  }
+}

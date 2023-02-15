@@ -1,0 +1,42 @@
+@import '@styles/variables.scss';
+
+.news {
+  padding: 40px 0 100px 0;
+  &__container {
+    position: relative;
+    max-width: 1280px;
+    margin: 0 auto;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 848px;
+      max-height: 999px;
+      height: 100%;
+      background: linear-gradient(90deg, #94afff 0%, #4e64f9 94.5%);
+      opacity: 0.1;
+      border-radius: 40px;
+      top: -10px;
+      right: -129px;
+      z-index: -1;
+    }
+  }
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 20px 0 49px 0;
+    gap: 20px;
+  }
+  &__head {
+    font-size: 30px;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: $desktop_view) {
+  .news {
+    &__container {
+      margin: 0 20px;
+    }
+  }
+}

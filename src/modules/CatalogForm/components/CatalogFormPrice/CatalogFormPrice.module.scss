@@ -1,0 +1,13 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.form-price {
+  @include d-flex-j-between-a-center;
+  width: 220px;
+  &__wrapper {
+    max-width: 100px;
+  }
+  &__separator {
+    color: $blue;
+  }
+}

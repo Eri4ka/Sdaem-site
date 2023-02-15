@@ -1,0 +1,41 @@
+@import '@styles/variables.scss';
+
+.toggle {
+  display: flex;
+  align-items: center;
+  &__slider {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+    background-color: $checkbox-grey;
+    border-radius: 20px;
+    transition: all 0.3s;
+    cursor: pointer;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: $white;
+      top: 15%;
+      right: 50%;
+      transition: all 0.3s;
+    }
+  }
+  &__checkbox {
+    display: none;
+    &:checked + .toggle__slider {
+      background-color: $blue;
+    }
+    &:checked + .toggle__slider::after {
+      right: 10%;
+    }
+  }
+  &__label {
+    font-size: 14px;
+    color: $text-grey-scnd;
+    margin-left: 8px;
+  }
+}

@@ -1,0 +1,63 @@
+@import '@styles/variables.scss';
+
+.category {
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 953px;
+    width: 100%;
+    gap: 30px;
+    &-card {
+      height: 270px;
+      width: 100%;
+      &_wide {
+        max-width: 516px;
+        width: 36vw;
+      }
+      &_short {
+        max-width: 407px;
+        width: 29vw;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $desktop_minimum) {
+  .category {
+    &__cards {
+      order: 1;
+      &-card {
+        &_wide {
+          width: 48vw;
+        }
+        &_short {
+          width: 38vw;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tablet_minimum) {
+  .category {
+    &__cards {
+      &-card {
+        &_wide {
+          width: 48vw;
+        }
+        &_short {
+          max-width: 407px;
+          width: 39vw;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile_large) {
+  .category {
+    &__cards {
+      display: none;
+    }
+  }
+}

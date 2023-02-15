@@ -1,0 +1,16 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+
+.singlenews-icons {
+  @include d-flex-a-center;
+  &__text {
+    font-size: 14px;
+    color: $black;
+    margin-right: 15px;
+  }
+  &__icons {
+    display: grid;
+    grid-template-columns: repeat(5, 36px);
+    grid-column-gap: 18px;
+  }
+}
